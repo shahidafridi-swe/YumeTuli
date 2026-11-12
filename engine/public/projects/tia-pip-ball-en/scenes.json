@@ -1,0 +1,327 @@
+{
+  "project": "tia-pip-ball-en",
+  "title": "Tia & Pip: The Red Ball",
+  "language": "en",
+  "voice": "en-US-AvaNeural",
+  "sibling": "tia-pip-ball-bn",
+  "fps": 30,
+  "theme": {
+    "bg": "#4fb8ff",
+    "bg2": "#9fdcff",
+    "text": "#ffffff",
+    "accent": "#ff3b6b",
+    "font": "Fredoka",
+    "stroke": "#1d3a6b"
+  },
+  "music": null,
+  "music_volume": 0.12,
+  "show_captions": true,
+  "scenes": [
+    {
+      "id": 1,
+      "duration_sec": 3.35,
+      "narration": "Catch, Pip! Now it's your turn!",
+      "segments": [
+        {
+          "text": "Catch, Pip! Now it's your turn!",
+          "voice": "en-US-AvaNeural",
+          "rate": "-5%"
+        }
+      ],
+      "on_screen_text": "Pip, *catch!*",
+      "visual": "Tia tosses a red ball towards Pip in a bright park.",
+      "illustration": "ball/play",
+      "image": null,
+      "video": null,
+      "audio": "audio/scene-1.mp3",
+      "captions": [
+        {
+          "word": "Catch,",
+          "start": 0.05,
+          "end": 0.684
+        },
+        {
+          "word": "Pip!",
+          "start": 0.684,
+          "end": 1.138
+        },
+        {
+          "word": "Now",
+          "start": 1.138,
+          "end": 1.5
+        },
+        {
+          "word": "it's",
+          "start": 1.5,
+          "end": 1.953
+        },
+        {
+          "word": "your",
+          "start": 1.953,
+          "end": 2.406
+        },
+        {
+          "word": "turn!",
+          "start": 2.406,
+          "end": 2.95
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 2,
+      "duration_sec": 2.63,
+      "narration": "Oh no! My ball!",
+      "segments": [
+        {
+          "text": "Oh no! My ball!",
+          "voice": "en-US-AvaNeural",
+          "rate": "-5%"
+        }
+      ],
+      "on_screen_text": "Oh no! *My ball!*",
+      "visual": "Ball bounces into a small pond. Tia looks surprised.",
+      "illustration": "ball/splash",
+      "image": null,
+      "video": null,
+      "audio": "audio/scene-2.mp3",
+      "captions": [
+        {
+          "word": "Oh",
+          "start": 0.05,
+          "end": 0.459
+        },
+        {
+          "word": "no!",
+          "start": 0.459,
+          "end": 1.004
+        },
+        {
+          "word": "My",
+          "start": 1.004,
+          "end": 1.412
+        },
+        {
+          "word": "ball!",
+          "start": 1.412,
+          "end": 2.23
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 3,
+      "duration_sec": 3.71,
+      "narration": "Wait a moment, Tia. The ball is coming closer!",
+      "segments": [
+        {
+          "text": "Wait a moment, Tia. The ball is coming closer!",
+          "voice": "en-US-AndrewNeural",
+          "rate": "-5%"
+        }
+      ],
+      "on_screen_text": "Just a *moment!*",
+      "visual": "Pip stays on dry grass, extending his trunk as wind brings the ball closer.",
+      "illustration": "ball/reach",
+      "image": null,
+      "video": null,
+      "audio": "audio/scene-3.mp3",
+      "captions": [
+        {
+          "word": "Wait",
+          "start": 0.05,
+          "end": 0.397
+        },
+        {
+          "word": "a",
+          "start": 0.397,
+          "end": 0.536
+        },
+        {
+          "word": "moment,",
+          "start": 0.536,
+          "end": 1.09
+        },
+        {
+          "word": "Tia.",
+          "start": 1.09,
+          "end": 1.437
+        },
+        {
+          "word": "The",
+          "start": 1.437,
+          "end": 1.715
+        },
+        {
+          "word": "ball",
+          "start": 1.715,
+          "end": 2.061
+        },
+        {
+          "word": "is",
+          "start": 2.061,
+          "end": 2.27
+        },
+        {
+          "word": "coming",
+          "start": 2.27,
+          "end": 2.755
+        },
+        {
+          "word": "closer!",
+          "start": 2.755,
+          "end": 3.31
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 4,
+      "duration_sec": 2.5,
+      "narration": "Got it! Here's your red ball!",
+      "segments": [
+        {
+          "text": "Got it! Here's your red ball!",
+          "voice": "en-US-AndrewNeural",
+          "rate": "-5%"
+        }
+      ],
+      "on_screen_text": "Got it! *Red ball!*",
+      "visual": "Pip catches the ball with his trunk and lifts it out of the water.",
+      "illustration": "ball/rescue",
+      "image": null,
+      "video": null,
+      "audio": "audio/scene-4.mp3",
+      "captions": [
+        {
+          "word": "Got",
+          "start": 0.05,
+          "end": 0.312
+        },
+        {
+          "word": "it!",
+          "start": 0.312,
+          "end": 0.574
+        },
+        {
+          "word": "Here's",
+          "start": 0.574,
+          "end": 1.032
+        },
+        {
+          "word": "your",
+          "start": 1.032,
+          "end": 1.359
+        },
+        {
+          "word": "red",
+          "start": 1.359,
+          "end": 1.621
+        },
+        {
+          "word": "ball!",
+          "start": 1.621,
+          "end": 2.014
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 5,
+      "duration_sec": 4.43,
+      "narration": "Achoo! Thanks, Pip! Let's play on the grass!",
+      "segments": [
+        {
+          "text": "Achoo!",
+          "voice": "en-US-AndrewNeural",
+          "rate": "-5%"
+        },
+        {
+          "text": "Thanks, Pip! Let's play on the grass!",
+          "voice": "en-US-AvaNeural",
+          "rate": "-5%"
+        }
+      ],
+      "on_screen_text": "Thanks, *Pip!*",
+      "visual": "Water tickles Pip’s nose, he sneezes; Tia receives the ball and both move towards the field.",
+      "illustration": "ball/ending",
+      "image": null,
+      "video": null,
+      "audio": "audio/scene-5.mp3",
+      "captions": [
+        {
+          "word": "Achoo!",
+          "start": 0.05,
+          "end": 0.79
+        },
+        {
+          "word": "Thanks,",
+          "start": 1.14,
+          "end": 1.735
+        },
+        {
+          "word": "Pip!",
+          "start": 1.735,
+          "end": 2.107
+        },
+        {
+          "word": "Let's",
+          "start": 2.107,
+          "end": 2.554
+        },
+        {
+          "word": "play",
+          "start": 2.554,
+          "end": 2.926
+        },
+        {
+          "word": "on",
+          "start": 2.926,
+          "end": 3.149
+        },
+        {
+          "word": "the",
+          "start": 3.149,
+          "end": 3.447
+        },
+        {
+          "word": "grass!",
+          "start": 3.447,
+          "end": 3.968
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    }
+  ],
+  "rate": "-5%",
+  "pitch": null,
+  "characters": {
+    "narrator": {
+      "voice": "en-US-AvaNeural",
+      "rate": "-5%"
+    },
+    "tia": {
+      "voice": "en-US-AvaNeural",
+      "rate": "-5%"
+    },
+    "pip": {
+      "voice": "en-US-AndrewNeural",
+      "rate": "-5%"
+    }
+  }
+}

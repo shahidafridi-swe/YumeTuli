@@ -1,0 +1,899 @@
+{
+  "project": "hizibizi/zipper-bn",
+  "title": "Why Is That? পর্ব ১: ব্যাগের চেইন এক টানে বন্ধ হয় কীভাবে?",
+  "language": "bn",
+  "voice": null,
+  "sibling": null,
+  "fps": 30,
+  "theme": {
+    "bg": "#fdf1dc",
+    "bg2": "#fff8ec",
+    "text": "#ffffff",
+    "accent": "#facc15",
+    "warn": "#fb923c",
+    "font": "HindSiliguri",
+    "title_scale": 0.8,
+    "caption_bottom": 145,
+    "logo_top": 141,
+    "caption_style": "shadow"
+  },
+  "logo": "brand/hizibizi-logo.png",
+  "music": "assets/zip-sfx.wav",
+  "music_volume": 0.55,
+  "show_captions": true,
+  "series": {
+    "name": "hizibizi · Why Is That?",
+    "part": 1
+  },
+  "scenes": [
+    {
+      "id": 1,
+      "duration_sec": 10.57,
+      "narration": "ব্যাগের চেইনটা টানতেই বন্ধ হয়ে গেলো। কিন্তু খেয়াল করেছো? তুমি টান দিলে এক জায়গায়, আর একটার পর একটা দাঁত ঠিক নিজের জায়গায় বসে গেলো কীভাবে?",
+      "on_screen_text": "",
+      "visual": "zip/open",
+      "illustration": "zip/open",
+      "image": null,
+      "audio": "audio/scene-1.mp3",
+      "captions": [
+        {
+          "word": "ব্যাগের",
+          "start": 0,
+          "end": 0.54
+        },
+        {
+          "word": "চেইনটা",
+          "start": 0.54,
+          "end": 0.98
+        },
+        {
+          "word": "টানতেই",
+          "start": 0.98,
+          "end": 1.5
+        },
+        {
+          "word": "বন্ধ",
+          "start": 1.5,
+          "end": 1.94
+        },
+        {
+          "word": "হয়ে",
+          "start": 1.94,
+          "end": 2.18
+        },
+        {
+          "word": "গেলো।",
+          "start": 2.18,
+          "end": 2.95
+        },
+        {
+          "word": "কিন্তু",
+          "start": 2.95,
+          "end": 3.42
+        },
+        {
+          "word": "খেয়াল",
+          "start": 3.42,
+          "end": 3.56
+        },
+        {
+          "word": "করেছো?",
+          "start": 3.56,
+          "end": 4.28
+        },
+        {
+          "word": "তুমি",
+          "start": 4.28,
+          "end": 4.44
+        },
+        {
+          "word": "টান",
+          "start": 4.44,
+          "end": 4.76
+        },
+        {
+          "word": "দিলে",
+          "start": 4.76,
+          "end": 5.06
+        },
+        {
+          "word": "এক",
+          "start": 5.06,
+          "end": 5.34
+        },
+        {
+          "word": "জায়গায়,",
+          "start": 5.34,
+          "end": 6.04
+        },
+        {
+          "word": "আর",
+          "start": 6.04,
+          "end": 6.62
+        },
+        {
+          "word": "একটার",
+          "start": 6.62,
+          "end": 6.76
+        },
+        {
+          "word": "পর",
+          "start": 6.76,
+          "end": 6.94
+        },
+        {
+          "word": "একটা",
+          "start": 6.94,
+          "end": 7.32
+        },
+        {
+          "word": "দাঁত",
+          "start": 7.32,
+          "end": 7.72
+        },
+        {
+          "word": "ঠিক",
+          "start": 7.72,
+          "end": 8.02
+        },
+        {
+          "word": "নিজের",
+          "start": 8.02,
+          "end": 8.56
+        },
+        {
+          "word": "জায়গায়",
+          "start": 8.56,
+          "end": 8.88
+        },
+        {
+          "word": "বসে",
+          "start": 8.88,
+          "end": 9.15
+        },
+        {
+          "word": "গেলো",
+          "start": 9.15,
+          "end": 9.73
+        },
+        {
+          "word": "কীভাবে?",
+          "start": 9.73,
+          "end": 10.12
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 2,
+      "duration_sec": 9.89,
+      "narration": "চলো, চেইনটা অর্ধেক টেনে থামাই। যে ছোট্ট হাতলটা ধরে টানলে, তার নিচে এই অংশটা দেখছো? এটাই স্লাইডার। এবার এর ভেতরটা দেখি।",
+      "on_screen_text": "",
+      "visual": "zip/slider",
+      "illustration": "zip/slider",
+      "image": null,
+      "audio": "audio/scene-2.mp3",
+      "captions": [
+        {
+          "word": "চলো,",
+          "start": 0,
+          "end": 0.36
+        },
+        {
+          "word": "চেইনটা",
+          "start": 0.36,
+          "end": 1.02
+        },
+        {
+          "word": "অর্ধেক",
+          "start": 1.02,
+          "end": 1.52
+        },
+        {
+          "word": "টেনে",
+          "start": 1.52,
+          "end": 1.74
+        },
+        {
+          "word": "থামাই।",
+          "start": 1.74,
+          "end": 2.56
+        },
+        {
+          "word": "যে",
+          "start": 2.56,
+          "end": 2.72
+        },
+        {
+          "word": "ছোট্ট",
+          "start": 2.72,
+          "end": 3.26
+        },
+        {
+          "word": "হাতলটা",
+          "start": 3.26,
+          "end": 3.72
+        },
+        {
+          "word": "ধরে",
+          "start": 3.72,
+          "end": 3.96
+        },
+        {
+          "word": "টানলে,",
+          "start": 3.96,
+          "end": 4.82
+        },
+        {
+          "word": "তার",
+          "start": 4.82,
+          "end": 4.94
+        },
+        {
+          "word": "নিচে",
+          "start": 4.94,
+          "end": 5.3
+        },
+        {
+          "word": "এই",
+          "start": 5.3,
+          "end": 5.54
+        },
+        {
+          "word": "অংশটা",
+          "start": 5.54,
+          "end": 5.96
+        },
+        {
+          "word": "দেখছো?",
+          "start": 5.96,
+          "end": 6.81
+        },
+        {
+          "word": "এটাই",
+          "start": 6.81,
+          "end": 7.12
+        },
+        {
+          "word": "স্লাইডার।",
+          "start": 7.12,
+          "end": 7.95
+        },
+        {
+          "word": "এবার",
+          "start": 7.95,
+          "end": 8.34
+        },
+        {
+          "word": "এর",
+          "start": 8.34,
+          "end": 8.54
+        },
+        {
+          "word": "ভেতরটা",
+          "start": 8.54,
+          "end": 9.12
+        },
+        {
+          "word": "দেখি।",
+          "start": 9.12,
+          "end": 9.42
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 3,
+      "duration_sec": 10.54,
+      "narration": "স্লাইডারের ভেতরের পথটা ইংরেজি Y-এর মতো। চওড়া মুখে দুটো আলাদা রাস্তা। একটু ভেতরে গেলেই রাস্তা দুটো মিশে একটাই সরু পথ হয়ে গেছে।",
+      "on_screen_text": "",
+      "visual": "zip/channel",
+      "illustration": "zip/channel",
+      "image": null,
+      "audio": "audio/scene-3.mp3",
+      "captions": [
+        {
+          "word": "স্লাইডারের",
+          "start": 0,
+          "end": 0.72
+        },
+        {
+          "word": "ভেতরের",
+          "start": 0.72,
+          "end": 1.2
+        },
+        {
+          "word": "পথটা",
+          "start": 1.2,
+          "end": 1.74
+        },
+        {
+          "word": "ইংরেজি",
+          "start": 1.74,
+          "end": 2.59
+        },
+        {
+          "word": "Y-এর",
+          "start": 2.59,
+          "end": 2.84
+        },
+        {
+          "word": "মতো।",
+          "start": 2.84,
+          "end": 3.68
+        },
+        {
+          "word": "চওড়া",
+          "start": 3.68,
+          "end": 4.08
+        },
+        {
+          "word": "মুখে",
+          "start": 4.08,
+          "end": 4.4
+        },
+        {
+          "word": "দুটো",
+          "start": 4.4,
+          "end": 4.88
+        },
+        {
+          "word": "আলাদা",
+          "start": 4.88,
+          "end": 5.38
+        },
+        {
+          "word": "রাস্তা।",
+          "start": 5.38,
+          "end": 6.2
+        },
+        {
+          "word": "একটু",
+          "start": 6.2,
+          "end": 6.52
+        },
+        {
+          "word": "ভেতরে",
+          "start": 6.52,
+          "end": 6.9
+        },
+        {
+          "word": "গেলেই",
+          "start": 6.9,
+          "end": 7.3
+        },
+        {
+          "word": "রাস্তা",
+          "start": 7.3,
+          "end": 7.71
+        },
+        {
+          "word": "দুটো",
+          "start": 7.71,
+          "end": 7.98
+        },
+        {
+          "word": "মিশে",
+          "start": 7.98,
+          "end": 8.34
+        },
+        {
+          "word": "একটাই",
+          "start": 8.34,
+          "end": 8.96
+        },
+        {
+          "word": "সরু",
+          "start": 8.96,
+          "end": 9.36
+        },
+        {
+          "word": "পথ",
+          "start": 9.36,
+          "end": 9.6
+        },
+        {
+          "word": "হয়ে",
+          "start": 9.6,
+          "end": 9.8
+        },
+        {
+          "word": "গেছে।",
+          "start": 9.8,
+          "end": 10.1
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 4,
+      "duration_sec": 10.98,
+      "narration": "এবার বাঁ পাশের এই নীল দাঁতটায় চোখ রাখো। স্লাইডারটা টানছি। দেখো, নীল দাঁতটার ঠিক সামনে একটা ফাঁক, ডান পাশের দুই হলুদ দাঁতের মাঝখানে।",
+      "on_screen_text": "",
+      "visual": "zip/follow",
+      "illustration": "zip/follow",
+      "image": null,
+      "audio": "audio/scene-4.mp3",
+      "captions": [
+        {
+          "word": "এবার",
+          "start": 0,
+          "end": 0.32
+        },
+        {
+          "word": "বাঁ",
+          "start": 0.32,
+          "end": 0.64
+        },
+        {
+          "word": "পাশের",
+          "start": 0.64,
+          "end": 1.06
+        },
+        {
+          "word": "এই",
+          "start": 1.06,
+          "end": 1.28
+        },
+        {
+          "word": "নীল",
+          "start": 1.28,
+          "end": 1.66
+        },
+        {
+          "word": "দাঁতটায়",
+          "start": 1.66,
+          "end": 2.12
+        },
+        {
+          "word": "চোখ",
+          "start": 2.12,
+          "end": 2.32
+        },
+        {
+          "word": "রাখো।",
+          "start": 2.32,
+          "end": 3.03
+        },
+        {
+          "word": "স্লাইডারটা",
+          "start": 3.03,
+          "end": 3.62
+        },
+        {
+          "word": "টানছি।",
+          "start": 3.62,
+          "end": 4.95
+        },
+        {
+          "word": "দেখো,",
+          "start": 4.95,
+          "end": 5.62
+        },
+        {
+          "word": "নীল",
+          "start": 5.62,
+          "end": 5.9
+        },
+        {
+          "word": "দাঁতটার",
+          "start": 5.9,
+          "end": 6.28
+        },
+        {
+          "word": "ঠিক",
+          "start": 6.28,
+          "end": 6.66
+        },
+        {
+          "word": "সামনে",
+          "start": 6.66,
+          "end": 7.14
+        },
+        {
+          "word": "একটা",
+          "start": 7.14,
+          "end": 7.46
+        },
+        {
+          "word": "ফাঁক,",
+          "start": 7.46,
+          "end": 8.31
+        },
+        {
+          "word": "ডান",
+          "start": 8.31,
+          "end": 8.58
+        },
+        {
+          "word": "পাশের",
+          "start": 8.58,
+          "end": 8.98
+        },
+        {
+          "word": "দুই",
+          "start": 8.98,
+          "end": 9.2
+        },
+        {
+          "word": "হলুদ",
+          "start": 9.2,
+          "end": 9.62
+        },
+        {
+          "word": "দাঁতের",
+          "start": 9.62,
+          "end": 9.92
+        },
+        {
+          "word": "মাঝখানে।",
+          "start": 9.92,
+          "end": 10.52
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 5,
+      "duration_sec": 12.73,
+      "narration": "পথটা যতো সরু হচ্ছে, দুই সারি ততো কাছে আসছে। এবং নীল দাঁতটা ওই ফাঁকে ঢুকে আটকে গেলো। স্লাইডারটা আরেকটু এগোতেই পরের দাঁতটাও বসে গেলো। এভাবেই পুরো চেইন বন্ধ হয়।",
+      "on_screen_text": "",
+      "visual": "zip/lock",
+      "illustration": "zip/lock",
+      "image": null,
+      "audio": "audio/scene-5.mp3",
+      "captions": [
+        {
+          "word": "পথটা",
+          "start": 0,
+          "end": 0.48
+        },
+        {
+          "word": "যতো",
+          "start": 0.48,
+          "end": 0.9
+        },
+        {
+          "word": "সরু",
+          "start": 0.9,
+          "end": 1.22
+        },
+        {
+          "word": "হচ্ছে,",
+          "start": 1.22,
+          "end": 1.64
+        },
+        {
+          "word": "দুই",
+          "start": 1.64,
+          "end": 1.95
+        },
+        {
+          "word": "সারি",
+          "start": 1.95,
+          "end": 2.5
+        },
+        {
+          "word": "ততো",
+          "start": 2.5,
+          "end": 2.96
+        },
+        {
+          "word": "কাছে",
+          "start": 2.96,
+          "end": 3.24
+        },
+        {
+          "word": "আসছে।",
+          "start": 3.24,
+          "end": 4.02
+        },
+        {
+          "word": "এবং",
+          "start": 4.02,
+          "end": 4.22
+        },
+        {
+          "word": "নীল",
+          "start": 4.22,
+          "end": 4.56
+        },
+        {
+          "word": "দাঁতটা",
+          "start": 4.56,
+          "end": 5.02
+        },
+        {
+          "word": "ওই",
+          "start": 5.02,
+          "end": 5.26
+        },
+        {
+          "word": "ফাঁকে",
+          "start": 5.26,
+          "end": 5.72
+        },
+        {
+          "word": "ঢুকে",
+          "start": 5.72,
+          "end": 6.06
+        },
+        {
+          "word": "আটকে",
+          "start": 6.06,
+          "end": 6.5
+        },
+        {
+          "word": "গেলো।",
+          "start": 6.5,
+          "end": 7.13
+        },
+        {
+          "word": "স্লাইডারটা",
+          "start": 7.13,
+          "end": 7.72
+        },
+        {
+          "word": "আরেকটু",
+          "start": 7.72,
+          "end": 8.2
+        },
+        {
+          "word": "এগোতেই",
+          "start": 8.2,
+          "end": 8.82
+        },
+        {
+          "word": "পরের",
+          "start": 8.82,
+          "end": 9.12
+        },
+        {
+          "word": "দাঁতটাও",
+          "start": 9.12,
+          "end": 9.52
+        },
+        {
+          "word": "বসে",
+          "start": 9.52,
+          "end": 9.76
+        },
+        {
+          "word": "গেলো।",
+          "start": 9.76,
+          "end": 10.41
+        },
+        {
+          "word": "এভাবেই",
+          "start": 10.41,
+          "end": 11.07
+        },
+        {
+          "word": "পুরো",
+          "start": 11.07,
+          "end": 11.34
+        },
+        {
+          "word": "চেইন",
+          "start": 11.34,
+          "end": 11.64
+        },
+        {
+          "word": "বন্ধ",
+          "start": 11.64,
+          "end": 12
+        },
+        {
+          "word": "হয়।",
+          "start": 12,
+          "end": 12.3
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 6,
+      "duration_sec": 14.9,
+      "narration": "এবার উল্টো দিকে টানি। জোড়া দাঁতগুলো এবার সরু মুখ দিয়ে ঢুকছে। মাঝখানের ভাগটা দুই সারিকে দুই দিকে সরিয়ে দিচ্ছে। একটু আগেই যে নীল দাঁতটা আটকে ছিলো, দেখো, সেটা আবার আলাদা হয়ে গেলো।",
+      "on_screen_text": "",
+      "visual": "zip/reverse",
+      "illustration": "zip/reverse",
+      "image": null,
+      "audio": "audio/scene-6.mp3",
+      "captions": [
+        {
+          "word": "এবার",
+          "start": 0,
+          "end": 0.32
+        },
+        {
+          "word": "উল্টো",
+          "start": 0.32,
+          "end": 0.74
+        },
+        {
+          "word": "দিকে",
+          "start": 0.74,
+          "end": 0.94
+        },
+        {
+          "word": "টানি।",
+          "start": 0.94,
+          "end": 1.58
+        },
+        {
+          "word": "জোড়া",
+          "start": 1.58,
+          "end": 1.96
+        },
+        {
+          "word": "দাঁতগুলো",
+          "start": 1.96,
+          "end": 2.5
+        },
+        {
+          "word": "এবার",
+          "start": 2.5,
+          "end": 2.8
+        },
+        {
+          "word": "সরু",
+          "start": 2.8,
+          "end": 3.2
+        },
+        {
+          "word": "মুখ",
+          "start": 3.2,
+          "end": 3.4
+        },
+        {
+          "word": "দিয়ে",
+          "start": 3.4,
+          "end": 3.62
+        },
+        {
+          "word": "ঢুকছে।",
+          "start": 3.62,
+          "end": 4.4
+        },
+        {
+          "word": "মাঝখানের",
+          "start": 4.4,
+          "end": 4.94
+        },
+        {
+          "word": "ভাগটা",
+          "start": 4.94,
+          "end": 5.38
+        },
+        {
+          "word": "দুই",
+          "start": 5.38,
+          "end": 5.66
+        },
+        {
+          "word": "সারিকে",
+          "start": 5.66,
+          "end": 6.1
+        },
+        {
+          "word": "দুই",
+          "start": 6.1,
+          "end": 6.15
+        },
+        {
+          "word": "দিকে",
+          "start": 6.15,
+          "end": 6.64
+        },
+        {
+          "word": "সরিয়ে",
+          "start": 6.64,
+          "end": 6.96
+        },
+        {
+          "word": "দিচ্ছে।",
+          "start": 6.96,
+          "end": 7.79
+        },
+        {
+          "word": "একটু",
+          "start": 7.79,
+          "end": 8.04
+        },
+        {
+          "word": "আগেই",
+          "start": 8.04,
+          "end": 8.41
+        },
+        {
+          "word": "যে",
+          "start": 8.41,
+          "end": 8.6
+        },
+        {
+          "word": "নীল",
+          "start": 8.6,
+          "end": 8.9
+        },
+        {
+          "word": "দাঁতটা",
+          "start": 8.9,
+          "end": 9.26
+        },
+        {
+          "word": "আটকে",
+          "start": 9.26,
+          "end": 9.62
+        },
+        {
+          "word": "ছিলো,",
+          "start": 9.62,
+          "end": 10.24
+        },
+        {
+          "word": "দেখো,",
+          "start": 10.24,
+          "end": 10.73
+        },
+        {
+          "word": "সেটা",
+          "start": 10.73,
+          "end": 11.08
+        },
+        {
+          "word": "আবার",
+          "start": 11.08,
+          "end": 11.48
+        },
+        {
+          "word": "আলাদা",
+          "start": 11.48,
+          "end": 11.72
+        },
+        {
+          "word": "হয়ে",
+          "start": 11.72,
+          "end": 11.96
+        },
+        {
+          "word": "গেলো।",
+          "start": 11.96,
+          "end": 12.26
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    }
+  ],
+  "voice_source": "recorded"
+}

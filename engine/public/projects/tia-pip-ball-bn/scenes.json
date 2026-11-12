@@ -1,0 +1,297 @@
+{
+  "project": "tia-pip-ball-bn",
+  "title": "টিয়া আর পিপ: লাল বল",
+  "language": "bn",
+  "voice": "bn-IN-TanishaaNeural",
+  "sibling": "tia-pip-ball-en",
+  "fps": 30,
+  "theme": {
+    "bg": "#4fb8ff",
+    "bg2": "#9fdcff",
+    "text": "#ffffff",
+    "accent": "#ff3b6b",
+    "font": "BalooDa2",
+    "stroke": "#1d3a6b"
+  },
+  "music": null,
+  "music_volume": 0.12,
+  "show_captions": true,
+  "scenes": [
+    {
+      "id": 1,
+      "duration_sec": 4.38,
+      "narration": "পিপ, ধরো! এবার তোমার পালা!",
+      "segments": [
+        {
+          "text": "পিপ, ধরো! এবার তোমার পালা!",
+          "voice": "bn-IN-TanishaaNeural",
+          "rate": "-5%"
+        }
+      ],
+      "on_screen_text": "পিপ, *ধরো!*",
+      "visual": "Tia tosses a red ball towards Pip in a bright park.",
+      "illustration": "ball/play",
+      "image": null,
+      "video": null,
+      "audio": "audio/scene-1.mp3",
+      "captions": [
+        {
+          "word": "পিপ,",
+          "start": 0.05,
+          "end": 0.778
+        },
+        {
+          "word": "ধরো!",
+          "start": 0.778,
+          "end": 1.506
+        },
+        {
+          "word": "এবার",
+          "start": 1.506,
+          "end": 2.234
+        },
+        {
+          "word": "তোমার",
+          "start": 2.234,
+          "end": 3.108
+        },
+        {
+          "word": "পালা!",
+          "start": 3.108,
+          "end": 3.982
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 2,
+      "duration_sec": 3.47,
+      "narration": "ও না! আমার বল!",
+      "segments": [
+        {
+          "text": "ও না! আমার বল!",
+          "voice": "bn-IN-TanishaaNeural",
+          "rate": "-5%"
+        }
+      ],
+      "on_screen_text": "ও না! *আমার বল!*",
+      "visual": "Ball bounces into a small pond. Tia looks surprised.",
+      "illustration": "ball/splash",
+      "image": null,
+      "video": null,
+      "audio": "audio/scene-2.mp3",
+      "captions": [
+        {
+          "word": "ও",
+          "start": 0.05,
+          "end": 0.453
+        },
+        {
+          "word": "না!",
+          "start": 0.453,
+          "end": 1.258
+        },
+        {
+          "word": "আমার",
+          "start": 1.258,
+          "end": 2.265
+        },
+        {
+          "word": "বল!",
+          "start": 2.265,
+          "end": 3.07
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 3,
+      "duration_sec": 5.03,
+      "narration": "একটু দাঁড়াও, টিয়া। বলটা কাছে আসছে!",
+      "segments": [
+        {
+          "text": "একটু দাঁড়াও, টিয়া। বলটা কাছে আসছে!",
+          "voice": "bn-IN-BashkarNeural",
+          "rate": "-5%"
+        }
+      ],
+      "on_screen_text": "একটু *অপেক্ষা!*",
+      "visual": "Pip stays on dry grass, extending his trunk as wind brings the ball closer.",
+      "illustration": "ball/reach",
+      "image": null,
+      "video": null,
+      "audio": "audio/scene-3.mp3",
+      "captions": [
+        {
+          "word": "একটু",
+          "start": 0.05,
+          "end": 0.669
+        },
+        {
+          "word": "দাঁড়াও,",
+          "start": 0.669,
+          "end": 1.783
+        },
+        {
+          "word": "টিয়া।",
+          "start": 1.783,
+          "end": 2.649
+        },
+        {
+          "word": "বলটা",
+          "start": 2.649,
+          "end": 3.268
+        },
+        {
+          "word": "কাছে",
+          "start": 3.268,
+          "end": 3.887
+        },
+        {
+          "word": "আসছে!",
+          "start": 3.887,
+          "end": 4.63
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 4,
+      "duration_sec": 3.85,
+      "narration": "এই যে! তোমার লাল বল!",
+      "segments": [
+        {
+          "text": "এই যে! তোমার লাল বল!",
+          "voice": "bn-IN-BashkarNeural",
+          "rate": "-5%"
+        }
+      ],
+      "on_screen_text": "পেয়েছি! *লাল বল!*",
+      "visual": "Pip catches the ball with his trunk and lifts it out of the water.",
+      "illustration": "ball/rescue",
+      "image": null,
+      "video": null,
+      "audio": "audio/scene-4.mp3",
+      "captions": [
+        {
+          "word": "এই",
+          "start": 0.05,
+          "end": 0.536
+        },
+        {
+          "word": "যে!",
+          "start": 0.536,
+          "end": 1.185
+        },
+        {
+          "word": "তোমার",
+          "start": 1.185,
+          "end": 2.157
+        },
+        {
+          "word": "লাল",
+          "start": 2.157,
+          "end": 2.806
+        },
+        {
+          "word": "বল!",
+          "start": 2.806,
+          "end": 3.454
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 5,
+      "duration_sec": 7.26,
+      "narration": "হাচ্ছু! ধন্যবাদ, পিপ! চলো, এবার মাঠে খেলি!",
+      "segments": [
+        {
+          "text": "হাচ্ছু!",
+          "voice": "bn-IN-BashkarNeural",
+          "rate": "-5%"
+        },
+        {
+          "text": "ধন্যবাদ, পিপ! চলো, এবার মাঠে খেলি!",
+          "voice": "bn-IN-TanishaaNeural",
+          "rate": "-5%"
+        }
+      ],
+      "on_screen_text": "ধন্যবাদ, *পিপ!*",
+      "visual": "Water tickles Pip’s nose, he sneezes; Tia receives the ball and both move towards the field.",
+      "illustration": "ball/ending",
+      "image": null,
+      "video": null,
+      "audio": "audio/scene-5.mp3",
+      "captions": [
+        {
+          "word": "হাচ্ছু!",
+          "start": 0.05,
+          "end": 1.822
+        },
+        {
+          "word": "ধন্যবাদ,",
+          "start": 2.172,
+          "end": 3.362
+        },
+        {
+          "word": "পিপ!",
+          "start": 3.362,
+          "end": 4.023
+        },
+        {
+          "word": "চলো,",
+          "start": 4.023,
+          "end": 4.684
+        },
+        {
+          "word": "এবার",
+          "start": 4.684,
+          "end": 5.345
+        },
+        {
+          "word": "মাঠে",
+          "start": 5.345,
+          "end": 6.007
+        },
+        {
+          "word": "খেলি!",
+          "start": 6.007,
+          "end": 6.8
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    }
+  ],
+  "rate": "-5%",
+  "pitch": null,
+  "characters": {
+    "narrator": {
+      "voice": "bn-IN-TanishaaNeural",
+      "rate": "-5%"
+    },
+    "pip": {
+      "voice": "bn-IN-BashkarNeural",
+      "rate": "-5%"
+    },
+    "tia": {
+      "voice": "bn-IN-TanishaaNeural",
+      "rate": "-5%"
+    }
+  }
+}

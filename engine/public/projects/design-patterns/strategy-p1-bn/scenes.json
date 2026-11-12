@@ -1,0 +1,675 @@
+{
+  "project": "design-patterns/strategy-p1-bn",
+  "title": "Strategy Pattern পর্ব ১: Rubber Duck কেন উড়ছে?",
+  "language": "bn",
+  "voice": null,
+  "sibling": null,
+  "fps": 30,
+  "theme": {
+    "bg": "#0b1426",
+    "bg2": "#13284a",
+    "text": "#ffffff",
+    "accent": "#2dd4bf",
+    "warn": "#fb923c",
+    "stroke": "#0b1426",
+    "font": "HindSiliguri",
+    "title_scale": 0.78
+  },
+  "logo": "brand/dev-diary-logo.png",
+  "music": null,
+  "music_volume": 0.12,
+  "show_captions": true,
+  "scenes": [
+    {
+      "id": 1,
+      "duration_sec": 4.82,
+      "narration": "একটা রাবারের হাঁস উড়ছে! আমাদের কোডে এমন ভুল কীভাবে হলো?",
+      "on_screen_text": "রাবারের হাঁস ~উড়ছে~?!",
+      "visual": "strategy/opening",
+      "illustration": "strategy/opening",
+      "image": null,
+      "audio": "audio/scene-1.mp3",
+      "captions": [
+        {
+          "word": "একটা",
+          "start": 0,
+          "end": 0.34
+        },
+        {
+          "word": "রাবারের",
+          "start": 0.34,
+          "end": 0.9
+        },
+        {
+          "word": "হাঁস",
+          "start": 0.9,
+          "end": 1.41
+        },
+        {
+          "word": "উড়ছে!",
+          "start": 1.41,
+          "end": 1.7
+        },
+        {
+          "word": "আমাদের",
+          "start": 1.7,
+          "end": 2.54
+        },
+        {
+          "word": "কোডে",
+          "start": 2.54,
+          "end": 2.92
+        },
+        {
+          "word": "এমন",
+          "start": 2.92,
+          "end": 3.36
+        },
+        {
+          "word": "ভুল",
+          "start": 3.36,
+          "end": 3.64
+        },
+        {
+          "word": "কীভাবে",
+          "start": 3.64,
+          "end": 4.04
+        },
+        {
+          "word": "হলো?",
+          "start": 4.04,
+          "end": 4.34
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 2,
+      "duration_sec": 8.84,
+      "narration": "ধরো, PHP দিয়ে একটা Duck simulator বানাচ্ছি। Parent class Duck, আর MallardDuck ও RubberDuck দুটোই তাকে extend করে।",
+      "on_screen_text": "Duck *simulator*",
+      "visual": "strategy/hierarchy",
+      "illustration": "strategy/hierarchy",
+      "image": null,
+      "audio": "audio/scene-2.mp3",
+      "captions": [
+        {
+          "word": "ধরো,",
+          "start": 0,
+          "end": 0.79
+        },
+        {
+          "word": "PHP",
+          "start": 0.79,
+          "end": 1.26
+        },
+        {
+          "word": "দিয়ে",
+          "start": 1.26,
+          "end": 1.5
+        },
+        {
+          "word": "একটা",
+          "start": 1.5,
+          "end": 1.86
+        },
+        {
+          "word": "Duck",
+          "start": 1.86,
+          "end": 2.14
+        },
+        {
+          "word": "simulator",
+          "start": 2.14,
+          "end": 2.68
+        },
+        {
+          "word": "বানাচ্ছি।",
+          "start": 2.68,
+          "end": 3.28
+        },
+        {
+          "word": "Parent",
+          "start": 3.28,
+          "end": 3.9
+        },
+        {
+          "word": "class",
+          "start": 3.9,
+          "end": 4.2
+        },
+        {
+          "word": "Duck,",
+          "start": 4.2,
+          "end": 4.84
+        },
+        {
+          "word": "আর",
+          "start": 4.84,
+          "end": 5.28
+        },
+        {
+          "word": "MallardDuck",
+          "start": 5.28,
+          "end": 6.04
+        },
+        {
+          "word": "ও",
+          "start": 6.04,
+          "end": 6.26
+        },
+        {
+          "word": "RubberDuck",
+          "start": 6.26,
+          "end": 6.82
+        },
+        {
+          "word": "দুটোই",
+          "start": 6.82,
+          "end": 7.46
+        },
+        {
+          "word": "তাকে",
+          "start": 7.46,
+          "end": 7.68
+        },
+        {
+          "word": "extend",
+          "start": 7.68,
+          "end": 8.12
+        },
+        {
+          "word": "করে।",
+          "start": 8.12,
+          "end": 8.42
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 3,
+      "duration_sec": 8.87,
+      "narration": "এবার হাঁসগুলোকে ওড়াতে Duck class-এ fly() method যোগ করলাম। কিন্তু RubberDuck-ও সেই method inherit করলো। ফলে রাবারের হাঁসও উড়ছে।",
+      "on_screen_text": "Duck-এ *fly()* যোগ",
+      "visual": "strategy/add-fly",
+      "illustration": "strategy/add-fly",
+      "image": null,
+      "audio": "audio/scene-3.mp3",
+      "captions": [
+        {
+          "word": "এবার",
+          "start": 0,
+          "end": 0.32
+        },
+        {
+          "word": "হাঁসগুলোকে",
+          "start": 0.32,
+          "end": 1
+        },
+        {
+          "word": "ওড়াতে",
+          "start": 1,
+          "end": 1.42
+        },
+        {
+          "word": "Duck",
+          "start": 1.42,
+          "end": 1.86
+        },
+        {
+          "word": "class-এ",
+          "start": 1.86,
+          "end": 2.28
+        },
+        {
+          "word": "fly()",
+          "start": 2.28,
+          "end": 2.66
+        },
+        {
+          "word": "method",
+          "start": 2.66,
+          "end": 2.96
+        },
+        {
+          "word": "যোগ",
+          "start": 2.96,
+          "end": 3.2
+        },
+        {
+          "word": "করলাম।",
+          "start": 3.2,
+          "end": 3.56
+        },
+        {
+          "word": "কিন্তু",
+          "start": 3.56,
+          "end": 4.26
+        },
+        {
+          "word": "RubberDuck-ও",
+          "start": 4.26,
+          "end": 4.98
+        },
+        {
+          "word": "সেই",
+          "start": 4.98,
+          "end": 5.18
+        },
+        {
+          "word": "method",
+          "start": 5.18,
+          "end": 5.46
+        },
+        {
+          "word": "inherit",
+          "start": 5.46,
+          "end": 5.92
+        },
+        {
+          "word": "করলো।",
+          "start": 5.92,
+          "end": 6.28
+        },
+        {
+          "word": "ফলে",
+          "start": 6.28,
+          "end": 7.02
+        },
+        {
+          "word": "রাবারের",
+          "start": 7.02,
+          "end": 7.5
+        },
+        {
+          "word": "হাঁসও",
+          "start": 7.5,
+          "end": 7.92
+        },
+        {
+          "word": "উড়ছে।",
+          "start": 7.92,
+          "end": 8.36
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 4,
+      "duration_sec": 5.71,
+      "narration": "তাহলে RubberDuck-এ fly() override করে ওড়া বন্ধ করি? হ্যাঁ, আপাতত তো ঠিক হলো।",
+      "on_screen_text": "*override* করে বন্ধ",
+      "visual": "strategy/override",
+      "illustration": "strategy/override",
+      "image": null,
+      "audio": "audio/scene-4.mp3",
+      "captions": [
+        {
+          "word": "তাহলে",
+          "start": 0,
+          "end": 0.48
+        },
+        {
+          "word": "RubberDuck-এ",
+          "start": 0.48,
+          "end": 1.36
+        },
+        {
+          "word": "fly()",
+          "start": 1.36,
+          "end": 1.76
+        },
+        {
+          "word": "override",
+          "start": 1.76,
+          "end": 2.36
+        },
+        {
+          "word": "করে",
+          "start": 2.36,
+          "end": 2.6
+        },
+        {
+          "word": "ওড়া",
+          "start": 2.6,
+          "end": 2.86
+        },
+        {
+          "word": "বন্ধ",
+          "start": 2.86,
+          "end": 3.12
+        },
+        {
+          "word": "করি?",
+          "start": 3.12,
+          "end": 3.58
+        },
+        {
+          "word": "হ্যাঁ,",
+          "start": 3.58,
+          "end": 4.1
+        },
+        {
+          "word": "আপাতত",
+          "start": 4.1,
+          "end": 4.53
+        },
+        {
+          "word": "তো",
+          "start": 4.53,
+          "end": 4.74
+        },
+        {
+          "word": "ঠিক",
+          "start": 4.74,
+          "end": 5.04
+        },
+        {
+          "word": "হলো।",
+          "start": 5.04,
+          "end": 5.34
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 5,
+      "duration_sec": 9.99,
+      "narration": "কিন্তু হাঁসের ধরন বাড়লে আলাদা flying behavior বিভিন্ন subclass-এ সামলাতে হবে। একই flying code কয়েক জায়গায় থাকলে পরিবর্তনও কয়েক জায়গায় লাগে।",
+      "on_screen_text": "হাঁস বাড়লে ~ঝামেলা~",
+      "visual": "strategy/more-ducks",
+      "illustration": "strategy/more-ducks",
+      "image": null,
+      "audio": "audio/scene-5.mp3",
+      "captions": [
+        {
+          "word": "কিন্তু",
+          "start": 0,
+          "end": 0.32
+        },
+        {
+          "word": "হাঁসের",
+          "start": 0.32,
+          "end": 0.82
+        },
+        {
+          "word": "ধরন",
+          "start": 0.82,
+          "end": 1.28
+        },
+        {
+          "word": "বাড়লে",
+          "start": 1.28,
+          "end": 1.68
+        },
+        {
+          "word": "আলাদা",
+          "start": 1.68,
+          "end": 2.5
+        },
+        {
+          "word": "flying",
+          "start": 2.5,
+          "end": 2.74
+        },
+        {
+          "word": "behavior",
+          "start": 2.74,
+          "end": 3.3
+        },
+        {
+          "word": "বিভিন্ন",
+          "start": 3.3,
+          "end": 3.86
+        },
+        {
+          "word": "subclass-এ",
+          "start": 3.86,
+          "end": 4.44
+        },
+        {
+          "word": "সামলাতে",
+          "start": 4.44,
+          "end": 4.88
+        },
+        {
+          "word": "হবে।",
+          "start": 4.88,
+          "end": 5.14
+        },
+        {
+          "word": "একই",
+          "start": 5.14,
+          "end": 5.96
+        },
+        {
+          "word": "flying",
+          "start": 5.96,
+          "end": 6.3
+        },
+        {
+          "word": "code",
+          "start": 6.3,
+          "end": 6.56
+        },
+        {
+          "word": "কয়েক",
+          "start": 6.56,
+          "end": 6.92
+        },
+        {
+          "word": "জায়গায়",
+          "start": 6.92,
+          "end": 7.24
+        },
+        {
+          "word": "থাকলে",
+          "start": 7.24,
+          "end": 7.64
+        },
+        {
+          "word": "পরিবর্তনও",
+          "start": 7.64,
+          "end": 8.54
+        },
+        {
+          "word": "কয়েক",
+          "start": 8.54,
+          "end": 8.82
+        },
+        {
+          "word": "জায়গায়",
+          "start": 8.82,
+          "end": 9.16
+        },
+        {
+          "word": "লাগে।",
+          "start": 9.16,
+          "end": 9.56
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 6,
+      "duration_sec": 4.06,
+      "narration": "সব হাঁস Duck হলেও, সবার ওড়ার আচরণ এক নয়।",
+      "on_screen_text": "সব Duck-এর flying\nbehavior *এক নয়*",
+      "visual": "strategy/takeaway",
+      "illustration": "strategy/takeaway",
+      "image": null,
+      "audio": "audio/scene-6.mp3",
+      "captions": [
+        {
+          "word": "সব",
+          "start": 0,
+          "end": 0.48
+        },
+        {
+          "word": "হাঁস",
+          "start": 0.48,
+          "end": 0.78
+        },
+        {
+          "word": "Duck",
+          "start": 0.78,
+          "end": 1.26
+        },
+        {
+          "word": "হলেও,",
+          "start": 1.26,
+          "end": 1.5
+        },
+        {
+          "word": "সবার",
+          "start": 1.5,
+          "end": 2.18
+        },
+        {
+          "word": "ওড়ার",
+          "start": 2.18,
+          "end": 2.52
+        },
+        {
+          "word": "আচরণ",
+          "start": 2.52,
+          "end": 3
+        },
+        {
+          "word": "এক",
+          "start": 3,
+          "end": 3.32
+        },
+        {
+          "word": "নয়।",
+          "start": 3.32,
+          "end": 3.68
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 7,
+      "duration_sec": 6.46,
+      "narration": "তাহলে ওড়ার আচরণটাকে আলাদা করে রাখলে কেমন হয়? পরের পর্বে এভাবেই Strategy Pattern বুঝবো।",
+      "on_screen_text": "Behavior-টা *আলাদা* রাখলে?",
+      "visual": "strategy/ending",
+      "illustration": "strategy/ending",
+      "image": null,
+      "audio": "audio/scene-7.mp3",
+      "captions": [
+        {
+          "word": "তাহলে",
+          "start": 0,
+          "end": 0.44
+        },
+        {
+          "word": "ওড়ার",
+          "start": 0.44,
+          "end": 0.88
+        },
+        {
+          "word": "আচরণটাকে",
+          "start": 0.88,
+          "end": 1.68
+        },
+        {
+          "word": "আলাদা",
+          "start": 1.68,
+          "end": 2.16
+        },
+        {
+          "word": "করে",
+          "start": 2.16,
+          "end": 2.34
+        },
+        {
+          "word": "রাখলে",
+          "start": 2.34,
+          "end": 2.64
+        },
+        {
+          "word": "কেমন",
+          "start": 2.64,
+          "end": 2.9
+        },
+        {
+          "word": "হয়?",
+          "start": 2.9,
+          "end": 3.42
+        },
+        {
+          "word": "পরের",
+          "start": 3.42,
+          "end": 3.82
+        },
+        {
+          "word": "পর্বে",
+          "start": 3.82,
+          "end": 4.16
+        },
+        {
+          "word": "এভাবেই",
+          "start": 4.16,
+          "end": 4.78
+        },
+        {
+          "word": "Strategy",
+          "start": 4.78,
+          "end": 5.26
+        },
+        {
+          "word": "Pattern",
+          "start": 5.26,
+          "end": 5.58
+        },
+        {
+          "word": "বুঝবো।",
+          "start": 5.58,
+          "end": 6
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    }
+  ],
+  "series": {
+    "name": "Strategy Pattern",
+    "part": 1
+  },
+  "voice_source": "recorded"
+}

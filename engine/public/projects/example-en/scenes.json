@@ -1,0 +1,280 @@
+{
+  "project": "example-en",
+  "title": "3 habits that double your productivity",
+  "language": "en",
+  "voice": null,
+  "sibling": "example",
+  "fps": 30,
+  "theme": {
+    "bg": "#0b0b12",
+    "bg2": "#2a1b5e",
+    "text": "#ffffff",
+    "accent": "#ffd23f",
+    "font": "Inter"
+  },
+  "music": null,
+  "music_volume": 0.12,
+  "show_captions": true,
+  "scenes": [
+    {
+      "id": 1,
+      "duration_sec": 3,
+      "narration": "Busy all day but nothing gets done?",
+      "on_screen_text": "Busy all day,\n*nothing done?*",
+      "visual": "Tired person at messy desk at night, laptop glow, cinematic, vertical 9:16",
+      "image": null,
+      "audio": "audio/scene-1.mp3",
+      "captions": [
+        {
+          "word": "Busy",
+          "start": 0.05,
+          "end": 0.359
+        },
+        {
+          "word": "all",
+          "start": 0.359,
+          "end": 0.607
+        },
+        {
+          "word": "day",
+          "start": 0.607,
+          "end": 0.855
+        },
+        {
+          "word": "but",
+          "start": 0.855,
+          "end": 1.102
+        },
+        {
+          "word": "nothing",
+          "start": 1.102,
+          "end": 1.597
+        },
+        {
+          "word": "gets",
+          "start": 1.597,
+          "end": 1.907
+        },
+        {
+          "word": "done?",
+          "start": 1.907,
+          "end": 2.278
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "center",
+      "emoji": "😩"
+    },
+    {
+      "id": 2,
+      "duration_sec": 3.69,
+      "narration": "One: do your hardest task first thing in the morning.",
+      "on_screen_text": "1. *Hardest task* first",
+      "visual": "Sunrise over desk, coffee, focused person writing, warm light",
+      "image": null,
+      "audio": "audio/scene-2.mp3",
+      "captions": [
+        {
+          "word": "One:",
+          "start": 0.05,
+          "end": 0.35
+        },
+        {
+          "word": "do",
+          "start": 0.35,
+          "end": 0.529
+        },
+        {
+          "word": "your",
+          "start": 0.529,
+          "end": 0.829
+        },
+        {
+          "word": "hardest",
+          "start": 0.829,
+          "end": 1.308
+        },
+        {
+          "word": "task",
+          "start": 1.308,
+          "end": 1.608
+        },
+        {
+          "word": "first",
+          "start": 1.608,
+          "end": 1.968
+        },
+        {
+          "word": "thing",
+          "start": 1.968,
+          "end": 2.327
+        },
+        {
+          "word": "in",
+          "start": 2.327,
+          "end": 2.507
+        },
+        {
+          "word": "the",
+          "start": 2.507,
+          "end": 2.747
+        },
+        {
+          "word": "morning.",
+          "start": 2.747,
+          "end": 3.286
+        }
+      ],
+      "transition": "slide",
+      "text_animation": "slide-up",
+      "text_position": "center",
+      "emoji": "🌅"
+    },
+    {
+      "id": 3,
+      "duration_sec": 3,
+      "narration": "Two: put your phone in another room.",
+      "on_screen_text": "2. Phone in *another room*",
+      "visual": "Smartphone on a shelf in another room, out of focus person working in background",
+      "image": null,
+      "audio": "audio/scene-3.mp3",
+      "captions": [
+        {
+          "word": "Two:",
+          "start": 0.05,
+          "end": 0.351
+        },
+        {
+          "word": "put",
+          "start": 0.351,
+          "end": 0.592
+        },
+        {
+          "word": "your",
+          "start": 0.592,
+          "end": 0.893
+        },
+        {
+          "word": "phone",
+          "start": 0.893,
+          "end": 1.254
+        },
+        {
+          "word": "in",
+          "start": 1.254,
+          "end": 1.435
+        },
+        {
+          "word": "another",
+          "start": 1.435,
+          "end": 1.917
+        },
+        {
+          "word": "room.",
+          "start": 1.917,
+          "end": 2.278
+        }
+      ],
+      "transition": "slide",
+      "text_animation": "slide-up",
+      "text_position": "center",
+      "emoji": "📵"
+    },
+    {
+      "id": 4,
+      "duration_sec": 4.24,
+      "narration": "Three: twenty-five minutes of work, five minutes of rest.",
+      "on_screen_text": "3. *25 min* work\n5 min rest",
+      "visual": "Tomato kitchen timer on desk next to notebook, minimal",
+      "image": null,
+      "audio": "audio/scene-4.mp3",
+      "captions": [
+        {
+          "word": "Three:",
+          "start": 0.05,
+          "end": 0.507
+        },
+        {
+          "word": "twenty-five",
+          "start": 0.507,
+          "end": 1.291
+        },
+        {
+          "word": "minutes",
+          "start": 1.291,
+          "end": 1.813
+        },
+        {
+          "word": "of",
+          "start": 1.813,
+          "end": 2.009
+        },
+        {
+          "word": "work,",
+          "start": 2.009,
+          "end": 2.401
+        },
+        {
+          "word": "five",
+          "start": 2.401,
+          "end": 2.728
+        },
+        {
+          "word": "minutes",
+          "start": 2.728,
+          "end": 3.25
+        },
+        {
+          "word": "of",
+          "start": 3.25,
+          "end": 3.446
+        },
+        {
+          "word": "rest.",
+          "start": 3.446,
+          "end": 3.838
+        }
+      ],
+      "transition": "slide",
+      "text_animation": "slide-up",
+      "text_position": "center",
+      "emoji": "⏱️"
+    },
+    {
+      "id": 5,
+      "duration_sec": 2.5,
+      "narration": "Follow for more tips!",
+      "on_screen_text": "*Follow* for more 🔔",
+      "visual": "Bold end card, brand colors",
+      "image": null,
+      "audio": "audio/scene-5.mp3",
+      "captions": [
+        {
+          "word": "Follow",
+          "start": 0.05,
+          "end": 0.614
+        },
+        {
+          "word": "for",
+          "start": 0.614,
+          "end": 0.936
+        },
+        {
+          "word": "more",
+          "start": 0.936,
+          "end": 1.339
+        },
+        {
+          "word": "tips!",
+          "start": 1.339,
+          "end": 1.822
+        }
+      ],
+      "transition": "zoom",
+      "text_animation": "pop",
+      "text_position": "center",
+      "emoji": null
+    }
+  ]
+}

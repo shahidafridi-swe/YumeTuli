@@ -1,0 +1,10 @@
+- [Bilingual shorts project](project-bilingual-shorts.md) — user makes bn + en shorts; every feature must support both
+- [Vertical centering](vertical-centering.md) — always centre content; equal empty space top and bottom (videos + thumbnails)
+- [Logo as given](logo-as-given.md) — keep supplied logos' transparent bg; no plates behind them
+- [hizibizi full-screen](hizibizi-fullscreen.md) — hizibizi episodes default to full-screen (no card/border), shadow captions
+- [Brand outro](brand-outro.md) — every NEW video: fade to charcoal → cream logo outro ("outro": devdiary | hizibizi)
+- [User profile](user-profile.md) — Banglish creator, own ElevenLabs voice, explain-first when asked, hates repeating corrections
+- [Video request workflow](video-request-workflow.md) — default steps + deliverables (MP4, source zip, thumbnail, QA) for every episode
+- [Dev Diary series](series-dev-diary.md) — design-pattern episodes done, styles, code/source rules
+- [hizibizi series](series-hizibizi.md) — kids science episodes done; next episode must add hizibizi outro
+- [YumeTuli](project-yumetuli.md) — web studio project (Next.js+Laravel+MySQL, Docker, B&W, i18n) replacing CLI workflow; plan in YumeTuli/docs/PLAN.md

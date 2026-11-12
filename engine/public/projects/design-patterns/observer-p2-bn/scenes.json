@@ -1,0 +1,1372 @@
+{
+  "project": "design-patterns/observer-p2-bn",
+  "title": "Observer Pattern in Laravel — পর্ব ২",
+  "language": "bn",
+  "voice": null,
+  "sibling": null,
+  "fps": 30,
+  "theme": {
+    "bg": "#FAF7EF",
+    "bg2": "#FAF7EF",
+    "text": "#25232A",
+    "accent": "#702963",
+    "warn": "#B84A20",
+    "font": "HindSiliguri",
+    "title_scale": 0.66,
+    "title_top": 290,
+    "caption_bottom": 150,
+    "caption_color": "#ffffff",
+    "caption_accent": "#ffb38a",
+    "caption_bg": "rgba(37,35,42,0.82)",
+    "logo_top": 140
+  },
+  "logo": "brand/dev-diary-logo-black.png",
+  "outro": "devdiary",
+  "max_duration_sec": 120,
+  "music": null,
+  "music_volume": 0.12,
+  "show_captions": true,
+  "scenes": [
+    {
+      "id": 1,
+      "duration_sec": 11.82,
+      "narration": "তুমি একটা অর্ডার দিলে। তোমার inbox-এ এল confirmation email, আর দোকানদার পেলেন নতুন অর্ডারের notification। কাল যদি warehouse-কেও জানাতে হয়, তাহলে কি আবার checkout-এর code বদলাতে হবে?",
+      "on_screen_text": "অর্ডার *#1042*",
+      "visual": "observer2/hook",
+      "illustration": "observer2/hook",
+      "image": null,
+      "audio": "audio/scene-1.mp3",
+      "captions": [
+        {
+          "word": "তুমি",
+          "start": 0,
+          "end": 0.25
+        },
+        {
+          "word": "একটা",
+          "start": 0.25,
+          "end": 0.62
+        },
+        {
+          "word": "অর্ডার",
+          "start": 0.62,
+          "end": 0.98
+        },
+        {
+          "word": "দিলে।",
+          "start": 0.98,
+          "end": 1.66
+        },
+        {
+          "word": "তোমার",
+          "start": 1.66,
+          "end": 1.86
+        },
+        {
+          "word": "inbox-এ",
+          "start": 1.86,
+          "end": 2.46
+        },
+        {
+          "word": "এল",
+          "start": 2.46,
+          "end": 2.76
+        },
+        {
+          "word": "confirmation",
+          "start": 2.76,
+          "end": 3.44
+        },
+        {
+          "word": "email,",
+          "start": 3.44,
+          "end": 4.1
+        },
+        {
+          "word": "আর",
+          "start": 4.1,
+          "end": 4.24
+        },
+        {
+          "word": "দোকানদার",
+          "start": 4.24,
+          "end": 4.76
+        },
+        {
+          "word": "পেলেন",
+          "start": 4.76,
+          "end": 5.12
+        },
+        {
+          "word": "নতুন",
+          "start": 5.12,
+          "end": 5.52
+        },
+        {
+          "word": "অর্ডারের",
+          "start": 5.52,
+          "end": 5.94
+        },
+        {
+          "word": "notification।",
+          "start": 5.94,
+          "end": 7.06
+        },
+        {
+          "word": "কাল",
+          "start": 7.06,
+          "end": 7.26
+        },
+        {
+          "word": "যদি",
+          "start": 7.26,
+          "end": 7.5
+        },
+        {
+          "word": "warehouse-কেও",
+          "start": 7.5,
+          "end": 8.22
+        },
+        {
+          "word": "জানাতে",
+          "start": 8.22,
+          "end": 8.54
+        },
+        {
+          "word": "হয়,",
+          "start": 8.54,
+          "end": 9.07
+        },
+        {
+          "word": "তাহলে",
+          "start": 9.07,
+          "end": 9.35
+        },
+        {
+          "word": "কি",
+          "start": 9.35,
+          "end": 9.5
+        },
+        {
+          "word": "আবার",
+          "start": 9.5,
+          "end": 10.07
+        },
+        {
+          "word": "checkout-এর",
+          "start": 10.07,
+          "end": 10.4
+        },
+        {
+          "word": "code",
+          "start": 10.4,
+          "end": 10.66
+        },
+        {
+          "word": "বদলাতে",
+          "start": 10.66,
+          "end": 11.08
+        },
+        {
+          "word": "হবে?",
+          "start": 11.08,
+          "end": 11.38
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 50
+    },
+    {
+      "id": 2,
+      "duration_sec": 15.61,
+      "narration": "ধরি, আমাদের Laravel app-এ checkout-এর কাজ হলো অর্ডারটা তৈরি করা। অর্ডারটা save হলে আমরা একটা event dispatch করি। নাম OrderPlaced। এর সঙ্গে order object-টা পাঠাই, যাতে যে এই খবর পাবে সে বুঝতে পারে ঠিক কোন অর্ডারটা হয়েছে।",
+      "on_screen_text": "*OrderPlaced* event",
+      "visual": "observer2/event",
+      "illustration": "observer2/event",
+      "image": null,
+      "audio": "audio/scene-2.mp3",
+      "captions": [
+        {
+          "word": "ধরি,",
+          "start": 0,
+          "end": 0.48
+        },
+        {
+          "word": "আমাদের",
+          "start": 0.48,
+          "end": 1.02
+        },
+        {
+          "word": "Laravel",
+          "start": 1.02,
+          "end": 1.54
+        },
+        {
+          "word": "app-এ",
+          "start": 1.54,
+          "end": 2.05
+        },
+        {
+          "word": "checkout-এর",
+          "start": 2.05,
+          "end": 2.5
+        },
+        {
+          "word": "কাজ",
+          "start": 2.5,
+          "end": 2.78
+        },
+        {
+          "word": "হলো",
+          "start": 2.78,
+          "end": 3.06
+        },
+        {
+          "word": "অর্ডারটা",
+          "start": 3.06,
+          "end": 3.58
+        },
+        {
+          "word": "তৈরি",
+          "start": 3.58,
+          "end": 3.92
+        },
+        {
+          "word": "করা।",
+          "start": 3.92,
+          "end": 4.48
+        },
+        {
+          "word": "অর্ডারটা",
+          "start": 4.48,
+          "end": 4.91
+        },
+        {
+          "word": "save",
+          "start": 4.91,
+          "end": 5.27
+        },
+        {
+          "word": "হলে",
+          "start": 5.27,
+          "end": 5.53
+        },
+        {
+          "word": "আমরা",
+          "start": 5.53,
+          "end": 5.98
+        },
+        {
+          "word": "একটা",
+          "start": 5.98,
+          "end": 6.13
+        },
+        {
+          "word": "event",
+          "start": 6.13,
+          "end": 6.51
+        },
+        {
+          "word": "dispatch",
+          "start": 6.51,
+          "end": 6.91
+        },
+        {
+          "word": "করি।",
+          "start": 6.91,
+          "end": 7.49
+        },
+        {
+          "word": "নাম",
+          "start": 7.49,
+          "end": 8.06
+        },
+        {
+          "word": "OrderPlaced।",
+          "start": 8.06,
+          "end": 9.12
+        },
+        {
+          "word": "এর",
+          "start": 9.12,
+          "end": 9.27
+        },
+        {
+          "word": "সঙ্গে",
+          "start": 9.27,
+          "end": 9.65
+        },
+        {
+          "word": "order",
+          "start": 9.65,
+          "end": 10.19
+        },
+        {
+          "word": "object-টা",
+          "start": 10.19,
+          "end": 10.61
+        },
+        {
+          "word": "পাঠাই,",
+          "start": 10.61,
+          "end": 11.17
+        },
+        {
+          "word": "যাতে",
+          "start": 11.17,
+          "end": 11.45
+        },
+        {
+          "word": "যে",
+          "start": 11.45,
+          "end": 11.77
+        },
+        {
+          "word": "এই",
+          "start": 11.77,
+          "end": 11.9
+        },
+        {
+          "word": "খবর",
+          "start": 11.9,
+          "end": 12.33
+        },
+        {
+          "word": "পাবে",
+          "start": 12.33,
+          "end": 12.71
+        },
+        {
+          "word": "সে",
+          "start": 12.71,
+          "end": 12.99
+        },
+        {
+          "word": "বুঝতে",
+          "start": 12.99,
+          "end": 13.41
+        },
+        {
+          "word": "পারে",
+          "start": 13.41,
+          "end": 13.67
+        },
+        {
+          "word": "ঠিক",
+          "start": 13.67,
+          "end": 14.08
+        },
+        {
+          "word": "কোন",
+          "start": 14.08,
+          "end": 14.29
+        },
+        {
+          "word": "অর্ডারটা",
+          "start": 14.29,
+          "end": 14.75
+        },
+        {
+          "word": "হয়েছে।",
+          "start": 14.75,
+          "end": 15.19
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 50
+    },
+    {
+      "id": 3,
+      "duration_sec": 13.39,
+      "narration": "এবার স্ক্রিনে দেখো, অর্ডার নম্বর ১০৪২। Checkout থেকে মাত্র একবার OrderPlaced dispatch হলো। Laravel-এর event dispatcher দেখে, এই event-এর জন্য কোন কোন listener আছে। আমাদের উদাহরণে আছে দুটো।",
+      "on_screen_text": "একবার *dispatch*",
+      "visual": "observer2/dispatch",
+      "illustration": "observer2/dispatch",
+      "image": null,
+      "audio": "audio/scene-3.mp3",
+      "captions": [
+        {
+          "word": "এবার",
+          "start": 0,
+          "end": 0.32
+        },
+        {
+          "word": "স্ক্রিনে",
+          "start": 0.32,
+          "end": 0.66
+        },
+        {
+          "word": "দেখো,",
+          "start": 0.66,
+          "end": 1.26
+        },
+        {
+          "word": "অর্ডার",
+          "start": 1.26,
+          "end": 1.54
+        },
+        {
+          "word": "নম্বর",
+          "start": 1.54,
+          "end": 1.92
+        },
+        {
+          "word": "১০৪২।",
+          "start": 1.92,
+          "end": 3.41
+        },
+        {
+          "word": "Checkout",
+          "start": 3.41,
+          "end": 3.8
+        },
+        {
+          "word": "থেকে",
+          "start": 3.8,
+          "end": 4.08
+        },
+        {
+          "word": "মাত্র",
+          "start": 4.08,
+          "end": 4.52
+        },
+        {
+          "word": "একবার",
+          "start": 4.52,
+          "end": 5.14
+        },
+        {
+          "word": "OrderPlaced",
+          "start": 5.14,
+          "end": 5.82
+        },
+        {
+          "word": "dispatch",
+          "start": 5.82,
+          "end": 6.28
+        },
+        {
+          "word": "হলো।",
+          "start": 6.28,
+          "end": 6.8
+        },
+        {
+          "word": "Laravel-এর",
+          "start": 6.8,
+          "end": 7.38
+        },
+        {
+          "word": "event",
+          "start": 7.38,
+          "end": 7.76
+        },
+        {
+          "word": "dispatcher",
+          "start": 7.76,
+          "end": 8.26
+        },
+        {
+          "word": "দেখে,",
+          "start": 8.26,
+          "end": 8.86
+        },
+        {
+          "word": "এই",
+          "start": 8.86,
+          "end": 9.08
+        },
+        {
+          "word": "event-এর",
+          "start": 9.08,
+          "end": 9.54
+        },
+        {
+          "word": "জন্য",
+          "start": 9.54,
+          "end": 9.9
+        },
+        {
+          "word": "কোন",
+          "start": 9.9,
+          "end": 10.24
+        },
+        {
+          "word": "কোন",
+          "start": 10.24,
+          "end": 10.42
+        },
+        {
+          "word": "listener",
+          "start": 10.42,
+          "end": 10.88
+        },
+        {
+          "word": "আছে।",
+          "start": 10.88,
+          "end": 11.41
+        },
+        {
+          "word": "আমাদের",
+          "start": 11.41,
+          "end": 11.78
+        },
+        {
+          "word": "উদাহরণে",
+          "start": 11.78,
+          "end": 12.18
+        },
+        {
+          "word": "আছে",
+          "start": 12.18,
+          "end": 12.46
+        },
+        {
+          "word": "দুটো।",
+          "start": 12.46,
+          "end": 12.9
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 50
+    },
+    {
+      "id": 4,
+      "duration_sec": 10.33,
+      "narration": "প্রথম listener হলো SendOrderConfirmation। এর handle method event থেকে অর্ডারটা নেয়, তারপর customer-কে ইমেইল পাঠায়—“আপনার অর্ডার নম্বর ১০৪২।”",
+      "on_screen_text": "Listener ১: *Email*",
+      "visual": "observer2/email",
+      "illustration": "observer2/email",
+      "image": null,
+      "audio": "audio/scene-4.mp3",
+      "captions": [
+        {
+          "word": "প্রথম",
+          "start": 0,
+          "end": 0.17
+        },
+        {
+          "word": "listener",
+          "start": 0.17,
+          "end": 0.34
+        },
+        {
+          "word": "হলো",
+          "start": 0.34,
+          "end": 0.6
+        },
+        {
+          "word": "SendOrderConfirmation।",
+          "start": 0.6,
+          "end": 2.4
+        },
+        {
+          "word": "এর",
+          "start": 2.4,
+          "end": 2.76
+        },
+        {
+          "word": "handle",
+          "start": 2.76,
+          "end": 3.3
+        },
+        {
+          "word": "method",
+          "start": 3.3,
+          "end": 3.66
+        },
+        {
+          "word": "event",
+          "start": 3.66,
+          "end": 4.09
+        },
+        {
+          "word": "থেকে",
+          "start": 4.09,
+          "end": 4.44
+        },
+        {
+          "word": "অর্ডারটা",
+          "start": 4.44,
+          "end": 4.98
+        },
+        {
+          "word": "নেয়,",
+          "start": 4.98,
+          "end": 5.43
+        },
+        {
+          "word": "তারপর",
+          "start": 5.43,
+          "end": 5.92
+        },
+        {
+          "word": "customer-কে",
+          "start": 5.92,
+          "end": 6.6
+        },
+        {
+          "word": "ইমেইল",
+          "start": 6.6,
+          "end": 6.67
+        },
+        {
+          "word": "পাঠায়—“আপনার",
+          "start": 6.67,
+          "end": 7.61
+        },
+        {
+          "word": "অর্ডার",
+          "start": 7.61,
+          "end": 7.76
+        },
+        {
+          "word": "নম্বর",
+          "start": 7.76,
+          "end": 8.47
+        },
+        {
+          "word": "১০৪২।”",
+          "start": 8.47,
+          "end": 9.7
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 50
+    },
+    {
+      "id": 5,
+      "duration_sec": 10.04,
+      "narration": "দ্বিতীয় listener হলো NotifyShop। সেও একই event থেকে একই অর্ডার পায়। এবার খবরটা যায় দোকানদারের কাছে—“নতুন অর্ডার ১০৪২ প্রস্তুত করুন।”",
+      "on_screen_text": "Listener ২: *দোকান*",
+      "visual": "observer2/shop",
+      "illustration": "observer2/shop",
+      "image": null,
+      "audio": "audio/scene-5.mp3",
+      "captions": [
+        {
+          "word": "দ্বিতীয়",
+          "start": 0,
+          "end": 0.52
+        },
+        {
+          "word": "listener",
+          "start": 0.52,
+          "end": 0.9
+        },
+        {
+          "word": "হলো",
+          "start": 0.9,
+          "end": 1.18
+        },
+        {
+          "word": "NotifyShop।",
+          "start": 1.18,
+          "end": 2.31
+        },
+        {
+          "word": "সেও",
+          "start": 2.31,
+          "end": 2.64
+        },
+        {
+          "word": "একই",
+          "start": 2.64,
+          "end": 3.1
+        },
+        {
+          "word": "event",
+          "start": 3.1,
+          "end": 3.46
+        },
+        {
+          "word": "থেকে",
+          "start": 3.46,
+          "end": 3.76
+        },
+        {
+          "word": "একই",
+          "start": 3.76,
+          "end": 4.22
+        },
+        {
+          "word": "অর্ডার",
+          "start": 4.22,
+          "end": 4.48
+        },
+        {
+          "word": "পায়।",
+          "start": 4.48,
+          "end": 4.97
+        },
+        {
+          "word": "এবার",
+          "start": 4.97,
+          "end": 5.24
+        },
+        {
+          "word": "খবরটা",
+          "start": 5.24,
+          "end": 5.68
+        },
+        {
+          "word": "যায়",
+          "start": 5.68,
+          "end": 5.9
+        },
+        {
+          "word": "দোকানদারের",
+          "start": 5.9,
+          "end": 7.09
+        },
+        {
+          "word": "কাছে—“নতুন",
+          "start": 7.09,
+          "end": 7.52
+        },
+        {
+          "word": "অর্ডার",
+          "start": 7.52,
+          "end": 7.84
+        },
+        {
+          "word": "১০৪২",
+          "start": 7.84,
+          "end": 8.82
+        },
+        {
+          "word": "প্রস্তুত",
+          "start": 8.82,
+          "end": 9.26
+        },
+        {
+          "word": "করুন।”",
+          "start": 9.26,
+          "end": 9.56
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 50
+    },
+    {
+      "id": 6,
+      "duration_sec": 5.05,
+      "narration": "এবার শুরুর প্রশ্নটায় ফিরি। Warehouse-কেও খবর দিতে হলে কোন জায়গায় code লিখব?",
+      "on_screen_text": "*Warehouse*-কেও?",
+      "visual": "observer2/question",
+      "illustration": "observer2/question",
+      "image": null,
+      "audio": "audio/scene-6.mp3",
+      "captions": [
+        {
+          "word": "এবার",
+          "start": 0,
+          "end": 0.32
+        },
+        {
+          "word": "শুরুর",
+          "start": 0.32,
+          "end": 0.7
+        },
+        {
+          "word": "প্রশ্নটায়",
+          "start": 0.7,
+          "end": 1.22
+        },
+        {
+          "word": "ফিরি।",
+          "start": 1.22,
+          "end": 1.77
+        },
+        {
+          "word": "Warehouse-কেও",
+          "start": 1.77,
+          "end": 2.5
+        },
+        {
+          "word": "খবর",
+          "start": 2.5,
+          "end": 2.78
+        },
+        {
+          "word": "দিতে",
+          "start": 2.78,
+          "end": 3.02
+        },
+        {
+          "word": "হলে",
+          "start": 3.02,
+          "end": 3.3
+        },
+        {
+          "word": "কোন",
+          "start": 3.3,
+          "end": 3.66
+        },
+        {
+          "word": "জায়গায়",
+          "start": 3.66,
+          "end": 4
+        },
+        {
+          "word": "code",
+          "start": 4,
+          "end": 4.22
+        },
+        {
+          "word": "লিখব?",
+          "start": 4.22,
+          "end": 4.54
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 50
+    },
+    {
+      "id": 7,
+      "duration_sec": 16.36,
+      "narration": "NotifyWarehouse নামে আরেকটা listener যোগ করব, আর সেটাকে OrderPlaced-এর সঙ্গে যুক্ত করব। পরের অর্ডার, ১০৪৩, তৈরি হলে checkout আগের মতোই একবার event dispatch করবে। এবার ওই এক অর্ডারের খবর পাবে তিনটি listener।",
+      "on_screen_text": "*#1043* → ৩ listener",
+      "visual": "observer2/warehouse",
+      "illustration": "observer2/warehouse",
+      "image": null,
+      "audio": "audio/scene-7.mp3",
+      "captions": [
+        {
+          "word": "NotifyWarehouse",
+          "start": 0,
+          "end": 1.1
+        },
+        {
+          "word": "নামে",
+          "start": 1.1,
+          "end": 1.38
+        },
+        {
+          "word": "আরেকটা",
+          "start": 1.38,
+          "end": 1.92
+        },
+        {
+          "word": "listener",
+          "start": 1.92,
+          "end": 2.22
+        },
+        {
+          "word": "যোগ",
+          "start": 2.22,
+          "end": 2.44
+        },
+        {
+          "word": "করব,",
+          "start": 2.44,
+          "end": 2.99
+        },
+        {
+          "word": "আর",
+          "start": 2.99,
+          "end": 3.14
+        },
+        {
+          "word": "সেটাকে",
+          "start": 3.14,
+          "end": 3.7
+        },
+        {
+          "word": "OrderPlaced-এর",
+          "start": 3.7,
+          "end": 4.62
+        },
+        {
+          "word": "সঙ্গে",
+          "start": 4.62,
+          "end": 4.94
+        },
+        {
+          "word": "যুক্ত",
+          "start": 4.94,
+          "end": 5.3
+        },
+        {
+          "word": "করব।",
+          "start": 5.3,
+          "end": 5.88
+        },
+        {
+          "word": "পরের",
+          "start": 5.88,
+          "end": 6.17
+        },
+        {
+          "word": "অর্ডার,",
+          "start": 6.17,
+          "end": 6.79
+        },
+        {
+          "word": "১০৪৩,",
+          "start": 6.79,
+          "end": 8.08
+        },
+        {
+          "word": "তৈরি",
+          "start": 8.08,
+          "end": 8.35
+        },
+        {
+          "word": "হলে",
+          "start": 8.35,
+          "end": 8.79
+        },
+        {
+          "word": "checkout",
+          "start": 8.79,
+          "end": 9.11
+        },
+        {
+          "word": "আগের",
+          "start": 9.11,
+          "end": 9.51
+        },
+        {
+          "word": "মতোই",
+          "start": 9.51,
+          "end": 9.83
+        },
+        {
+          "word": "একবার",
+          "start": 9.83,
+          "end": 10.41
+        },
+        {
+          "word": "event",
+          "start": 10.41,
+          "end": 10.82
+        },
+        {
+          "word": "dispatch",
+          "start": 10.82,
+          "end": 11.13
+        },
+        {
+          "word": "করবে।",
+          "start": 11.13,
+          "end": 11.72
+        },
+        {
+          "word": "এবার",
+          "start": 11.72,
+          "end": 11.97
+        },
+        {
+          "word": "ওই",
+          "start": 11.97,
+          "end": 12.25
+        },
+        {
+          "word": "এক",
+          "start": 12.25,
+          "end": 12.65
+        },
+        {
+          "word": "অর্ডারের",
+          "start": 12.65,
+          "end": 13.09
+        },
+        {
+          "word": "খবর",
+          "start": 13.09,
+          "end": 13.41
+        },
+        {
+          "word": "পাবে",
+          "start": 13.41,
+          "end": 13.93
+        },
+        {
+          "word": "তিনটি",
+          "start": 13.93,
+          "end": 14.25
+        },
+        {
+          "word": "listener।",
+          "start": 14.25,
+          "end": 14.69
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 50
+    },
+    {
+      "id": 8,
+      "duration_sec": 14.72,
+      "narration": "আগের পর্বে Weather Station নিজেই display-গুলোর তালিকা রাখত। এখানে সেই সংযোগ সামলায় Laravel-এর event dispatcher। Observer Pattern-এর ধারণাটা একই—এক জায়গায় কিছু ঘটলে, যারা সেই খবরে আগ্রহী তারা প্রত্যেকে নিজের কাজটা করে।",
+      "on_screen_text": "একই *Observer* ধারণা",
+      "visual": "observer2/recap",
+      "illustration": "observer2/recap",
+      "image": null,
+      "audio": "audio/scene-8.mp3",
+      "captions": [
+        {
+          "word": "আগের",
+          "start": 0,
+          "end": 0.38
+        },
+        {
+          "word": "পর্বে",
+          "start": 0.38,
+          "end": 0.82
+        },
+        {
+          "word": "Weather",
+          "start": 0.82,
+          "end": 1.12
+        },
+        {
+          "word": "Station",
+          "start": 1.12,
+          "end": 1.56
+        },
+        {
+          "word": "নিজেই",
+          "start": 1.56,
+          "end": 2.02
+        },
+        {
+          "word": "display-গুলোর",
+          "start": 2.02,
+          "end": 2.6
+        },
+        {
+          "word": "তালিকা",
+          "start": 2.6,
+          "end": 3.02
+        },
+        {
+          "word": "রাখত।",
+          "start": 3.02,
+          "end": 3.6
+        },
+        {
+          "word": "এখানে",
+          "start": 3.6,
+          "end": 4.02
+        },
+        {
+          "word": "সেই",
+          "start": 4.02,
+          "end": 4.34
+        },
+        {
+          "word": "সংযোগ",
+          "start": 4.34,
+          "end": 4.76
+        },
+        {
+          "word": "সামলায়",
+          "start": 4.76,
+          "end": 5.22
+        },
+        {
+          "word": "Laravel-এর",
+          "start": 5.22,
+          "end": 5.78
+        },
+        {
+          "word": "event",
+          "start": 5.78,
+          "end": 6.2
+        },
+        {
+          "word": "dispatcher।",
+          "start": 6.2,
+          "end": 7.06
+        },
+        {
+          "word": "Observer",
+          "start": 7.06,
+          "end": 7.51
+        },
+        {
+          "word": "Pattern-এর",
+          "start": 7.51,
+          "end": 7.99
+        },
+        {
+          "word": "ধারণাটা",
+          "start": 7.99,
+          "end": 9.26
+        },
+        {
+          "word": "একই—এক",
+          "start": 9.26,
+          "end": 9.45
+        },
+        {
+          "word": "জায়গায়",
+          "start": 9.45,
+          "end": 9.89
+        },
+        {
+          "word": "কিছু",
+          "start": 9.89,
+          "end": 10.11
+        },
+        {
+          "word": "ঘটলে,",
+          "start": 10.11,
+          "end": 10.67
+        },
+        {
+          "word": "যারা",
+          "start": 10.67,
+          "end": 11.03
+        },
+        {
+          "word": "সেই",
+          "start": 11.03,
+          "end": 11.37
+        },
+        {
+          "word": "খবরে",
+          "start": 11.37,
+          "end": 11.73
+        },
+        {
+          "word": "আগ্রহী",
+          "start": 11.73,
+          "end": 12.47
+        },
+        {
+          "word": "তারা",
+          "start": 12.47,
+          "end": 12.67
+        },
+        {
+          "word": "প্রত্যেকে",
+          "start": 12.67,
+          "end": 13.27
+        },
+        {
+          "word": "নিজের",
+          "start": 13.27,
+          "end": 13.67
+        },
+        {
+          "word": "কাজটা",
+          "start": 13.67,
+          "end": 14.05
+        },
+        {
+          "word": "করে।",
+          "start": 14.05,
+          "end": 14.35
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 50
+    },
+    {
+      "id": 9,
+      "duration_sec": 12.08,
+      "narration": "নিজের প্রজেক্টে ভাবো—অর্ডার তৈরি হয়েছে একবার, কিন্তু তার পরে দলের তিনজনের তিন রকম কাজ। অর্ডার তৈরি হওয়ার ঘটনাটা event-এ রাখো, আর প্রতিটা কাজের নিয়ম রাখো তার নিজের listener-এ।",
+      "on_screen_text": "*Event* + *Listener*",
+      "visual": "observer2/takeaway",
+      "illustration": "observer2/takeaway",
+      "image": null,
+      "audio": "audio/scene-9.mp3",
+      "captions": [
+        {
+          "word": "নিজের",
+          "start": 0,
+          "end": 0.42
+        },
+        {
+          "word": "প্রজেক্টে",
+          "start": 0.42,
+          "end": 1.39
+        },
+        {
+          "word": "ভাবো—অর্ডার",
+          "start": 1.39,
+          "end": 1.68
+        },
+        {
+          "word": "তৈরি",
+          "start": 1.68,
+          "end": 1.98
+        },
+        {
+          "word": "হয়েছে",
+          "start": 1.98,
+          "end": 2.34
+        },
+        {
+          "word": "একবার,",
+          "start": 2.34,
+          "end": 3.09
+        },
+        {
+          "word": "কিন্তু",
+          "start": 3.09,
+          "end": 3.3
+        },
+        {
+          "word": "তার",
+          "start": 3.3,
+          "end": 3.6
+        },
+        {
+          "word": "পরে",
+          "start": 3.6,
+          "end": 3.9
+        },
+        {
+          "word": "দলের",
+          "start": 3.9,
+          "end": 4.47
+        },
+        {
+          "word": "তিনজনের",
+          "start": 4.47,
+          "end": 5.18
+        },
+        {
+          "word": "তিন",
+          "start": 5.18,
+          "end": 5.34
+        },
+        {
+          "word": "রকম",
+          "start": 5.34,
+          "end": 5.66
+        },
+        {
+          "word": "কাজ।",
+          "start": 5.66,
+          "end": 6.28
+        },
+        {
+          "word": "অর্ডার",
+          "start": 6.28,
+          "end": 6.56
+        },
+        {
+          "word": "তৈরি",
+          "start": 6.56,
+          "end": 6.96
+        },
+        {
+          "word": "হওয়ার",
+          "start": 6.96,
+          "end": 7.24
+        },
+        {
+          "word": "ঘটনাটা",
+          "start": 7.24,
+          "end": 7.82
+        },
+        {
+          "word": "event-এ",
+          "start": 7.82,
+          "end": 8.3
+        },
+        {
+          "word": "রাখো,",
+          "start": 8.3,
+          "end": 8.84
+        },
+        {
+          "word": "আর",
+          "start": 8.84,
+          "end": 8.96
+        },
+        {
+          "word": "প্রতিটা",
+          "start": 8.96,
+          "end": 9.48
+        },
+        {
+          "word": "কাজের",
+          "start": 9.48,
+          "end": 9.9
+        },
+        {
+          "word": "নিয়ম",
+          "start": 9.9,
+          "end": 10.14
+        },
+        {
+          "word": "রাখো",
+          "start": 10.14,
+          "end": 10.48
+        },
+        {
+          "word": "তার",
+          "start": 10.48,
+          "end": 10.68
+        },
+        {
+          "word": "নিজের",
+          "start": 10.68,
+          "end": 11.16
+        },
+        {
+          "word": "listener-এ।",
+          "start": 11.16,
+          "end": 11.6
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 50
+    }
+  ],
+  "series": {
+    "name": "Observer Pattern",
+    "part": 2
+  },
+  "voice_source": "recorded"
+}

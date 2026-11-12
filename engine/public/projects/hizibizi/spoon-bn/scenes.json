@@ -1,0 +1,939 @@
+{
+  "project": "hizibizi/spoon-bn",
+  "title": "Why Is That? পর্ব ৩: চামচের ভেতরের পিঠে নিজের মুখ উল্টো দেখো কেন?",
+  "language": "bn",
+  "voice": null,
+  "sibling": null,
+  "fps": 30,
+  "theme": {
+    "bg": "#FFF4E2",
+    "bg2": "#FFF4E2",
+    "text": "#ffffff",
+    "accent": "#facc15",
+    "warn": "#fb923c",
+    "font": "HindSiliguri",
+    "title_scale": 0.8,
+    "caption_bottom": 120,
+    "logo_top": 120,
+    "caption_style": "shadow"
+  },
+  "logo": "brand/hizibizi-logo.png",
+  "music": "assets/sfx.wav",
+  "music_volume": 0.35,
+  "show_captions": true,
+  "series": {
+    "name": "hizibizi · Why Is That?",
+    "part": 3
+  },
+  "scenes": [
+    {
+      "id": 1,
+      "duration_sec": 12.63,
+      "narration": "একটা চকচকে চামচ নাও। যেদিক দিয়ে স্যুপ খাও, সেই দিকটা মুখের সামনে ধরো। একটু দূর থেকে তাকাও তো… তোমার থুতনি উপরে, চুল নিচে! চামচটা তো সোজাই আছে। তাহলে উল্টো হলো কেন?",
+      "on_screen_text": "",
+      "visual": "spoon/hook",
+      "illustration": "spoon/hook",
+      "image": null,
+      "audio": "audio/scene-1.mp3",
+      "captions": [
+        {
+          "word": "একটা",
+          "start": 0,
+          "end": 0.34
+        },
+        {
+          "word": "চকচকে",
+          "start": 0.34,
+          "end": 0.94
+        },
+        {
+          "word": "চামচ",
+          "start": 0.94,
+          "end": 1.36
+        },
+        {
+          "word": "নাও।",
+          "start": 1.36,
+          "end": 1.97
+        },
+        {
+          "word": "যেদিক",
+          "start": 1.97,
+          "end": 2.36
+        },
+        {
+          "word": "দিয়ে",
+          "start": 2.36,
+          "end": 2.46
+        },
+        {
+          "word": "স্যুপ",
+          "start": 2.46,
+          "end": 2.78
+        },
+        {
+          "word": "খাও,",
+          "start": 2.78,
+          "end": 3.1
+        },
+        {
+          "word": "সেই",
+          "start": 3.1,
+          "end": 3.46
+        },
+        {
+          "word": "দিকটা",
+          "start": 3.46,
+          "end": 3.74
+        },
+        {
+          "word": "মুখের",
+          "start": 3.74,
+          "end": 4.1
+        },
+        {
+          "word": "সামনে",
+          "start": 4.1,
+          "end": 4.42
+        },
+        {
+          "word": "ধরো।",
+          "start": 4.42,
+          "end": 5.15
+        },
+        {
+          "word": "একটু",
+          "start": 5.15,
+          "end": 5.34
+        },
+        {
+          "word": "দূর",
+          "start": 5.34,
+          "end": 5.6
+        },
+        {
+          "word": "থেকে",
+          "start": 5.6,
+          "end": 5.84
+        },
+        {
+          "word": "তাকাও",
+          "start": 5.84,
+          "end": 6.14
+        },
+        {
+          "word": "তো…",
+          "start": 6.14,
+          "end": 6.8
+        },
+        {
+          "word": "তোমার",
+          "start": 6.8,
+          "end": 7
+        },
+        {
+          "word": "থুতনি",
+          "start": 7,
+          "end": 7.52
+        },
+        {
+          "word": "উপরে,",
+          "start": 7.52,
+          "end": 8.3
+        },
+        {
+          "word": "চুল",
+          "start": 8.3,
+          "end": 8.52
+        },
+        {
+          "word": "নিচে!",
+          "start": 8.52,
+          "end": 9.34
+        },
+        {
+          "word": "চামচটা",
+          "start": 9.34,
+          "end": 9.77
+        },
+        {
+          "word": "তো",
+          "start": 9.77,
+          "end": 9.95
+        },
+        {
+          "word": "সোজাই",
+          "start": 9.95,
+          "end": 10.37
+        },
+        {
+          "word": "আছে।",
+          "start": 10.37,
+          "end": 11.04
+        },
+        {
+          "word": "তাহলে",
+          "start": 11.04,
+          "end": 11.27
+        },
+        {
+          "word": "উল্টো",
+          "start": 11.27,
+          "end": 11.67
+        },
+        {
+          "word": "হলো",
+          "start": 11.67,
+          "end": 11.87
+        },
+        {
+          "word": "কেন?",
+          "start": 11.87,
+          "end": 12.17
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 2,
+      "duration_sec": 11.98,
+      "narration": "এবার চামচটা না ঘুরিয়ে ধীরে ধীরে মুখের খুব কাছে আনো। দেখলে? মুখটা আবার সোজা! আর বেশ বড়ও লাগছে। একই চামচে দুটো এমন আলাদা ছবি কীভাবে?",
+      "on_screen_text": "",
+      "visual": "spoon/close",
+      "illustration": "spoon/close",
+      "image": null,
+      "audio": "audio/scene-2.mp3",
+      "captions": [
+        {
+          "word": "এবার",
+          "start": 0,
+          "end": 0.3
+        },
+        {
+          "word": "চামচটা",
+          "start": 0.3,
+          "end": 0.88
+        },
+        {
+          "word": "না",
+          "start": 0.88,
+          "end": 2
+        },
+        {
+          "word": "ঘুরিয়ে",
+          "start": 2,
+          "end": 2.56
+        },
+        {
+          "word": "ধীরে",
+          "start": 2.56,
+          "end": 2.7
+        },
+        {
+          "word": "ধীরে",
+          "start": 2.7,
+          "end": 2.94
+        },
+        {
+          "word": "মুখের",
+          "start": 2.94,
+          "end": 3.54
+        },
+        {
+          "word": "খুব",
+          "start": 3.54,
+          "end": 4.08
+        },
+        {
+          "word": "কাছে",
+          "start": 4.08,
+          "end": 4.46
+        },
+        {
+          "word": "আনো।",
+          "start": 4.46,
+          "end": 5.22
+        },
+        {
+          "word": "দেখলে?",
+          "start": 5.22,
+          "end": 5.91
+        },
+        {
+          "word": "মুখটা",
+          "start": 5.91,
+          "end": 6.22
+        },
+        {
+          "word": "আবার",
+          "start": 6.22,
+          "end": 6.56
+        },
+        {
+          "word": "সোজা!",
+          "start": 6.56,
+          "end": 7.23
+        },
+        {
+          "word": "আর",
+          "start": 7.23,
+          "end": 7.38
+        },
+        {
+          "word": "বেশ",
+          "start": 7.38,
+          "end": 7.64
+        },
+        {
+          "word": "বড়ও",
+          "start": 7.64,
+          "end": 8.06
+        },
+        {
+          "word": "লাগছে।",
+          "start": 8.06,
+          "end": 8.88
+        },
+        {
+          "word": "একই",
+          "start": 8.88,
+          "end": 9.2
+        },
+        {
+          "word": "চামচে",
+          "start": 9.2,
+          "end": 9.62
+        },
+        {
+          "word": "দুটো",
+          "start": 9.62,
+          "end": 10.1
+        },
+        {
+          "word": "এমন",
+          "start": 10.1,
+          "end": 10.58
+        },
+        {
+          "word": "আলাদা",
+          "start": 10.58,
+          "end": 10.86
+        },
+        {
+          "word": "ছবি",
+          "start": 10.86,
+          "end": 11.14
+        },
+        {
+          "word": "কীভাবে?",
+          "start": 11.14,
+          "end": 11.5
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 3,
+      "duration_sec": 9.29,
+      "narration": "চামচের ভেতরের পিঠটা বাটির মতো বাঁকা। তাই মুখ থেকে আলো এসে চামচের কোথায় পড়ছে, তার ওপর নির্ভর করে আলো কোন দিকে ফিরে যাবে।",
+      "on_screen_text": "",
+      "visual": "spoon/curve",
+      "illustration": "spoon/curve",
+      "image": null,
+      "audio": "audio/scene-3.mp3",
+      "captions": [
+        {
+          "word": "চামচের",
+          "start": 0,
+          "end": 0.56
+        },
+        {
+          "word": "ভেতরের",
+          "start": 0.56,
+          "end": 1.08
+        },
+        {
+          "word": "পিঠটা",
+          "start": 1.08,
+          "end": 1.56
+        },
+        {
+          "word": "বাটির",
+          "start": 1.56,
+          "end": 2.06
+        },
+        {
+          "word": "মতো",
+          "start": 2.06,
+          "end": 2.32
+        },
+        {
+          "word": "বাঁকা।",
+          "start": 2.32,
+          "end": 3.03
+        },
+        {
+          "word": "তাই",
+          "start": 3.03,
+          "end": 3.14
+        },
+        {
+          "word": "মুখ",
+          "start": 3.14,
+          "end": 3.44
+        },
+        {
+          "word": "থেকে",
+          "start": 3.44,
+          "end": 3.72
+        },
+        {
+          "word": "আলো",
+          "start": 3.72,
+          "end": 4.12
+        },
+        {
+          "word": "এসে",
+          "start": 4.12,
+          "end": 4.42
+        },
+        {
+          "word": "চামচের",
+          "start": 4.42,
+          "end": 4.96
+        },
+        {
+          "word": "কোথায়",
+          "start": 4.96,
+          "end": 5.42
+        },
+        {
+          "word": "পড়ছে,",
+          "start": 5.42,
+          "end": 6.25
+        },
+        {
+          "word": "তার",
+          "start": 6.25,
+          "end": 6.48
+        },
+        {
+          "word": "ওপর",
+          "start": 6.48,
+          "end": 6.68
+        },
+        {
+          "word": "নির্ভর",
+          "start": 6.68,
+          "end": 7.1
+        },
+        {
+          "word": "করে",
+          "start": 7.1,
+          "end": 7.38
+        },
+        {
+          "word": "আলো",
+          "start": 7.38,
+          "end": 7.74
+        },
+        {
+          "word": "কোন",
+          "start": 7.74,
+          "end": 8.04
+        },
+        {
+          "word": "দিকে",
+          "start": 8.04,
+          "end": 8.3
+        },
+        {
+          "word": "ফিরে",
+          "start": 8.3,
+          "end": 8.54
+        },
+        {
+          "word": "যাবে।",
+          "start": 8.54,
+          "end": 8.84
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 4,
+      "duration_sec": 16.97,
+      "narration": "ধরো, এই হলুদ রেখাগুলো তোমার কপাল থেকে আসা আলো। আর নীলগুলো থুতনি থেকে। একটু দূরে থাকলে কী হয় দেখো। চামচে ধাক্কা খেয়ে কপালের আলোগুলো নিচের দিকে এসে মেলে। থুতনির আলোগুলো মেলে উপরের দিকে। তাই ছবিতে কপাল নিচে, থুতনি উপরে!",
+      "on_screen_text": "",
+      "visual": "spoon/far",
+      "illustration": "spoon/far",
+      "image": null,
+      "audio": "audio/scene-4.mp3",
+      "captions": [
+        {
+          "word": "ধরো,",
+          "start": 0,
+          "end": 0.76
+        },
+        {
+          "word": "এই",
+          "start": 0.76,
+          "end": 0.88
+        },
+        {
+          "word": "হলুদ",
+          "start": 0.88,
+          "end": 1.32
+        },
+        {
+          "word": "রেখাগুলো",
+          "start": 1.32,
+          "end": 1.88
+        },
+        {
+          "word": "তোমার",
+          "start": 1.88,
+          "end": 2.18
+        },
+        {
+          "word": "কপাল",
+          "start": 2.18,
+          "end": 2.6
+        },
+        {
+          "word": "থেকে",
+          "start": 2.6,
+          "end": 2.88
+        },
+        {
+          "word": "আসা",
+          "start": 2.88,
+          "end": 3.16
+        },
+        {
+          "word": "আলো।",
+          "start": 3.16,
+          "end": 3.72
+        },
+        {
+          "word": "আর",
+          "start": 3.72,
+          "end": 3.86
+        },
+        {
+          "word": "নীলগুলো",
+          "start": 3.86,
+          "end": 4.54
+        },
+        {
+          "word": "থুতনি",
+          "start": 4.54,
+          "end": 5.02
+        },
+        {
+          "word": "থেকে।",
+          "start": 5.02,
+          "end": 5.7
+        },
+        {
+          "word": "একটু",
+          "start": 5.7,
+          "end": 5.88
+        },
+        {
+          "word": "দূরে",
+          "start": 5.88,
+          "end": 6.28
+        },
+        {
+          "word": "থাকলে",
+          "start": 6.28,
+          "end": 6.6
+        },
+        {
+          "word": "কী",
+          "start": 6.6,
+          "end": 6.74
+        },
+        {
+          "word": "হয়",
+          "start": 6.74,
+          "end": 7
+        },
+        {
+          "word": "দেখো।",
+          "start": 7,
+          "end": 7.68
+        },
+        {
+          "word": "চামচে",
+          "start": 7.68,
+          "end": 8.1
+        },
+        {
+          "word": "ধাক্কা",
+          "start": 8.1,
+          "end": 8.45
+        },
+        {
+          "word": "খেয়ে",
+          "start": 8.45,
+          "end": 8.8
+        },
+        {
+          "word": "কপালের",
+          "start": 8.8,
+          "end": 9.4
+        },
+        {
+          "word": "আলোগুলো",
+          "start": 9.4,
+          "end": 9.92
+        },
+        {
+          "word": "নিচের",
+          "start": 9.92,
+          "end": 10.36
+        },
+        {
+          "word": "দিকে",
+          "start": 10.36,
+          "end": 10.62
+        },
+        {
+          "word": "এসে",
+          "start": 10.62,
+          "end": 10.84
+        },
+        {
+          "word": "মেলে।",
+          "start": 10.84,
+          "end": 11.45
+        },
+        {
+          "word": "থুতনির",
+          "start": 11.45,
+          "end": 11.9
+        },
+        {
+          "word": "আলোগুলো",
+          "start": 11.9,
+          "end": 12.3
+        },
+        {
+          "word": "মেলে",
+          "start": 12.3,
+          "end": 12.58
+        },
+        {
+          "word": "উপরের",
+          "start": 12.58,
+          "end": 13.12
+        },
+        {
+          "word": "দিকে।",
+          "start": 13.12,
+          "end": 13.72
+        },
+        {
+          "word": "তাই",
+          "start": 13.72,
+          "end": 13.84
+        },
+        {
+          "word": "ছবিতে",
+          "start": 13.84,
+          "end": 14.38
+        },
+        {
+          "word": "কপাল",
+          "start": 14.38,
+          "end": 14.94
+        },
+        {
+          "word": "নিচে,",
+          "start": 14.94,
+          "end": 15.62
+        },
+        {
+          "word": "থুতনি",
+          "start": 15.62,
+          "end": 16.02
+        },
+        {
+          "word": "উপরে!",
+          "start": 16.02,
+          "end": 16.6
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 5,
+      "duration_sec": 11.64,
+      "narration": "আর একদম কাছে আনলে? তখন একই জায়গা থেকে আসা আলোগুলো চামচ থেকে ফিরে ছড়িয়ে যায়। তোমার চোখে মনে হয়, আলো আসছে চামচের পেছনে একটা বড়, সোজা মুখ থেকে।",
+      "on_screen_text": "",
+      "visual": "spoon/near",
+      "illustration": "spoon/near",
+      "image": null,
+      "audio": "audio/scene-5.mp3",
+      "captions": [
+        {
+          "word": "আর",
+          "start": 0,
+          "end": 0.32
+        },
+        {
+          "word": "একদম",
+          "start": 0.32,
+          "end": 0.84
+        },
+        {
+          "word": "কাছে",
+          "start": 0.84,
+          "end": 1.14
+        },
+        {
+          "word": "আনলে?",
+          "start": 1.14,
+          "end": 1.86
+        },
+        {
+          "word": "তখন",
+          "start": 1.86,
+          "end": 2.1
+        },
+        {
+          "word": "একই",
+          "start": 2.1,
+          "end": 2.54
+        },
+        {
+          "word": "জায়গা",
+          "start": 2.54,
+          "end": 2.9
+        },
+        {
+          "word": "থেকে",
+          "start": 2.9,
+          "end": 3.12
+        },
+        {
+          "word": "আসা",
+          "start": 3.12,
+          "end": 3.38
+        },
+        {
+          "word": "আলোগুলো",
+          "start": 3.38,
+          "end": 3.96
+        },
+        {
+          "word": "চামচ",
+          "start": 3.96,
+          "end": 4.42
+        },
+        {
+          "word": "থেকে",
+          "start": 4.42,
+          "end": 4.72
+        },
+        {
+          "word": "ফিরে",
+          "start": 4.72,
+          "end": 5.14
+        },
+        {
+          "word": "ছড়িয়ে",
+          "start": 5.14,
+          "end": 5.54
+        },
+        {
+          "word": "যায়।",
+          "start": 5.54,
+          "end": 6.09
+        },
+        {
+          "word": "তোমার",
+          "start": 6.09,
+          "end": 6.3
+        },
+        {
+          "word": "চোখে",
+          "start": 6.3,
+          "end": 6.56
+        },
+        {
+          "word": "মনে",
+          "start": 6.56,
+          "end": 6.82
+        },
+        {
+          "word": "হয়,",
+          "start": 6.82,
+          "end": 7.04
+        },
+        {
+          "word": "আলো",
+          "start": 7.04,
+          "end": 7.66
+        },
+        {
+          "word": "আসছে",
+          "start": 7.66,
+          "end": 8.02
+        },
+        {
+          "word": "চামচের",
+          "start": 8.02,
+          "end": 8.54
+        },
+        {
+          "word": "পেছনে",
+          "start": 8.54,
+          "end": 9.1
+        },
+        {
+          "word": "একটা",
+          "start": 9.1,
+          "end": 9.48
+        },
+        {
+          "word": "বড়,",
+          "start": 9.48,
+          "end": 10
+        },
+        {
+          "word": "সোজা",
+          "start": 10,
+          "end": 10.64
+        },
+        {
+          "word": "মুখ",
+          "start": 10.64,
+          "end": 10.84
+        },
+        {
+          "word": "থেকে।",
+          "start": 10.84,
+          "end": 11.18
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 6,
+      "duration_sec": 7.08,
+      "narration": "এবার চামচটা আবার দূরে সরাও তো। ঠিক কখন তোমার মুখটা উল্টে যায়, ধরতে পারো?",
+      "on_screen_text": "",
+      "visual": "spoon/end",
+      "illustration": "spoon/end",
+      "image": null,
+      "audio": "audio/scene-6.mp3",
+      "captions": [
+        {
+          "word": "এবার",
+          "start": 0,
+          "end": 0.28
+        },
+        {
+          "word": "চামচটা",
+          "start": 0.28,
+          "end": 0.8
+        },
+        {
+          "word": "আবার",
+          "start": 0.8,
+          "end": 1.2
+        },
+        {
+          "word": "দূরে",
+          "start": 1.2,
+          "end": 1.42
+        },
+        {
+          "word": "সরাও",
+          "start": 1.42,
+          "end": 1.74
+        },
+        {
+          "word": "তো।",
+          "start": 1.74,
+          "end": 2.31
+        },
+        {
+          "word": "ঠিক",
+          "start": 2.31,
+          "end": 2.65
+        },
+        {
+          "word": "কখন",
+          "start": 2.65,
+          "end": 3.02
+        },
+        {
+          "word": "তোমার",
+          "start": 3.02,
+          "end": 3.3
+        },
+        {
+          "word": "মুখটা",
+          "start": 3.3,
+          "end": 3.64
+        },
+        {
+          "word": "উল্টে",
+          "start": 3.64,
+          "end": 4.04
+        },
+        {
+          "word": "যায়,",
+          "start": 4.04,
+          "end": 4.51
+        },
+        {
+          "word": "ধরতে",
+          "start": 4.51,
+          "end": 4.84
+        },
+        {
+          "word": "পারো?",
+          "start": 4.84,
+          "end": 5.14
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    }
+  ],
+  "voice_source": "recorded"
+}

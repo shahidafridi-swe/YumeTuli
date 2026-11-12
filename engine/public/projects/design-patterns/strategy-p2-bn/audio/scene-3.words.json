@@ -1,0 +1,132 @@
+{
+ "duration": 8.176125,
+ "words": [
+  {
+   "word": "তার",
+   "start": 0,
+   "end": 0.28
+  },
+  {
+   "word": "পার",
+   "start": 0.28,
+   "end": 0.5
+  },
+  {
+   "word": "দুটো",
+   "start": 0.5,
+   "end": 0.92
+  },
+  {
+   "word": "কলাস",
+   "start": 0.92,
+   "end": 1.2
+  },
+  {
+   "word": "এই",
+   "start": 1.2,
+   "end": 1.52
+  },
+  {
+   "word": "ইন্টেস",
+   "start": 1.52,
+   "end": 1.92
+  },
+  {
+   "word": "ইমপলিমন্ট",
+   "start": 1.92,
+   "end": 2.46
+  },
+  {
+   "word": "Fly",
+   "start": 2.3,
+   "end": 3.24
+  },
+  {
+   "word": "with",
+   "start": 3.24,
+   "end": 3.48
+  },
+  {
+   "word": "wings",
+   "start": 3.48,
+   "end": 3.78
+  },
+  {
+   "word": "bolbe,",
+   "start": 3.78,
+   "end": 4.16
+  },
+  {
+   "word": "dana",
+   "start": 4.28,
+   "end": 4.64
+  },
+  {
+   "word": "diye",
+   "start": 4.64,
+   "end": 4.9
+  },
+  {
+   "word": "urchi.",
+   "start": 4.9,
+   "end": 5.2
+  },
+  {
+   "word": "Ar",
+   "start": 5.44,
+   "end": 5.64
+  },
+  {
+   "word": "fly",
+   "start": 5.64,
+   "end": 5.92
+  },
+  {
+   "word": "no",
+   "start": 5.92,
+   "end": 6.2
+  },
+  {
+   "word": "way",
+   "start": 6.2,
+   "end": 6.42
+  },
+  {
+   "word": "bolbe,",
+   "start": 6.42,
+   "end": 6.76
+  },
+  {
+   "word": "aami",
+   "start": 6.98,
+   "end": 7.18
+  },
+  {
+   "word": "urte",
+   "start": 7.18,
+   "end": 7.52
+  },
+  {
+   "word": "paari",
+   "start": 7.52,
+   "end": 7.88
+  },
+  {
+   "word": "na.",
+   "start": 7.88,
+   "end": 8
+  }
+ ],
+ "segments": [
+  {
+   "start": 0,
+   "end": 2.78,
+   "text": "তার পার দুটো কলাস এই ইন্টেস ইমপলিমন্ট করবে."
+  },
+  {
+   "start": 4.1,
+   "end": 8.04,
+   "text": "দানা দিয়ে উরছি আর ফলাই নো এ বলে আমি উরতে পারিনা."
+  }
+ ]
+}

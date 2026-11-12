@@ -1,0 +1,821 @@
+{
+  "project": "hizibizi/sorbot-bn",
+  "title": "Why Is That? পর্ব ২: শরবত লাল, কিন্তু গ্লাসের বাইরের ফোঁটা স্বচ্ছ কেন?",
+  "language": "bn",
+  "voice": null,
+  "sibling": null,
+  "fps": 30,
+  "theme": {
+    "bg": "#FFF4E2",
+    "bg2": "#FFF4E2",
+    "text": "#ffffff",
+    "accent": "#facc15",
+    "warn": "#fb923c",
+    "font": "HindSiliguri",
+    "title_scale": 0.8,
+    "caption_bottom": 145,
+    "logo_top": 141,
+    "caption_style": "shadow"
+  },
+  "logo": "brand/hizibizi-logo.png",
+  "music": "assets/sfx.wav",
+  "music_volume": 0.35,
+  "show_captions": true,
+  "series": {
+    "name": "hizibizi · Why Is That?",
+    "part": 2
+  },
+  "scenes": [
+    {
+      "id": 1,
+      "duration_sec": 14.75,
+      "narration": "বরফ দেওয়া লাল শরবতের গ্লাসটা একটু আগে মুছে রাখলাম। এই দেখো, আবার ভিজে গেছে! একটা ফোঁটা আঙুলে নিয়ে দেখি… একদম স্বচ্ছ। ভেতরের শরবত যদি লাল হয়, বাইরের পানিটা এল কোথা থেকে?",
+      "on_screen_text": "",
+      "visual": "sorbot/hook",
+      "illustration": "sorbot/hook",
+      "image": null,
+      "audio": "audio/scene-1.mp3",
+      "captions": [
+        {
+          "word": "বরফ",
+          "start": 0,
+          "end": 0.56
+        },
+        {
+          "word": "দেওয়া",
+          "start": 0.56,
+          "end": 0.82
+        },
+        {
+          "word": "লাল",
+          "start": 0.82,
+          "end": 1.16
+        },
+        {
+          "word": "শরবতের",
+          "start": 1.16,
+          "end": 1.66
+        },
+        {
+          "word": "গ্লাসটা",
+          "start": 1.66,
+          "end": 2.26
+        },
+        {
+          "word": "একটু",
+          "start": 2.26,
+          "end": 2.68
+        },
+        {
+          "word": "আগে",
+          "start": 2.68,
+          "end": 3.06
+        },
+        {
+          "word": "মুছে",
+          "start": 3.06,
+          "end": 3.34
+        },
+        {
+          "word": "রাখলাম।",
+          "start": 3.34,
+          "end": 4.34
+        },
+        {
+          "word": "এই",
+          "start": 4.34,
+          "end": 4.4
+        },
+        {
+          "word": "দেখো,",
+          "start": 4.4,
+          "end": 5.08
+        },
+        {
+          "word": "আবার",
+          "start": 5.08,
+          "end": 5.36
+        },
+        {
+          "word": "ভিজে",
+          "start": 5.36,
+          "end": 5.6
+        },
+        {
+          "word": "গেছে!",
+          "start": 5.6,
+          "end": 6.52
+        },
+        {
+          "word": "একটা",
+          "start": 6.52,
+          "end": 6.76
+        },
+        {
+          "word": "ফোঁটা",
+          "start": 6.76,
+          "end": 7.24
+        },
+        {
+          "word": "আঙুলে",
+          "start": 7.24,
+          "end": 7.58
+        },
+        {
+          "word": "নিয়ে",
+          "start": 7.58,
+          "end": 7.78
+        },
+        {
+          "word": "দেখি…",
+          "start": 7.78,
+          "end": 8.84
+        },
+        {
+          "word": "একদম",
+          "start": 8.84,
+          "end": 9.38
+        },
+        {
+          "word": "স্বচ্ছ।",
+          "start": 9.38,
+          "end": 10.27
+        },
+        {
+          "word": "ভেতরের",
+          "start": 10.27,
+          "end": 10.72
+        },
+        {
+          "word": "শরবত",
+          "start": 10.72,
+          "end": 11.14
+        },
+        {
+          "word": "যদি",
+          "start": 11.14,
+          "end": 11.38
+        },
+        {
+          "word": "লাল",
+          "start": 11.38,
+          "end": 11.76
+        },
+        {
+          "word": "হয়,",
+          "start": 11.76,
+          "end": 12.45
+        },
+        {
+          "word": "বাইরের",
+          "start": 12.45,
+          "end": 12.92
+        },
+        {
+          "word": "পানিটা",
+          "start": 12.92,
+          "end": 13.36
+        },
+        {
+          "word": "এল",
+          "start": 13.36,
+          "end": 13.7
+        },
+        {
+          "word": "কোথা",
+          "start": 13.7,
+          "end": 13.96
+        },
+        {
+          "word": "থেকে?",
+          "start": 13.96,
+          "end": 14.26
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 2,
+      "duration_sec": 14.07,
+      "narration": "চলো, একটা ছোট্ট পরীক্ষা করি। পাশাপাশি দুটো শুকনো গ্লাস রাখি। দুটোতেই একই লাল শরবত। একটায় বরফ দিই, আরেকটা ঘরের তাপমাত্রায় রাখি। একটু পরে দেখো… শুধু ঠান্ডা গ্লাসটার গায়েই ফোঁটা জমেছে!",
+      "on_screen_text": "",
+      "visual": "sorbot/test",
+      "illustration": "sorbot/test",
+      "image": null,
+      "audio": "audio/scene-2.mp3",
+      "captions": [
+        {
+          "word": "চলো,",
+          "start": 0,
+          "end": 0.54
+        },
+        {
+          "word": "একটা",
+          "start": 0.54,
+          "end": 0.92
+        },
+        {
+          "word": "ছোট্ট",
+          "start": 0.92,
+          "end": 1.42
+        },
+        {
+          "word": "পরীক্ষা",
+          "start": 1.42,
+          "end": 1.78
+        },
+        {
+          "word": "করি।",
+          "start": 1.78,
+          "end": 2.41
+        },
+        {
+          "word": "পাশাপাশি",
+          "start": 2.41,
+          "end": 2.92
+        },
+        {
+          "word": "দুটো",
+          "start": 2.92,
+          "end": 3.24
+        },
+        {
+          "word": "শুকনো",
+          "start": 3.24,
+          "end": 3.7
+        },
+        {
+          "word": "গ্লাস",
+          "start": 3.7,
+          "end": 3.94
+        },
+        {
+          "word": "রাখি।",
+          "start": 3.94,
+          "end": 4.63
+        },
+        {
+          "word": "দুটোতেই",
+          "start": 4.63,
+          "end": 5.14
+        },
+        {
+          "word": "একই",
+          "start": 5.14,
+          "end": 5.62
+        },
+        {
+          "word": "লাল",
+          "start": 5.62,
+          "end": 5.86
+        },
+        {
+          "word": "শরবত।",
+          "start": 5.86,
+          "end": 6.68
+        },
+        {
+          "word": "একটায়",
+          "start": 6.68,
+          "end": 7.02
+        },
+        {
+          "word": "বরফ",
+          "start": 7.02,
+          "end": 7.41
+        },
+        {
+          "word": "দিই,",
+          "start": 7.41,
+          "end": 7.85
+        },
+        {
+          "word": "আরেকটা",
+          "start": 7.85,
+          "end": 8.38
+        },
+        {
+          "word": "ঘরের",
+          "start": 8.38,
+          "end": 8.82
+        },
+        {
+          "word": "তাপমাত্রায়",
+          "start": 8.82,
+          "end": 9.65
+        },
+        {
+          "word": "রাখি।",
+          "start": 9.65,
+          "end": 10.06
+        },
+        {
+          "word": "একটু",
+          "start": 10.06,
+          "end": 10.27
+        },
+        {
+          "word": "পরে",
+          "start": 10.27,
+          "end": 10.55
+        },
+        {
+          "word": "দেখো…",
+          "start": 10.55,
+          "end": 11.18
+        },
+        {
+          "word": "শুধু",
+          "start": 11.18,
+          "end": 11.45
+        },
+        {
+          "word": "ঠান্ডা",
+          "start": 11.45,
+          "end": 11.99
+        },
+        {
+          "word": "গ্লাসটার",
+          "start": 11.99,
+          "end": 12.39
+        },
+        {
+          "word": "গায়েই",
+          "start": 12.39,
+          "end": 12.85
+        },
+        {
+          "word": "ফোঁটা",
+          "start": 12.85,
+          "end": 13.13
+        },
+        {
+          "word": "জমেছে!",
+          "start": 13.13,
+          "end": 13.65
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 3,
+      "duration_sec": 16.99,
+      "narration": "এবার গ্লাসের ঠিক বাইরের বাতাসটুকু দেখি। এই বাতাসে পানি আছে, জলীয় বাষ্প হয়ে। চোখে দেখা যায় না। ঠান্ডা গ্লাসের গায়ে লেগে বাতাসটা ঠান্ডা হয়। যথেষ্ট ঠান্ডা হলে সেই বাষ্পের কিছুটা তরল পানি হয়ে কাচের গায়ে জমে। একেই বলে ঘনীভবন।",
+      "on_screen_text": "",
+      "visual": "sorbot/zoom",
+      "illustration": "sorbot/zoom",
+      "image": null,
+      "audio": "audio/scene-3.mp3",
+      "captions": [
+        {
+          "word": "এবার",
+          "start": 0,
+          "end": 0.42
+        },
+        {
+          "word": "গ্লাসের",
+          "start": 0.42,
+          "end": 1.05
+        },
+        {
+          "word": "ঠিক",
+          "start": 1.05,
+          "end": 1.36
+        },
+        {
+          "word": "বাইরের",
+          "start": 1.36,
+          "end": 1.76
+        },
+        {
+          "word": "বাতাসটুকু",
+          "start": 1.76,
+          "end": 2.46
+        },
+        {
+          "word": "দেখি।",
+          "start": 2.46,
+          "end": 3.17
+        },
+        {
+          "word": "এই",
+          "start": 3.17,
+          "end": 3.32
+        },
+        {
+          "word": "বাতাসে",
+          "start": 3.32,
+          "end": 3.78
+        },
+        {
+          "word": "পানি",
+          "start": 3.78,
+          "end": 4.2
+        },
+        {
+          "word": "আছে,",
+          "start": 4.2,
+          "end": 4.73
+        },
+        {
+          "word": "জলীয়",
+          "start": 4.73,
+          "end": 5.16
+        },
+        {
+          "word": "বাষ্প",
+          "start": 5.16,
+          "end": 5.56
+        },
+        {
+          "word": "হয়ে।",
+          "start": 5.56,
+          "end": 6.05
+        },
+        {
+          "word": "চোখে",
+          "start": 6.05,
+          "end": 6.34
+        },
+        {
+          "word": "দেখা",
+          "start": 6.34,
+          "end": 6.58
+        },
+        {
+          "word": "যায়",
+          "start": 6.58,
+          "end": 6.8
+        },
+        {
+          "word": "না।",
+          "start": 6.8,
+          "end": 7.26
+        },
+        {
+          "word": "ঠান্ডা",
+          "start": 7.26,
+          "end": 7.63
+        },
+        {
+          "word": "গ্লাসের",
+          "start": 7.63,
+          "end": 7.97
+        },
+        {
+          "word": "গায়ে",
+          "start": 7.97,
+          "end": 8.31
+        },
+        {
+          "word": "লেগে",
+          "start": 8.31,
+          "end": 8.55
+        },
+        {
+          "word": "বাতাসটা",
+          "start": 8.55,
+          "end": 9.11
+        },
+        {
+          "word": "ঠান্ডা",
+          "start": 9.11,
+          "end": 9.61
+        },
+        {
+          "word": "হয়।",
+          "start": 9.61,
+          "end": 10.11
+        },
+        {
+          "word": "যথেষ্ট",
+          "start": 10.11,
+          "end": 10.65
+        },
+        {
+          "word": "ঠান্ডা",
+          "start": 10.65,
+          "end": 10.99
+        },
+        {
+          "word": "হলে",
+          "start": 10.99,
+          "end": 11.29
+        },
+        {
+          "word": "সেই",
+          "start": 11.29,
+          "end": 11.81
+        },
+        {
+          "word": "বাষ্পের",
+          "start": 11.81,
+          "end": 12.25
+        },
+        {
+          "word": "কিছুটা",
+          "start": 12.25,
+          "end": 12.67
+        },
+        {
+          "word": "তরল",
+          "start": 12.67,
+          "end": 13.09
+        },
+        {
+          "word": "পানি",
+          "start": 13.09,
+          "end": 13.37
+        },
+        {
+          "word": "হয়ে",
+          "start": 13.37,
+          "end": 13.65
+        },
+        {
+          "word": "কাচের",
+          "start": 13.65,
+          "end": 14.11
+        },
+        {
+          "word": "গায়ে",
+          "start": 14.11,
+          "end": 14.32
+        },
+        {
+          "word": "জমে।",
+          "start": 14.32,
+          "end": 15
+        },
+        {
+          "word": "একেই",
+          "start": 15,
+          "end": 15.33
+        },
+        {
+          "word": "বলে",
+          "start": 15.33,
+          "end": 15.63
+        },
+        {
+          "word": "ঘনীভবন।",
+          "start": 15.63,
+          "end": 16.53
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 4,
+      "duration_sec": 6.7,
+      "narration": "এই যে ছোট্ট দুটো ফোঁটা, খেয়াল করো… মিলে একটা বড় ফোঁটা হলো। এবার সেটা গড়িয়ে পড়ছে!",
+      "on_screen_text": "",
+      "visual": "sorbot/merge",
+      "illustration": "sorbot/merge",
+      "image": null,
+      "audio": "audio/scene-4.mp3",
+      "captions": [
+        {
+          "word": "এই",
+          "start": 0,
+          "end": 0.24
+        },
+        {
+          "word": "যে",
+          "start": 0.24,
+          "end": 0.36
+        },
+        {
+          "word": "ছোট্ট",
+          "start": 0.36,
+          "end": 0.86
+        },
+        {
+          "word": "দুটো",
+          "start": 0.86,
+          "end": 1.1
+        },
+        {
+          "word": "ফোঁটা,",
+          "start": 1.1,
+          "end": 1.63
+        },
+        {
+          "word": "খেয়াল",
+          "start": 1.63,
+          "end": 1.84
+        },
+        {
+          "word": "করো…",
+          "start": 1.84,
+          "end": 2.41
+        },
+        {
+          "word": "মিলে",
+          "start": 2.41,
+          "end": 2.8
+        },
+        {
+          "word": "একটা",
+          "start": 2.8,
+          "end": 3.18
+        },
+        {
+          "word": "বড়",
+          "start": 3.18,
+          "end": 3.62
+        },
+        {
+          "word": "ফোঁটা",
+          "start": 3.62,
+          "end": 3.94
+        },
+        {
+          "word": "হলো।",
+          "start": 3.94,
+          "end": 4.57
+        },
+        {
+          "word": "এবার",
+          "start": 4.57,
+          "end": 4.94
+        },
+        {
+          "word": "সেটা",
+          "start": 4.94,
+          "end": 5.24
+        },
+        {
+          "word": "গড়িয়ে",
+          "start": 5.24,
+          "end": 5.68
+        },
+        {
+          "word": "পড়ছে!",
+          "start": 5.68,
+          "end": 6.14
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 5,
+      "duration_sec": 12.56,
+      "narration": "তাহলে রহস্যটা ধরতে পেরেছো? লাল রংটা শরবতের সঙ্গে গ্লাসের ভেতরেই আছে। আর তোমার আঙুলে যে পানিটা লেগেছিল? একটু আগেও সেটা ছিল তোমার চারপাশের বাতাসে!",
+      "on_screen_text": "",
+      "visual": "sorbot/end",
+      "illustration": "sorbot/end",
+      "image": null,
+      "audio": "audio/scene-5.mp3",
+      "captions": [
+        {
+          "word": "তাহলে",
+          "start": 0,
+          "end": 0.36
+        },
+        {
+          "word": "রহস্যটা",
+          "start": 0.36,
+          "end": 0.84
+        },
+        {
+          "word": "ধরতে",
+          "start": 0.84,
+          "end": 1.12
+        },
+        {
+          "word": "পেরেছো?",
+          "start": 1.12,
+          "end": 1.93
+        },
+        {
+          "word": "লাল",
+          "start": 1.93,
+          "end": 2.26
+        },
+        {
+          "word": "রংটা",
+          "start": 2.26,
+          "end": 2.7
+        },
+        {
+          "word": "শরবতের",
+          "start": 2.7,
+          "end": 3.28
+        },
+        {
+          "word": "সঙ্গে",
+          "start": 3.28,
+          "end": 3.64
+        },
+        {
+          "word": "গ্লাসের",
+          "start": 3.64,
+          "end": 4.12
+        },
+        {
+          "word": "ভেতরেই",
+          "start": 4.12,
+          "end": 4.67
+        },
+        {
+          "word": "আছে।",
+          "start": 4.67,
+          "end": 5.36
+        },
+        {
+          "word": "আর",
+          "start": 5.36,
+          "end": 5.5
+        },
+        {
+          "word": "তোমার",
+          "start": 5.5,
+          "end": 5.8
+        },
+        {
+          "word": "আঙুলে",
+          "start": 5.8,
+          "end": 6.26
+        },
+        {
+          "word": "যে",
+          "start": 6.26,
+          "end": 6.38
+        },
+        {
+          "word": "পানিটা",
+          "start": 6.38,
+          "end": 6.74
+        },
+        {
+          "word": "লেগেছিল?",
+          "start": 6.74,
+          "end": 7.6
+        },
+        {
+          "word": "একটু",
+          "start": 7.6,
+          "end": 7.88
+        },
+        {
+          "word": "আগেও",
+          "start": 7.88,
+          "end": 8.2
+        },
+        {
+          "word": "সেটা",
+          "start": 8.2,
+          "end": 8.72
+        },
+        {
+          "word": "ছিল",
+          "start": 8.72,
+          "end": 8.98
+        },
+        {
+          "word": "তোমার",
+          "start": 8.98,
+          "end": 9.26
+        },
+        {
+          "word": "চারপাশের",
+          "start": 9.26,
+          "end": 9.88
+        },
+        {
+          "word": "বাতাসে!",
+          "start": 9.88,
+          "end": 10.62
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    }
+  ],
+  "voice_source": "recorded"
+}

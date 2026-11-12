@@ -1,0 +1,40 @@
+{
+  "name": "ai-video",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio",
+    "new": "node scripts/new-project.mjs",
+    "voice": "node scripts/voiceover.mjs",
+    "images": "node scripts/gen-images.mjs",
+    "render": "node scripts/render.mjs",
+    "frames": "bash scripts/extract-frames.sh",
+    "typecheck": "tsc --noEmit",
+    "localize": "node scripts/localize.mjs",
+    "import-voice": "node scripts/import-voice.mjs",
+    "read-script": "node scripts/read-script.mjs",
+    "align-captions": "node scripts/align-captions.mjs",
+    "thumbs:hizibizi": "npx remotion still src/index.ts HizibiziZipperThumb out/hizibizi/thumbs/zipper-thumb.png --log=error && npx remotion still src/index.ts HizibiziSorbotThumb out/hizibizi/thumbs/sorbot-thumb.png --log=error && npx remotion still src/index.ts HizibiziSpoonThumb out/hizibizi/thumbs/spoon-thumb.png --log=error",
+    "thumbs:patterns": "for i in 1 2 3; do npx remotion still src/index.ts StrategyThumb$i out/design-patterns/thumbs/strategy-p$i-thumb.png --log=error || exit 1; done && npx remotion still src/index.ts ObserverThumb1 out/design-patterns/thumbs/observer-p1-thumb.png --log=error && npx remotion still src/index.ts ObserverThumb2 out/design-patterns/thumbs/observer-p2-thumb.png --log=error",
+    "outro": "npx remotion render src/index.ts OutroDevDiary out/brand/dev-diary/dev-diary-outro.mp4 --log=error && npx remotion render src/index.ts OutroDevDiaryAlpha out/brand/dev-diary/dev-diary-outro-transparent.mov --codec=prores --prores-profile=4444 --image-format=png --pixel-format=yuva444p10le --log=error && npx remotion render src/index.ts OutroHizibizi out/brand/hizibizi/hizibizi-outro.mp4 --log=error && npx remotion render src/index.ts OutroHizibiziAlpha out/brand/hizibizi/hizibizi-outro-transparent.mov --codec=prores --prores-profile=4444 --image-format=png --pixel-format=yuva444p10le --log=error"
+  },
+  "dependencies": {
+    "@react-three/fiber": "^8.18.0",
+    "@remotion/cli": "^4.0.542",
+    "@remotion/google-fonts": "^4.0.542",
+    "@remotion/media-utils": "^4.0.542",
+    "@remotion/three": "^4.0.542",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.542",
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/three": "^0.170.0",
+    "typescript": "^5.6.3"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true
+  }
+}

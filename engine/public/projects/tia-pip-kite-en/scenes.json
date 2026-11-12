@@ -1,0 +1,513 @@
+{
+  "project": "tia-pip-kite-en",
+  "title": "Tia & Pip: The Kite in the Tree",
+  "language": "en",
+  "voice": "en-US-AvaNeural",
+  "sibling": "tia-pip-kite-bn",
+  "fps": 30,
+  "theme": {
+    "bg": "#4fb8ff",
+    "bg2": "#9fdcff",
+    "text": "#ffffff",
+    "accent": "#ff3b6b",
+    "font": "Fredoka",
+    "stroke": "#1d3a6b"
+  },
+  "music": null,
+  "music_volume": 0.12,
+  "show_captions": true,
+  "scenes": [
+    {
+      "id": 1,
+      "duration_sec": 4.41,
+      "narration": "This is Tia! She loves flying her bright red kite.",
+      "on_screen_text": "This is *Tia!*",
+      "visual": "code-drawn illustration kite/flying",
+      "illustration": "kite/flying",
+      "image": null,
+      "audio": "audio/scene-1.mp3",
+      "captions": [
+        {
+          "word": "This",
+          "start": 0.05,
+          "end": 0.438
+        },
+        {
+          "word": "is",
+          "start": 0.438,
+          "end": 0.671
+        },
+        {
+          "word": "Tia!",
+          "start": 0.671,
+          "end": 1.058
+        },
+        {
+          "word": "She",
+          "start": 1.058,
+          "end": 1.369
+        },
+        {
+          "word": "loves",
+          "start": 1.369,
+          "end": 1.834
+        },
+        {
+          "word": "flying",
+          "start": 1.834,
+          "end": 2.377
+        },
+        {
+          "word": "her",
+          "start": 2.377,
+          "end": 2.687
+        },
+        {
+          "word": "bright",
+          "start": 2.687,
+          "end": 3.23
+        },
+        {
+          "word": "red",
+          "start": 3.23,
+          "end": 3.541
+        },
+        {
+          "word": "kite.",
+          "start": 3.541,
+          "end": 4.006
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 2,
+      "duration_sec": 6.09,
+      "narration": "Whoosh! A big wind blows... and the kite gets stuck in the tall tree!",
+      "on_screen_text": "*Oh no!*",
+      "visual": "code-drawn illustration kite/stuck",
+      "illustration": "kite/stuck",
+      "image": null,
+      "audio": "audio/scene-2.mp3",
+      "captions": [
+        {
+          "word": "Whoosh!",
+          "start": 0.05,
+          "end": 0.568
+        },
+        {
+          "word": "A",
+          "start": 0.568,
+          "end": 0.697
+        },
+        {
+          "word": "big",
+          "start": 0.697,
+          "end": 0.956
+        },
+        {
+          "word": "wind",
+          "start": 0.956,
+          "end": 1.28
+        },
+        {
+          "word": "blows...",
+          "start": 1.28,
+          "end": 1.863
+        },
+        {
+          "word": "and",
+          "start": 1.863,
+          "end": 2.122
+        },
+        {
+          "word": "the",
+          "start": 2.122,
+          "end": 2.381
+        },
+        {
+          "word": "kite",
+          "start": 2.381,
+          "end": 2.704
+        },
+        {
+          "word": "gets",
+          "start": 2.704,
+          "end": 3.028
+        },
+        {
+          "word": "stuck",
+          "start": 3.028,
+          "end": 3.417
+        },
+        {
+          "word": "in",
+          "start": 3.417,
+          "end": 3.611
+        },
+        {
+          "word": "the",
+          "start": 3.611,
+          "end": 3.87
+        },
+        {
+          "word": "tall",
+          "start": 3.87,
+          "end": 4.194
+        },
+        {
+          "word": "tree!",
+          "start": 4.194,
+          "end": 4.582
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 3,
+      "duration_sec": 4.35,
+      "narration": "Tia jumps and jumps. But the kite is too high.",
+      "on_screen_text": "Too *high!*",
+      "visual": "code-drawn illustration kite/jumping",
+      "illustration": "kite/jumping",
+      "image": null,
+      "audio": "audio/scene-3.mp3",
+      "captions": [
+        {
+          "word": "Tia",
+          "start": 0.05,
+          "end": 0.344
+        },
+        {
+          "word": "jumps",
+          "start": 0.344,
+          "end": 0.784
+        },
+        {
+          "word": "and",
+          "start": 0.784,
+          "end": 1.078
+        },
+        {
+          "word": "jumps.",
+          "start": 1.078,
+          "end": 1.592
+        },
+        {
+          "word": "But",
+          "start": 1.592,
+          "end": 1.886
+        },
+        {
+          "word": "the",
+          "start": 1.886,
+          "end": 2.18
+        },
+        {
+          "word": "kite",
+          "start": 2.18,
+          "end": 2.547
+        },
+        {
+          "word": "is",
+          "start": 2.547,
+          "end": 2.768
+        },
+        {
+          "word": "too",
+          "start": 2.768,
+          "end": 3.061
+        },
+        {
+          "word": "high.",
+          "start": 3.061,
+          "end": 3.502
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 4,
+      "duration_sec": 4.45,
+      "narration": "Then along comes Pip, the little elephant. I can help!",
+      "on_screen_text": "Hi, *Pip!*",
+      "visual": "code-drawn illustration kite/pip-arrives",
+      "illustration": "kite/pip-arrives",
+      "image": null,
+      "audio": "audio/scene-4.mp3",
+      "captions": [
+        {
+          "word": "Then",
+          "start": 0.05,
+          "end": 0.414
+        },
+        {
+          "word": "along",
+          "start": 0.414,
+          "end": 0.851
+        },
+        {
+          "word": "comes",
+          "start": 0.851,
+          "end": 1.288
+        },
+        {
+          "word": "Pip,",
+          "start": 1.288,
+          "end": 1.652
+        },
+        {
+          "word": "the",
+          "start": 1.652,
+          "end": 1.943
+        },
+        {
+          "word": "little",
+          "start": 1.943,
+          "end": 2.452
+        },
+        {
+          "word": "elephant.",
+          "start": 2.452,
+          "end": 3.18
+        },
+        {
+          "word": "I",
+          "start": 3.18,
+          "end": 3.326
+        },
+        {
+          "word": "can",
+          "start": 3.326,
+          "end": 3.617
+        },
+        {
+          "word": "help!",
+          "start": 3.617,
+          "end": 4.054
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 5,
+      "duration_sec": 5.65,
+      "narration": "Tia climbs onto Pip's back. Pip lifts his long trunk up, up, up!",
+      "on_screen_text": "*Together!*",
+      "visual": "code-drawn illustration kite/teamwork",
+      "illustration": "kite/teamwork",
+      "image": null,
+      "audio": "audio/scene-5.mp3",
+      "captions": [
+        {
+          "word": "Tia",
+          "start": 0.05,
+          "end": 0.332
+        },
+        {
+          "word": "climbs",
+          "start": 0.332,
+          "end": 0.825
+        },
+        {
+          "word": "onto",
+          "start": 0.825,
+          "end": 1.177
+        },
+        {
+          "word": "Pip's",
+          "start": 1.177,
+          "end": 1.6
+        },
+        {
+          "word": "back.",
+          "start": 1.6,
+          "end": 2.023
+        },
+        {
+          "word": "Pip",
+          "start": 2.023,
+          "end": 2.305
+        },
+        {
+          "word": "lifts",
+          "start": 2.305,
+          "end": 2.728
+        },
+        {
+          "word": "his",
+          "start": 2.728,
+          "end": 3.009
+        },
+        {
+          "word": "long",
+          "start": 3.009,
+          "end": 3.362
+        },
+        {
+          "word": "trunk",
+          "start": 3.362,
+          "end": 3.784
+        },
+        {
+          "word": "up,",
+          "start": 3.784,
+          "end": 4.066
+        },
+        {
+          "word": "up,",
+          "start": 4.066,
+          "end": 4.348
+        },
+        {
+          "word": "up!",
+          "start": 4.348,
+          "end": 4.63
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 6,
+      "duration_sec": 3.57,
+      "narration": "Got it! The kite is free! Hooray!",
+      "on_screen_text": "*Hooray!*",
+      "visual": "code-drawn illustration kite/free",
+      "illustration": "kite/free",
+      "image": null,
+      "audio": "audio/scene-6.mp3",
+      "captions": [
+        {
+          "word": "Got",
+          "start": 0.05,
+          "end": 0.417
+        },
+        {
+          "word": "it!",
+          "start": 0.417,
+          "end": 0.783
+        },
+        {
+          "word": "The",
+          "start": 0.783,
+          "end": 1.15
+        },
+        {
+          "word": "kite",
+          "start": 1.15,
+          "end": 1.608
+        },
+        {
+          "word": "is",
+          "start": 1.608,
+          "end": 1.883
+        },
+        {
+          "word": "free!",
+          "start": 1.883,
+          "end": 2.433
+        },
+        {
+          "word": "Hooray!",
+          "start": 2.433,
+          "end": 3.166
+        }
+      ],
+      "transition": "zoom",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 7,
+      "duration_sec": 5.22,
+      "narration": "Now Tia and Pip fly the kite together. Friends help each other!",
+      "on_screen_text": "Friends *help*\neach other",
+      "visual": "code-drawn illustration kite/happy-ending",
+      "illustration": "kite/happy-ending",
+      "image": null,
+      "audio": "audio/scene-7.mp3",
+      "captions": [
+        {
+          "word": "Now",
+          "start": 0.05,
+          "end": 0.317
+        },
+        {
+          "word": "Tia",
+          "start": 0.317,
+          "end": 0.584
+        },
+        {
+          "word": "and",
+          "start": 0.584,
+          "end": 0.85
+        },
+        {
+          "word": "Pip",
+          "start": 0.85,
+          "end": 1.117
+        },
+        {
+          "word": "fly",
+          "start": 1.117,
+          "end": 1.384
+        },
+        {
+          "word": "the",
+          "start": 1.384,
+          "end": 1.651
+        },
+        {
+          "word": "kite",
+          "start": 1.651,
+          "end": 1.984
+        },
+        {
+          "word": "together.",
+          "start": 1.984,
+          "end": 2.651
+        },
+        {
+          "word": "Friends",
+          "start": 2.651,
+          "end": 3.184
+        },
+        {
+          "word": "help",
+          "start": 3.184,
+          "end": 3.518
+        },
+        {
+          "word": "each",
+          "start": 3.518,
+          "end": 3.851
+        },
+        {
+          "word": "other!",
+          "start": 3.851,
+          "end": 4.318
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    }
+  ]
+}

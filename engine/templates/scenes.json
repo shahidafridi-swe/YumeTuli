@@ -1,0 +1,13 @@
+{
+  "project": "__SLUG__",
+  "title": "__TITLE__",
+  "language": "__LANG__",
+  "voice": null,
+  "sibling": null,
+  "fps": 30,
+  "theme": { "bg": "#0b0b12", "bg2": "#2a1b5e", "text": "#ffffff", "accent": "#ffd23f", "font": "__FONT__" },
+  "music": null,
+  "music_volume": 0.12,
+  "show_captions": true,
+  "scenes": []
+}

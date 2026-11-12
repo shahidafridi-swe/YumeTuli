@@ -1,0 +1,505 @@
+{
+  "project": "tia-pip-kite-bn",
+  "title": "টিয়া আর পিপ: গাছে আটকে যাওয়া ঘুড়ি",
+  "language": "bn",
+  "voice": "bn-IN-TanishaaNeural",
+  "sibling": "tia-pip-kite-en",
+  "fps": 30,
+  "theme": {
+    "bg": "#4fb8ff",
+    "bg2": "#9fdcff",
+    "text": "#ffffff",
+    "accent": "#ff3b6b",
+    "font": "BalooDa2",
+    "stroke": "#1d3a6b"
+  },
+  "music": null,
+  "music_volume": 0.12,
+  "show_captions": true,
+  "scenes": [
+    {
+      "id": 1,
+      "duration_sec": 6.09,
+      "narration": "এ হলো টিয়া! টিয়া তার লাল ঘুড়ি ওড়াতে খুব ভালোবাসে।",
+      "on_screen_text": "এ হলো *টিয়া!*",
+      "visual": "code-drawn illustration kite/flying",
+      "illustration": "kite/flying",
+      "image": null,
+      "audio": "audio/scene-1.mp3",
+      "captions": [
+        {
+          "word": "এ",
+          "start": 0.05,
+          "end": 0.259
+        },
+        {
+          "word": "হলো",
+          "start": 0.259,
+          "end": 0.676
+        },
+        {
+          "word": "টিয়া!",
+          "start": 0.676,
+          "end": 1.407
+        },
+        {
+          "word": "টিয়া",
+          "start": 1.407,
+          "end": 2.033
+        },
+        {
+          "word": "তার",
+          "start": 2.033,
+          "end": 2.451
+        },
+        {
+          "word": "লাল",
+          "start": 2.451,
+          "end": 2.868
+        },
+        {
+          "word": "ঘুড়ি",
+          "start": 2.868,
+          "end": 3.494
+        },
+        {
+          "word": "ওড়াতে",
+          "start": 3.494,
+          "end": 4.225
+        },
+        {
+          "word": "খুব",
+          "start": 4.225,
+          "end": 4.642
+        },
+        {
+          "word": "ভালোবাসে।",
+          "start": 4.642,
+          "end": 5.686
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 2,
+      "duration_sec": 7.81,
+      "narration": "শোঁ শোঁ! জোরে বাতাস এলো... আর ঘুড়িটা আটকে গেল উঁচু গাছে!",
+      "on_screen_text": "*ওহ না!*",
+      "visual": "code-drawn illustration kite/stuck",
+      "illustration": "kite/stuck",
+      "image": null,
+      "audio": "audio/scene-2.mp3",
+      "captions": [
+        {
+          "word": "শোঁ",
+          "start": 0.05,
+          "end": 0.558
+        },
+        {
+          "word": "শোঁ!",
+          "start": 0.558,
+          "end": 1.193
+        },
+        {
+          "word": "জোরে",
+          "start": 1.193,
+          "end": 1.828
+        },
+        {
+          "word": "বাতাস",
+          "start": 1.828,
+          "end": 2.589
+        },
+        {
+          "word": "এলো...",
+          "start": 2.589,
+          "end": 3.478
+        },
+        {
+          "word": "আর",
+          "start": 3.478,
+          "end": 3.859
+        },
+        {
+          "word": "ঘুড়িটা",
+          "start": 3.859,
+          "end": 4.875
+        },
+        {
+          "word": "আটকে",
+          "start": 4.875,
+          "end": 5.51
+        },
+        {
+          "word": "গেল",
+          "start": 5.51,
+          "end": 6.017
+        },
+        {
+          "word": "উঁচু",
+          "start": 6.017,
+          "end": 6.652
+        },
+        {
+          "word": "গাছে!",
+          "start": 6.652,
+          "end": 7.414
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 3,
+      "duration_sec": 6.01,
+      "narration": "টিয়া লাফায় আর লাফায়। কিন্তু ঘুড়িটা অনেক উঁচুতে।",
+      "on_screen_text": "অনেক *উঁচু!*",
+      "visual": "code-drawn illustration kite/jumping",
+      "illustration": "kite/jumping",
+      "image": null,
+      "audio": "audio/scene-3.mp3",
+      "captions": [
+        {
+          "word": "টিয়া",
+          "start": 0.05,
+          "end": 0.692
+        },
+        {
+          "word": "লাফায়",
+          "start": 0.692,
+          "end": 1.441
+        },
+        {
+          "word": "আর",
+          "start": 1.441,
+          "end": 1.762
+        },
+        {
+          "word": "লাফায়।",
+          "start": 1.762,
+          "end": 2.618
+        },
+        {
+          "word": "কিন্তু",
+          "start": 2.618,
+          "end": 3.367
+        },
+        {
+          "word": "ঘুড়িটা",
+          "start": 3.367,
+          "end": 4.223
+        },
+        {
+          "word": "অনেক",
+          "start": 4.223,
+          "end": 4.758
+        },
+        {
+          "word": "উঁচুতে।",
+          "start": 4.758,
+          "end": 5.614
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 4,
+      "duration_sec": 5.85,
+      "narration": "তখন এলো ছোট্ট হাতি পিপ। আমি সাহায্য করবো!",
+      "on_screen_text": "হাই, *পিপ!*",
+      "visual": "code-drawn illustration kite/pip-arrives",
+      "illustration": "kite/pip-arrives",
+      "image": null,
+      "audio": "audio/scene-4.mp3",
+      "captions": [
+        {
+          "word": "তখন",
+          "start": 0.05,
+          "end": 0.533
+        },
+        {
+          "word": "এলো",
+          "start": 0.533,
+          "end": 1.017
+        },
+        {
+          "word": "ছোট্ট",
+          "start": 1.017,
+          "end": 1.742
+        },
+        {
+          "word": "হাতি",
+          "start": 1.742,
+          "end": 2.346
+        },
+        {
+          "word": "পিপ।",
+          "start": 2.346,
+          "end": 2.95
+        },
+        {
+          "word": "আমি",
+          "start": 3.3,
+          "end": 3.763
+        },
+        {
+          "word": "সাহায্য",
+          "start": 3.763,
+          "end": 4.689
+        },
+        {
+          "word": "করবো!",
+          "start": 4.689,
+          "end": 5.384
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "segments": [
+        {
+          "text": "তখন এলো ছোট্ট হাতি পিপ।"
+        },
+        {
+          "text": "আমি সাহায্য করবো!",
+          "voice": "bn-IN-BashkarNeural",
+          "rate": "-5%"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "duration_sec": 8.58,
+      "narration": "টিয়া উঠলো পিপের পিঠে। পিপ তার লম্বা শুঁড় তুললো। উপরে, আরও উপরে!",
+      "on_screen_text": "*একসাথে!*",
+      "visual": "code-drawn illustration kite/teamwork",
+      "illustration": "kite/teamwork",
+      "image": null,
+      "audio": "audio/scene-5.mp3",
+      "captions": [
+        {
+          "word": "টিয়া",
+          "start": 0.05,
+          "end": 0.698
+        },
+        {
+          "word": "উঠলো",
+          "start": 0.698,
+          "end": 1.237
+        },
+        {
+          "word": "পিপের",
+          "start": 1.237,
+          "end": 1.885
+        },
+        {
+          "word": "পিঠে।",
+          "start": 1.885,
+          "end": 2.532
+        },
+        {
+          "word": "পিপ",
+          "start": 2.532,
+          "end": 2.964
+        },
+        {
+          "word": "তার",
+          "start": 2.964,
+          "end": 3.396
+        },
+        {
+          "word": "লম্বা",
+          "start": 3.396,
+          "end": 4.043
+        },
+        {
+          "word": "শুঁড়",
+          "start": 4.043,
+          "end": 4.691
+        },
+        {
+          "word": "তুললো।",
+          "start": 4.691,
+          "end": 5.446
+        },
+        {
+          "word": "উপরে,",
+          "start": 5.796,
+          "end": 6.668
+        },
+        {
+          "word": "আরও",
+          "start": 6.668,
+          "end": 7.248
+        },
+        {
+          "word": "উপরে!",
+          "start": 7.248,
+          "end": 8.12
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "segments": [
+        {
+          "text": "টিয়া উঠলো পিপের পিঠে। পিপ তার লম্বা শুঁড় তুললো।"
+        },
+        {
+          "text": "উপরে, আরও উপরে!",
+          "voice": "bn-IN-BashkarNeural",
+          "rate": "-5%"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "duration_sec": 6.06,
+      "narration": "পেয়ে গেছি! ঘুড়িটা নেমে এসেছে! হুররে!",
+      "on_screen_text": "*হুররে!*",
+      "visual": "code-drawn illustration kite/free",
+      "illustration": "kite/free",
+      "image": null,
+      "audio": "audio/scene-6.mp3",
+      "captions": [
+        {
+          "word": "পেয়ে",
+          "start": 0.05,
+          "end": 0.913
+        },
+        {
+          "word": "গেছি!",
+          "start": 0.913,
+          "end": 1.777
+        },
+        {
+          "word": "ঘুড়িটা",
+          "start": 1.777,
+          "end": 2.928
+        },
+        {
+          "word": "নেমে",
+          "start": 2.928,
+          "end": 3.647
+        },
+        {
+          "word": "এসেছে!",
+          "start": 3.647,
+          "end": 4.655
+        },
+        {
+          "word": "হুররে!",
+          "start": 4.655,
+          "end": 5.662
+        }
+      ],
+      "transition": "zoom",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 7,
+      "duration_sec": 8.17,
+      "narration": "এখন টিয়া আর পিপ একসাথে ঘুড়ি ওড়ায়। বন্ধুরা সবসময় একে অপরকে সাহায্য করে!",
+      "on_screen_text": "বন্ধুরা *সাহায্য*\nকরে",
+      "visual": "code-drawn illustration kite/happy-ending",
+      "illustration": "kite/happy-ending",
+      "image": null,
+      "audio": "audio/scene-7.mp3",
+      "captions": [
+        {
+          "word": "এখন",
+          "start": 0.05,
+          "end": 0.457
+        },
+        {
+          "word": "টিয়া",
+          "start": 0.457,
+          "end": 1.066
+        },
+        {
+          "word": "আর",
+          "start": 1.066,
+          "end": 1.371
+        },
+        {
+          "word": "পিপ",
+          "start": 1.371,
+          "end": 1.778
+        },
+        {
+          "word": "একসাথে",
+          "start": 1.778,
+          "end": 2.489
+        },
+        {
+          "word": "ঘুড়ি",
+          "start": 2.489,
+          "end": 3.099
+        },
+        {
+          "word": "ওড়ায়।",
+          "start": 3.099,
+          "end": 3.912
+        },
+        {
+          "word": "বন্ধুরা",
+          "start": 3.912,
+          "end": 4.725
+        },
+        {
+          "word": "সবসময়",
+          "start": 4.725,
+          "end": 5.436
+        },
+        {
+          "word": "একে",
+          "start": 5.436,
+          "end": 5.843
+        },
+        {
+          "word": "অপরকে",
+          "start": 5.843,
+          "end": 6.453
+        },
+        {
+          "word": "সাহায্য",
+          "start": 6.453,
+          "end": 7.266
+        },
+        {
+          "word": "করে!",
+          "start": 7.266,
+          "end": 7.774
+        }
+      ],
+      "transition": "fade",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    }
+  ],
+  "rate": "-5%",
+  "pitch": null,
+  "characters": {
+    "narrator": {
+      "voice": "bn-IN-TanishaaNeural",
+      "rate": "-5%"
+    },
+    "pip": {
+      "voice": "bn-IN-BashkarNeural",
+      "rate": "-5%"
+    }
+  }
+}

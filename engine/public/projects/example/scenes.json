@@ -1,0 +1,265 @@
+{
+  "project": "example",
+  "title": "3 ta habit jeta productivity 2x kore",
+  "language": "bn",
+  "voice": null,
+  "sibling": "example-en",
+  "fps": 30,
+  "theme": {
+    "bg": "#0b0b12",
+    "bg2": "#2a1b5e",
+    "text": "#ffffff",
+    "accent": "#ffd23f",
+    "font": "NotoSansBengali"
+  },
+  "music": null,
+  "music_volume": 0.12,
+  "show_captions": true,
+  "scenes": [
+    {
+      "id": 1,
+      "duration_sec": 3.54,
+      "narration": "সারাদিন ব্যস্ত, কিন্তু কাজ শেষ হয় না?",
+      "on_screen_text": "সারাদিন ব্যস্ত,\n*কাজ শেষ হয় না?*",
+      "visual": "Tired person at messy desk at night, laptop glow, cinematic, vertical 9:16",
+      "image": null,
+      "audio": "audio/scene-1.mp3",
+      "captions": [
+        {
+          "word": "সারাদিন",
+          "start": 0.05,
+          "end": 0.684
+        },
+        {
+          "word": "ব্যস্ত,",
+          "start": 0.684,
+          "end": 1.319
+        },
+        {
+          "word": "কিন্তু",
+          "start": 1.319,
+          "end": 1.873
+        },
+        {
+          "word": "কাজ",
+          "start": 1.873,
+          "end": 2.191
+        },
+        {
+          "word": "শেষ",
+          "start": 2.191,
+          "end": 2.508
+        },
+        {
+          "word": "হয়",
+          "start": 2.508,
+          "end": 2.825
+        },
+        {
+          "word": "না?",
+          "start": 2.825,
+          "end": 3.142
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "center",
+      "emoji": "😩"
+    },
+    {
+      "id": 2,
+      "duration_sec": 4.29,
+      "narration": "এক নম্বর: সকালে সবচেয়ে কঠিন কাজটা আগে করুন।",
+      "on_screen_text": "১. *কঠিন কাজ* আগে",
+      "visual": "Sunrise over desk, coffee, focused person writing, warm light",
+      "image": null,
+      "audio": "audio/scene-2.mp3",
+      "captions": [
+        {
+          "word": "এক",
+          "start": 0.05,
+          "end": 0.306
+        },
+        {
+          "word": "নম্বর:",
+          "start": 0.306,
+          "end": 0.902
+        },
+        {
+          "word": "সকালে",
+          "start": 0.902,
+          "end": 1.414
+        },
+        {
+          "word": "সবচেয়ে",
+          "start": 1.414,
+          "end": 2.096
+        },
+        {
+          "word": "কঠিন",
+          "start": 2.096,
+          "end": 2.522
+        },
+        {
+          "word": "কাজটা",
+          "start": 2.522,
+          "end": 3.034
+        },
+        {
+          "word": "আগে",
+          "start": 3.034,
+          "end": 3.375
+        },
+        {
+          "word": "করুন।",
+          "start": 3.375,
+          "end": 3.886
+        }
+      ],
+      "transition": "slide",
+      "text_animation": "slide-up",
+      "text_position": "center",
+      "emoji": "🌅"
+    },
+    {
+      "id": 3,
+      "duration_sec": 3.4,
+      "narration": "দুই নম্বর: ফোন অন্য রুমে রাখুন।",
+      "on_screen_text": "২. ফোন *অন্য রুমে*",
+      "visual": "Smartphone on a shelf in another room, out of focus person working in background",
+      "image": null,
+      "audio": "audio/scene-3.mp3",
+      "captions": [
+        {
+          "word": "দুই",
+          "start": 0.05,
+          "end": 0.418
+        },
+        {
+          "word": "নম্বর:",
+          "start": 0.418,
+          "end": 1.063
+        },
+        {
+          "word": "ফোন",
+          "start": 1.063,
+          "end": 1.432
+        },
+        {
+          "word": "অন্য",
+          "start": 1.432,
+          "end": 1.893
+        },
+        {
+          "word": "রুমে",
+          "start": 1.893,
+          "end": 2.353
+        },
+        {
+          "word": "রাখুন।",
+          "start": 2.353,
+          "end": 2.998
+        }
+      ],
+      "transition": "slide",
+      "text_animation": "slide-up",
+      "text_position": "center",
+      "emoji": "📵"
+    },
+    {
+      "id": 4,
+      "duration_sec": 4.26,
+      "narration": "তিন নম্বর: পঁচিশ মিনিট কাজ, পাঁচ মিনিট বিরতি।",
+      "on_screen_text": "৩. *২৫ মিনিট* কাজ\n৫ মিনিট বিরতি",
+      "visual": "Tomato kitchen timer on desk next to notebook, minimal",
+      "image": null,
+      "audio": "audio/scene-4.mp3",
+      "captions": [
+        {
+          "word": "তিন",
+          "start": 0.05,
+          "end": 0.381
+        },
+        {
+          "word": "নম্বর:",
+          "start": 0.381,
+          "end": 0.962
+        },
+        {
+          "word": "পঁচিশ",
+          "start": 0.962,
+          "end": 1.459
+        },
+        {
+          "word": "মিনিট",
+          "start": 1.459,
+          "end": 1.956
+        },
+        {
+          "word": "কাজ,",
+          "start": 1.956,
+          "end": 2.37
+        },
+        {
+          "word": "পাঁচ",
+          "start": 2.37,
+          "end": 2.785
+        },
+        {
+          "word": "মিনিট",
+          "start": 2.785,
+          "end": 3.282
+        },
+        {
+          "word": "বিরতি।",
+          "start": 3.282,
+          "end": 3.862
+        }
+      ],
+      "transition": "slide",
+      "text_animation": "slide-up",
+      "text_position": "center",
+      "emoji": "⏱️"
+    },
+    {
+      "id": 5,
+      "duration_sec": 3.06,
+      "narration": "ফলো করুন আরও টিপসের জন্য!",
+      "on_screen_text": "*Follow* করুন 🔔",
+      "visual": "Bold end card, brand colors",
+      "image": null,
+      "audio": "audio/scene-5.mp3",
+      "captions": [
+        {
+          "word": "ফলো",
+          "start": 0.05,
+          "end": 0.452
+        },
+        {
+          "word": "করুন",
+          "start": 0.452,
+          "end": 0.954
+        },
+        {
+          "word": "আরও",
+          "start": 0.954,
+          "end": 1.356
+        },
+        {
+          "word": "টিপসের",
+          "start": 1.356,
+          "end": 2.059
+        },
+        {
+          "word": "জন্য!",
+          "start": 2.059,
+          "end": 2.662
+        }
+      ],
+      "transition": "zoom",
+      "text_animation": "pop",
+      "text_position": "center",
+      "emoji": null
+    }
+  ]
+}

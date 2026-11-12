@@ -1,0 +1,931 @@
+{
+  "project": "design-patterns/strategy-p2-bn",
+  "title": "Strategy Pattern পর্ব ২: Strategy Pattern দিয়ে সমাধান",
+  "language": "bn",
+  "voice": null,
+  "sibling": null,
+  "fps": 30,
+  "theme": {
+    "bg": "#0b1426",
+    "bg2": "#13284a",
+    "text": "#ffffff",
+    "accent": "#2dd4bf",
+    "warn": "#fb923c",
+    "stroke": "#0b1426",
+    "font": "HindSiliguri",
+    "title_scale": 0.78
+  },
+  "logo": "brand/dev-diary-logo.png",
+  "music": null,
+  "music_volume": 0.12,
+  "show_captions": true,
+  "scenes": [
+    {
+      "id": 1,
+      "duration_sec": 7.59,
+      "narration": "রাবারের হাঁস ওড়ে না, কিন্তু আসল হাঁস ওড়ে। একই Duck family-তে এই আলাদা আচরণ কীভাবে সামলাবো?",
+      "on_screen_text": "ওড়ার আচরণ *আলাদা*",
+      "visual": "strategy2/recap",
+      "illustration": "strategy2/recap",
+      "image": null,
+      "audio": "audio/scene-1.mp3",
+      "captions": [
+        {
+          "word": "রাবারের",
+          "start": 0,
+          "end": 0.64
+        },
+        {
+          "word": "হাঁস",
+          "start": 0.64,
+          "end": 1.02
+        },
+        {
+          "word": "ওড়ে",
+          "start": 1.02,
+          "end": 1.3
+        },
+        {
+          "word": "না,",
+          "start": 1.3,
+          "end": 1.81
+        },
+        {
+          "word": "কিন্তু",
+          "start": 1.81,
+          "end": 2.06
+        },
+        {
+          "word": "আসল",
+          "start": 2.06,
+          "end": 2.58
+        },
+        {
+          "word": "হাঁস",
+          "start": 2.58,
+          "end": 2.84
+        },
+        {
+          "word": "ওড়ে।",
+          "start": 2.84,
+          "end": 3.71
+        },
+        {
+          "word": "একই",
+          "start": 3.71,
+          "end": 4.04
+        },
+        {
+          "word": "Duck",
+          "start": 4.04,
+          "end": 4.3
+        },
+        {
+          "word": "family-তে",
+          "start": 4.3,
+          "end": 4.9
+        },
+        {
+          "word": "এই",
+          "start": 4.9,
+          "end": 5.22
+        },
+        {
+          "word": "আলাদা",
+          "start": 5.22,
+          "end": 5.76
+        },
+        {
+          "word": "আচরণ",
+          "start": 5.76,
+          "end": 6.1
+        },
+        {
+          "word": "কীভাবে",
+          "start": 6.1,
+          "end": 6.6
+        },
+        {
+          "word": "সামলাবো?",
+          "start": 6.6,
+          "end": 7.08
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 2,
+      "duration_sec": 7.98,
+      "narration": "ওড়ার আচরণটাকে Duck থেকে আলাদা করে PHP-তে একটা interface বানাই, FlyBehavior। এর মধ্যে থাকবে fly() method।",
+      "on_screen_text": "*FlyBehavior* interface",
+      "visual": "strategy2/interface",
+      "illustration": "strategy2/interface",
+      "image": null,
+      "audio": "audio/scene-2.mp3",
+      "captions": [
+        {
+          "word": "ওড়ার",
+          "start": 0,
+          "end": 0.34
+        },
+        {
+          "word": "আচরণটাকে",
+          "start": 0.34,
+          "end": 1.14
+        },
+        {
+          "word": "Duck",
+          "start": 1.14,
+          "end": 1.42
+        },
+        {
+          "word": "থেকে",
+          "start": 1.42,
+          "end": 1.72
+        },
+        {
+          "word": "আলাদা",
+          "start": 1.72,
+          "end": 2.14
+        },
+        {
+          "word": "করে",
+          "start": 2.14,
+          "end": 2.74
+        },
+        {
+          "word": "PHP-তে",
+          "start": 2.74,
+          "end": 3.3
+        },
+        {
+          "word": "একটা",
+          "start": 3.3,
+          "end": 3.66
+        },
+        {
+          "word": "interface",
+          "start": 3.66,
+          "end": 4.14
+        },
+        {
+          "word": "বানাই,",
+          "start": 4.14,
+          "end": 4.69
+        },
+        {
+          "word": "FlyBehavior।",
+          "start": 4.69,
+          "end": 5.94
+        },
+        {
+          "word": "এর",
+          "start": 5.94,
+          "end": 5.96
+        },
+        {
+          "word": "মধ্যে",
+          "start": 5.96,
+          "end": 6.32
+        },
+        {
+          "word": "থাকবে",
+          "start": 6.32,
+          "end": 6.66
+        },
+        {
+          "word": "fly()",
+          "start": 6.66,
+          "end": 7.14
+        },
+        {
+          "word": "method।",
+          "start": 7.14,
+          "end": 7.5
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 3,
+      "duration_sec": 8.5,
+      "narration": "তারপর দুটো class এই interface implement করবে। FlyWithWings বলবে, ডানা দিয়ে উড়ছি, আর FlyNoWay বলবে, আমি উড়তে পারি না।",
+      "on_screen_text": "দুটো *Strategy* class",
+      "visual": "strategy2/concrete",
+      "illustration": "strategy2/concrete",
+      "image": null,
+      "audio": "audio/scene-3.mp3",
+      "captions": [
+        {
+          "word": "তারপর",
+          "start": 0,
+          "end": 0.5
+        },
+        {
+          "word": "দুটো",
+          "start": 0.5,
+          "end": 0.92
+        },
+        {
+          "word": "class",
+          "start": 0.92,
+          "end": 1.2
+        },
+        {
+          "word": "এই",
+          "start": 1.2,
+          "end": 1.52
+        },
+        {
+          "word": "interface",
+          "start": 1.52,
+          "end": 1.92
+        },
+        {
+          "word": "implement",
+          "start": 1.92,
+          "end": 2.46
+        },
+        {
+          "word": "করবে।",
+          "start": 2.46,
+          "end": 3.06
+        },
+        {
+          "word": "FlyWithWings",
+          "start": 3.06,
+          "end": 3.78
+        },
+        {
+          "word": "বলবে,",
+          "start": 3.78,
+          "end": 4.28
+        },
+        {
+          "word": "ডানা",
+          "start": 4.28,
+          "end": 4.64
+        },
+        {
+          "word": "দিয়ে",
+          "start": 4.64,
+          "end": 4.9
+        },
+        {
+          "word": "উড়ছি,",
+          "start": 4.9,
+          "end": 5.53
+        },
+        {
+          "word": "আর",
+          "start": 5.53,
+          "end": 5.64
+        },
+        {
+          "word": "FlyNoWay",
+          "start": 5.64,
+          "end": 6.42
+        },
+        {
+          "word": "বলবে,",
+          "start": 6.42,
+          "end": 6.98
+        },
+        {
+          "word": "আমি",
+          "start": 6.98,
+          "end": 7.18
+        },
+        {
+          "word": "উড়তে",
+          "start": 7.18,
+          "end": 7.52
+        },
+        {
+          "word": "পারি",
+          "start": 7.52,
+          "end": 7.88
+        },
+        {
+          "word": "না।",
+          "start": 7.88,
+          "end": 8.18
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 4,
+      "duration_sec": 5.9,
+      "narration": "এবার Duck নিজে ওড়ার নিয়ম লেখে না। সে একটা FlyBehavior object রাখে।",
+      "on_screen_text": "Duck *has-a* FlyBehavior",
+      "visual": "strategy2/constructor",
+      "illustration": "strategy2/constructor",
+      "image": null,
+      "audio": "audio/scene-4.mp3",
+      "captions": [
+        {
+          "word": "এবার",
+          "start": 0,
+          "end": 0.36
+        },
+        {
+          "word": "Duck",
+          "start": 0.36,
+          "end": 0.78
+        },
+        {
+          "word": "নিজে",
+          "start": 0.78,
+          "end": 1.34
+        },
+        {
+          "word": "ওড়ার",
+          "start": 1.34,
+          "end": 1.68
+        },
+        {
+          "word": "নিয়ম",
+          "start": 1.68,
+          "end": 1.92
+        },
+        {
+          "word": "লেখে",
+          "start": 1.92,
+          "end": 2.24
+        },
+        {
+          "word": "না।",
+          "start": 2.24,
+          "end": 2.69
+        },
+        {
+          "word": "সে",
+          "start": 2.69,
+          "end": 2.84
+        },
+        {
+          "word": "একটা",
+          "start": 2.84,
+          "end": 3.14
+        },
+        {
+          "word": "FlyBehavior",
+          "start": 3.14,
+          "end": 4
+        },
+        {
+          "word": "object",
+          "start": 4,
+          "end": 4.48
+        },
+        {
+          "word": "রাখে।",
+          "start": 4.48,
+          "end": 4.78
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 5,
+      "duration_sec": 7.5,
+      "narration": "Duck-এর performFly() call করলে সে ওই object-এর fly() method-কে কাজটা দিয়ে দেবে। এটাকে বলে delegation।",
+      "on_screen_text": "কাজ দিয়ে দেয়: *delegation*",
+      "visual": "strategy2/delegate",
+      "illustration": "strategy2/delegate",
+      "image": null,
+      "audio": "audio/scene-5.mp3",
+      "captions": [
+        {
+          "word": "Duck-এর",
+          "start": 0,
+          "end": 0.52
+        },
+        {
+          "word": "performFly()",
+          "start": 0.52,
+          "end": 1.3
+        },
+        {
+          "word": "call",
+          "start": 1.3,
+          "end": 1.56
+        },
+        {
+          "word": "করলে",
+          "start": 1.56,
+          "end": 1.94
+        },
+        {
+          "word": "সে",
+          "start": 1.94,
+          "end": 2.28
+        },
+        {
+          "word": "ওই",
+          "start": 2.28,
+          "end": 2.6
+        },
+        {
+          "word": "object-এর",
+          "start": 2.6,
+          "end": 3.16
+        },
+        {
+          "word": "fly()",
+          "start": 3.16,
+          "end": 3.48
+        },
+        {
+          "word": "method-কে",
+          "start": 3.48,
+          "end": 3.96
+        },
+        {
+          "word": "কাজটা",
+          "start": 3.96,
+          "end": 4.34
+        },
+        {
+          "word": "দিয়ে",
+          "start": 4.34,
+          "end": 4.58
+        },
+        {
+          "word": "দেবে।",
+          "start": 4.58,
+          "end": 5.15
+        },
+        {
+          "word": "এটাকে",
+          "start": 5.15,
+          "end": 5.46
+        },
+        {
+          "word": "বলে",
+          "start": 5.46,
+          "end": 5.7
+        },
+        {
+          "word": "delegation।",
+          "start": 5.7,
+          "end": 6.46
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 6,
+      "duration_sec": 7.64,
+      "narration": "MallardDuck-কে দেবো FlyWithWings, RubberDuck-কে দেবো FlyNoWay। একই flying behavior অন্য হাঁসেও reuse করা যাবে।",
+      "on_screen_text": "যার যেটা *দরকার*",
+      "visual": "strategy2/inject",
+      "illustration": "strategy2/inject",
+      "image": null,
+      "audio": "audio/scene-6.mp3",
+      "captions": [
+        {
+          "word": "MallardDuck-কে",
+          "start": 0,
+          "end": 0.78
+        },
+        {
+          "word": "দেবো",
+          "start": 0.78,
+          "end": 1.04
+        },
+        {
+          "word": "FlyWithWings,",
+          "start": 1.04,
+          "end": 2.32
+        },
+        {
+          "word": "RubberDuck-কে",
+          "start": 2.32,
+          "end": 2.96
+        },
+        {
+          "word": "দেবো",
+          "start": 2.96,
+          "end": 3.18
+        },
+        {
+          "word": "FlyNoWay।",
+          "start": 3.18,
+          "end": 4.37
+        },
+        {
+          "word": "একই",
+          "start": 4.37,
+          "end": 4.6
+        },
+        {
+          "word": "flying",
+          "start": 4.6,
+          "end": 4.94
+        },
+        {
+          "word": "behavior",
+          "start": 4.94,
+          "end": 5.42
+        },
+        {
+          "word": "অন্য",
+          "start": 5.42,
+          "end": 5.9
+        },
+        {
+          "word": "হাঁসেও",
+          "start": 5.9,
+          "end": 6.3
+        },
+        {
+          "word": "reuse",
+          "start": 6.3,
+          "end": 6.56
+        },
+        {
+          "word": "করা",
+          "start": 6.56,
+          "end": 6.82
+        },
+        {
+          "word": "যাবে।",
+          "start": 6.82,
+          "end": 7.12
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 7,
+      "duration_sec": 9.44,
+      "narration": "আর পরে behavior বদলাতে চাইলে setter দিয়ে নতুন behavior object বসিয়ে দিলেই হবে। Duck object একই থাকবে, কিন্তু তার ওড়ার আচরণ বদলে যাবে।",
+      "on_screen_text": "*Runtime*-এ বদল",
+      "visual": "strategy2/runtime",
+      "illustration": "strategy2/runtime",
+      "image": null,
+      "audio": "audio/scene-7.mp3",
+      "captions": [
+        {
+          "word": "আর",
+          "start": 0,
+          "end": 0.36
+        },
+        {
+          "word": "পরে",
+          "start": 0.36,
+          "end": 0.84
+        },
+        {
+          "word": "behavior",
+          "start": 0.84,
+          "end": 1.46
+        },
+        {
+          "word": "বদলাতে",
+          "start": 1.46,
+          "end": 1.86
+        },
+        {
+          "word": "চাইলে",
+          "start": 1.86,
+          "end": 2.55
+        },
+        {
+          "word": "setter",
+          "start": 2.55,
+          "end": 2.94
+        },
+        {
+          "word": "দিয়ে",
+          "start": 2.94,
+          "end": 3.2
+        },
+        {
+          "word": "নতুন",
+          "start": 3.2,
+          "end": 3.6
+        },
+        {
+          "word": "behavior",
+          "start": 3.6,
+          "end": 4.04
+        },
+        {
+          "word": "object",
+          "start": 4.04,
+          "end": 4.38
+        },
+        {
+          "word": "বসিয়ে",
+          "start": 4.38,
+          "end": 4.64
+        },
+        {
+          "word": "দিলেই",
+          "start": 4.64,
+          "end": 4.9
+        },
+        {
+          "word": "হবে।",
+          "start": 4.9,
+          "end": 5.5
+        },
+        {
+          "word": "Duck",
+          "start": 5.5,
+          "end": 5.84
+        },
+        {
+          "word": "object",
+          "start": 5.84,
+          "end": 6.18
+        },
+        {
+          "word": "একই",
+          "start": 6.18,
+          "end": 6.48
+        },
+        {
+          "word": "থাকবে,",
+          "start": 6.48,
+          "end": 7.06
+        },
+        {
+          "word": "কিন্তু",
+          "start": 7.06,
+          "end": 7.26
+        },
+        {
+          "word": "তার",
+          "start": 7.26,
+          "end": 7.44
+        },
+        {
+          "word": "ওড়ার",
+          "start": 7.44,
+          "end": 7.84
+        },
+        {
+          "word": "আচরণ",
+          "start": 7.84,
+          "end": 8.36
+        },
+        {
+          "word": "বদলে",
+          "start": 8.36,
+          "end": 8.66
+        },
+        {
+          "word": "যাবে।",
+          "start": 8.66,
+          "end": 8.96
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 8,
+      "duration_sec": 13.8,
+      "narration": "এটাই Strategy Pattern: একই কাজের বিভিন্ন পদ্ধতি আলাদা object-এ রাখা, আর প্রয়োজনমতো বেছে নেওয়া। Duck হলো Context, FlyBehavior হলো Strategy interface, আর flying class-গুলো concrete strategy।",
+      "on_screen_text": "*Strategy* Pattern",
+      "visual": "strategy2/diagram",
+      "illustration": "strategy2/diagram",
+      "image": null,
+      "audio": "audio/scene-8.mp3",
+      "captions": [
+        {
+          "word": "এটাই",
+          "start": 0,
+          "end": 0.44
+        },
+        {
+          "word": "Strategy",
+          "start": 0.44,
+          "end": 1.02
+        },
+        {
+          "word": "Pattern:",
+          "start": 1.02,
+          "end": 1.71
+        },
+        {
+          "word": "একই",
+          "start": 1.71,
+          "end": 2
+        },
+        {
+          "word": "কাজের",
+          "start": 2,
+          "end": 2.4
+        },
+        {
+          "word": "বিভিন্ন",
+          "start": 2.4,
+          "end": 2.9
+        },
+        {
+          "word": "পদ্ধতি",
+          "start": 2.9,
+          "end": 3.42
+        },
+        {
+          "word": "আলাদা",
+          "start": 3.42,
+          "end": 3.94
+        },
+        {
+          "word": "object-এ",
+          "start": 3.94,
+          "end": 4.38
+        },
+        {
+          "word": "রাখা,",
+          "start": 4.38,
+          "end": 4.94
+        },
+        {
+          "word": "আর",
+          "start": 4.94,
+          "end": 5.06
+        },
+        {
+          "word": "প্রয়োজনমতো",
+          "start": 5.06,
+          "end": 5.84
+        },
+        {
+          "word": "বেছে",
+          "start": 5.84,
+          "end": 6.16
+        },
+        {
+          "word": "নেওয়া।",
+          "start": 6.16,
+          "end": 6.82
+        },
+        {
+          "word": "Duck",
+          "start": 6.82,
+          "end": 7.14
+        },
+        {
+          "word": "হলো",
+          "start": 7.14,
+          "end": 7.48
+        },
+        {
+          "word": "Context,",
+          "start": 7.48,
+          "end": 8.28
+        },
+        {
+          "word": "FlyBehavior",
+          "start": 8.28,
+          "end": 8.96
+        },
+        {
+          "word": "হলো",
+          "start": 8.96,
+          "end": 9.34
+        },
+        {
+          "word": "Strategy",
+          "start": 9.34,
+          "end": 9.72
+        },
+        {
+          "word": "interface,",
+          "start": 9.72,
+          "end": 10.74
+        },
+        {
+          "word": "আর",
+          "start": 10.74,
+          "end": 10.79
+        },
+        {
+          "word": "flying",
+          "start": 10.79,
+          "end": 11.16
+        },
+        {
+          "word": "class-গুলো",
+          "start": 11.16,
+          "end": 11.8
+        },
+        {
+          "word": "concrete",
+          "start": 11.8,
+          "end": 12.24
+        },
+        {
+          "word": "strategy।",
+          "start": 12.24,
+          "end": 12.72
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    },
+    {
+      "id": 9,
+      "duration_sec": 4.5,
+      "narration": "পরের পর্বে দেখবো বাস্তব কাজে এর ব্যবহার।",
+      "on_screen_text": "পরের পর্বে *বাস্তব* কাজে",
+      "visual": "strategy2/ending",
+      "illustration": "strategy2/ending",
+      "image": null,
+      "audio": "audio/scene-9.mp3",
+      "captions": [
+        {
+          "word": "পরের",
+          "start": 0,
+          "end": 0.34
+        },
+        {
+          "word": "পর্বে",
+          "start": 0.34,
+          "end": 0.62
+        },
+        {
+          "word": "দেখবো",
+          "start": 0.62,
+          "end": 0.98
+        },
+        {
+          "word": "বাস্তব",
+          "start": 0.98,
+          "end": 1.52
+        },
+        {
+          "word": "কাজে",
+          "start": 1.52,
+          "end": 1.84
+        },
+        {
+          "word": "এর",
+          "start": 1.84,
+          "end": 2.04
+        },
+        {
+          "word": "ব্যবহার।",
+          "start": 2.04,
+          "end": 2.52
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null
+    }
+  ],
+  "series": {
+    "name": "Strategy Pattern",
+    "part": 2
+  },
+  "voice_source": "recorded"
+}

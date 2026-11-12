@@ -1,0 +1,1976 @@
+{
+  "project": "design-patterns/strategy-p3-bn",
+  "title": "Strategy Pattern পর্ব ৩: Checkout-এ Delivery Fee",
+  "language": "bn",
+  "voice": null,
+  "sibling": null,
+  "fps": 30,
+  "theme": {
+    "bg": "#0b1426",
+    "bg2": "#13284a",
+    "text": "#ffffff",
+    "accent": "#2dd4bf",
+    "warn": "#fb923c",
+    "stroke": "#0b1426",
+    "font": "HindSiliguri",
+    "title_scale": 0.78,
+    "title_top": 300,
+    "caption_bottom": 300
+  },
+  "logo": "brand/dev-diary-logo.png",
+  "max_duration_sec": 180,
+  "music": null,
+  "music_volume": 0.12,
+  "show_captions": true,
+  "scenes": [
+    {
+      "id": 1,
+      "duration_sec": 11.9,
+      "narration": "একই অর্ডার, একই ঠিকানা। Standard delivery বেছে নিলে চার্জ ৬০ টাকা। Express-এ চাপ দিতেই হয়ে গেল ১০০ টাকা। এই এক click-এর পর আমাদের Laravel app-এ আসলে কী ঘটলো?",
+      "on_screen_text": "এক click-এ *৳60* → *৳100*",
+      "visual": "strategy3/hook",
+      "illustration": "strategy3/hook",
+      "image": null,
+      "audio": "audio/scene-1.mp3",
+      "captions": [
+        {
+          "word": "একই",
+          "start": 0,
+          "end": 0.42
+        },
+        {
+          "word": "অর্ডার,",
+          "start": 0.42,
+          "end": 1.1
+        },
+        {
+          "word": "একই",
+          "start": 1.1,
+          "end": 1.36
+        },
+        {
+          "word": "ঠিকানা।",
+          "start": 1.36,
+          "end": 2.13
+        },
+        {
+          "word": "Standard",
+          "start": 2.13,
+          "end": 2.58
+        },
+        {
+          "word": "delivery",
+          "start": 2.58,
+          "end": 2.96
+        },
+        {
+          "word": "বেছে",
+          "start": 2.96,
+          "end": 3.24
+        },
+        {
+          "word": "নিলে",
+          "start": 3.24,
+          "end": 3.52
+        },
+        {
+          "word": "চার্জ",
+          "start": 3.52,
+          "end": 3.9
+        },
+        {
+          "word": "৬০",
+          "start": 3.9,
+          "end": 4.3
+        },
+        {
+          "word": "টাকা।",
+          "start": 4.3,
+          "end": 4.97
+        },
+        {
+          "word": "Express-এ",
+          "start": 4.97,
+          "end": 5.48
+        },
+        {
+          "word": "চাপ",
+          "start": 5.48,
+          "end": 5.84
+        },
+        {
+          "word": "দিতেই",
+          "start": 5.84,
+          "end": 6.22
+        },
+        {
+          "word": "হয়ে",
+          "start": 6.22,
+          "end": 6.44
+        },
+        {
+          "word": "গেল",
+          "start": 6.44,
+          "end": 6.64
+        },
+        {
+          "word": "১০০",
+          "start": 6.64,
+          "end": 7.07
+        },
+        {
+          "word": "টাকা।",
+          "start": 7.07,
+          "end": 7.84
+        },
+        {
+          "word": "এই",
+          "start": 7.84,
+          "end": 8.02
+        },
+        {
+          "word": "এক",
+          "start": 8.02,
+          "end": 8.5
+        },
+        {
+          "word": "click-এর",
+          "start": 8.5,
+          "end": 8.8
+        },
+        {
+          "word": "পর",
+          "start": 8.8,
+          "end": 9.1
+        },
+        {
+          "word": "আমাদের",
+          "start": 9.1,
+          "end": 9.48
+        },
+        {
+          "word": "Laravel",
+          "start": 9.48,
+          "end": 9.98
+        },
+        {
+          "word": "app-এ",
+          "start": 9.98,
+          "end": 10.34
+        },
+        {
+          "word": "আসলে",
+          "start": 10.34,
+          "end": 10.74
+        },
+        {
+          "word": "কী",
+          "start": 10.74,
+          "end": 10.96
+        },
+        {
+          "word": "ঘটলো?",
+          "start": 10.96,
+          "end": 11.4
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 168
+    },
+    {
+      "id": 2,
+      "duration_sec": 18.01,
+      "narration": "ধরো, দোকান থেকে বাসার দূরত্ব ৪ কিলোমিটার। আমাদের দোকানে Standard delivery charge সবসময় ৬০ টাকা। Express-এর নিয়ম একটু আলাদা: শুরুতে ৬০ টাকা, তারপর প্রতি কিলোমিটারে আরও ১০ টাকা। তাই ৪ কিলোমিটারের জন্য Express charge দাঁড়ায় ৬০ যোগ ৪০, অর্থাৎ ১০০ টাকা।",
+      "on_screen_text": "Express-এর *হিসাব*",
+      "visual": "strategy3/math",
+      "illustration": "strategy3/math",
+      "image": null,
+      "audio": "audio/scene-2.mp3",
+      "captions": [
+        {
+          "word": "ধরো,",
+          "start": 0,
+          "end": 0.44
+        },
+        {
+          "word": "দোকান",
+          "start": 0.44,
+          "end": 0.88
+        },
+        {
+          "word": "থেকে",
+          "start": 0.88,
+          "end": 1.12
+        },
+        {
+          "word": "বাসার",
+          "start": 1.12,
+          "end": 1.52
+        },
+        {
+          "word": "দূরত্ব",
+          "start": 1.52,
+          "end": 1.92
+        },
+        {
+          "word": "৪",
+          "start": 1.92,
+          "end": 2.26
+        },
+        {
+          "word": "কিলোমিটার।",
+          "start": 2.26,
+          "end": 3.15
+        },
+        {
+          "word": "আমাদের",
+          "start": 3.15,
+          "end": 3.48
+        },
+        {
+          "word": "দোকানে",
+          "start": 3.48,
+          "end": 3.9
+        },
+        {
+          "word": "Standard",
+          "start": 3.9,
+          "end": 4.44
+        },
+        {
+          "word": "delivery",
+          "start": 4.44,
+          "end": 4.82
+        },
+        {
+          "word": "charge",
+          "start": 4.82,
+          "end": 5.26
+        },
+        {
+          "word": "সবসময়",
+          "start": 5.26,
+          "end": 5.86
+        },
+        {
+          "word": "৬০",
+          "start": 5.86,
+          "end": 6.18
+        },
+        {
+          "word": "টাকা।",
+          "start": 6.18,
+          "end": 6.91
+        },
+        {
+          "word": "Express-এর",
+          "start": 6.91,
+          "end": 7.42
+        },
+        {
+          "word": "নিয়ম",
+          "start": 7.42,
+          "end": 7.72
+        },
+        {
+          "word": "একটু",
+          "start": 7.72,
+          "end": 8.2
+        },
+        {
+          "word": "আলাদা:",
+          "start": 8.2,
+          "end": 8.8
+        },
+        {
+          "word": "শুরুতে",
+          "start": 8.8,
+          "end": 9.18
+        },
+        {
+          "word": "৬০",
+          "start": 9.18,
+          "end": 9.48
+        },
+        {
+          "word": "টাকা,",
+          "start": 9.48,
+          "end": 9.9
+        },
+        {
+          "word": "তারপর",
+          "start": 9.9,
+          "end": 10.22
+        },
+        {
+          "word": "প্রতি",
+          "start": 10.22,
+          "end": 10.62
+        },
+        {
+          "word": "কিলোমিটারে",
+          "start": 10.62,
+          "end": 11.18
+        },
+        {
+          "word": "আরও",
+          "start": 11.18,
+          "end": 11.54
+        },
+        {
+          "word": "১০",
+          "start": 11.54,
+          "end": 11.8
+        },
+        {
+          "word": "টাকা।",
+          "start": 11.8,
+          "end": 12.36
+        },
+        {
+          "word": "তাই",
+          "start": 12.36,
+          "end": 12.48
+        },
+        {
+          "word": "৪",
+          "start": 12.48,
+          "end": 12.78
+        },
+        {
+          "word": "কিলোমিটারের",
+          "start": 12.78,
+          "end": 13.34
+        },
+        {
+          "word": "জন্য",
+          "start": 13.34,
+          "end": 13.78
+        },
+        {
+          "word": "Express",
+          "start": 13.78,
+          "end": 14.32
+        },
+        {
+          "word": "charge",
+          "start": 14.32,
+          "end": 14.64
+        },
+        {
+          "word": "দাঁড়ায়",
+          "start": 14.64,
+          "end": 15
+        },
+        {
+          "word": "৬০",
+          "start": 15,
+          "end": 15.42
+        },
+        {
+          "word": "যোগ",
+          "start": 15.42,
+          "end": 15.72
+        },
+        {
+          "word": "৪০,",
+          "start": 15.72,
+          "end": 16.47
+        },
+        {
+          "word": "অর্থাৎ",
+          "start": 16.47,
+          "end": 16.84
+        },
+        {
+          "word": "১০০",
+          "start": 16.84,
+          "end": 17.3
+        },
+        {
+          "word": "টাকা।",
+          "start": 17.3,
+          "end": 17.6
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 120
+    },
+    {
+      "id": 3,
+      "duration_sec": 16.91,
+      "narration": "এই দুই নিয়ম একটা if/else দিয়েই লেখা যায়। এখন ধরো দোকান Same Day delivery চালু করলো, সেটার charge আবার অর্ডারের সময়ের ওপর নির্ভর করে। পরের মাসে শুধু Express-এর rate বাড়ালো। সব হিসাব এক method-এ থাকলে, একটা নিয়ম বদলাতেও আমাদের সেই একই method খুলতে হয়।",
+      "on_screen_text": "*if/else*-এ সব নিয়ম",
+      "visual": "strategy3/ifelse",
+      "illustration": "strategy3/ifelse",
+      "image": null,
+      "audio": "audio/scene-3.mp3",
+      "captions": [
+        {
+          "word": "এই",
+          "start": 0,
+          "end": 0.28
+        },
+        {
+          "word": "দুই",
+          "start": 0.28,
+          "end": 0.56
+        },
+        {
+          "word": "নিয়ম",
+          "start": 0.56,
+          "end": 0.88
+        },
+        {
+          "word": "একটা",
+          "start": 0.88,
+          "end": 1.24
+        },
+        {
+          "word": "if/else",
+          "start": 1.24,
+          "end": 1.72
+        },
+        {
+          "word": "দিয়েই",
+          "start": 1.72,
+          "end": 2
+        },
+        {
+          "word": "লেখা",
+          "start": 2,
+          "end": 2.33
+        },
+        {
+          "word": "যায়।",
+          "start": 2.33,
+          "end": 2.94
+        },
+        {
+          "word": "এখন",
+          "start": 2.94,
+          "end": 3.16
+        },
+        {
+          "word": "ধরো",
+          "start": 3.16,
+          "end": 3.48
+        },
+        {
+          "word": "দোকান",
+          "start": 3.48,
+          "end": 3.92
+        },
+        {
+          "word": "Same",
+          "start": 3.92,
+          "end": 4.3
+        },
+        {
+          "word": "Day",
+          "start": 4.3,
+          "end": 4.46
+        },
+        {
+          "word": "delivery",
+          "start": 4.46,
+          "end": 4.84
+        },
+        {
+          "word": "চালু",
+          "start": 4.84,
+          "end": 5.1
+        },
+        {
+          "word": "করলো,",
+          "start": 5.1,
+          "end": 5.72
+        },
+        {
+          "word": "সেটার",
+          "start": 5.72,
+          "end": 6.09
+        },
+        {
+          "word": "charge",
+          "start": 6.09,
+          "end": 6.43
+        },
+        {
+          "word": "আবার",
+          "start": 6.43,
+          "end": 6.75
+        },
+        {
+          "word": "অর্ডারের",
+          "start": 6.75,
+          "end": 7.23
+        },
+        {
+          "word": "সময়ের",
+          "start": 7.23,
+          "end": 7.81
+        },
+        {
+          "word": "ওপর",
+          "start": 7.81,
+          "end": 8.04
+        },
+        {
+          "word": "নির্ভর",
+          "start": 8.04,
+          "end": 8.27
+        },
+        {
+          "word": "করে।",
+          "start": 8.27,
+          "end": 8.85
+        },
+        {
+          "word": "পরের",
+          "start": 8.85,
+          "end": 9.11
+        },
+        {
+          "word": "মাসে",
+          "start": 9.11,
+          "end": 9.41
+        },
+        {
+          "word": "শুধু",
+          "start": 9.41,
+          "end": 9.73
+        },
+        {
+          "word": "Express-এর",
+          "start": 9.73,
+          "end": 10.39
+        },
+        {
+          "word": "rate",
+          "start": 10.39,
+          "end": 10.57
+        },
+        {
+          "word": "বাড়ালো।",
+          "start": 10.57,
+          "end": 11.38
+        },
+        {
+          "word": "সব",
+          "start": 11.38,
+          "end": 11.73
+        },
+        {
+          "word": "হিসাব",
+          "start": 11.73,
+          "end": 12.15
+        },
+        {
+          "word": "এক",
+          "start": 12.15,
+          "end": 12.47
+        },
+        {
+          "word": "method-এ",
+          "start": 12.47,
+          "end": 12.87
+        },
+        {
+          "word": "থাকলে,",
+          "start": 12.87,
+          "end": 13.37
+        },
+        {
+          "word": "একটা",
+          "start": 13.37,
+          "end": 13.79
+        },
+        {
+          "word": "নিয়ম",
+          "start": 13.79,
+          "end": 14.07
+        },
+        {
+          "word": "বদলাতেও",
+          "start": 14.07,
+          "end": 14.61
+        },
+        {
+          "word": "আমাদের",
+          "start": 14.61,
+          "end": 14.97
+        },
+        {
+          "word": "সেই",
+          "start": 14.97,
+          "end": 15.17
+        },
+        {
+          "word": "একই",
+          "start": 15.17,
+          "end": 15.61
+        },
+        {
+          "word": "method",
+          "start": 15.61,
+          "end": 15.91
+        },
+        {
+          "word": "খুলতে",
+          "start": 15.91,
+          "end": 16.29
+        },
+        {
+          "word": "হয়।",
+          "start": 16.29,
+          "end": 16.59
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 103
+    },
+    {
+      "id": 4,
+      "duration_sec": 11.01,
+      "narration": "এখানে খেয়াল করো, checkout প্রতিবার একই প্রশ্ন করছে: এই অর্ডারে delivery charge কত? শুধু উত্তর বের করার নিয়মটা বদলাচ্ছে। এই নিয়মগুলোকেই আমরা আলাদা strategy বানাবো।",
+      "on_screen_text": "প্রশ্ন *একই*, নিয়ম *আলাদা*",
+      "visual": "strategy3/question",
+      "illustration": "strategy3/question",
+      "image": null,
+      "audio": "audio/scene-4.mp3",
+      "captions": [
+        {
+          "word": "এখানে",
+          "start": 0,
+          "end": 0.36
+        },
+        {
+          "word": "খেয়াল",
+          "start": 0.36,
+          "end": 1.19
+        },
+        {
+          "word": "করো,",
+          "start": 1.19,
+          "end": 1.24
+        },
+        {
+          "word": "checkout",
+          "start": 1.24,
+          "end": 1.56
+        },
+        {
+          "word": "প্রতিবার",
+          "start": 1.56,
+          "end": 2.1
+        },
+        {
+          "word": "একই",
+          "start": 2.1,
+          "end": 2.5
+        },
+        {
+          "word": "প্রশ্ন",
+          "start": 2.5,
+          "end": 2.82
+        },
+        {
+          "word": "করছে:",
+          "start": 2.82,
+          "end": 3.52
+        },
+        {
+          "word": "এই",
+          "start": 3.52,
+          "end": 3.68
+        },
+        {
+          "word": "অর্ডারে",
+          "start": 3.68,
+          "end": 4.02
+        },
+        {
+          "word": "delivery",
+          "start": 4.02,
+          "end": 4.5
+        },
+        {
+          "word": "charge",
+          "start": 4.5,
+          "end": 4.78
+        },
+        {
+          "word": "কত?",
+          "start": 4.78,
+          "end": 5.44
+        },
+        {
+          "word": "শুধু",
+          "start": 5.44,
+          "end": 5.7
+        },
+        {
+          "word": "উত্তর",
+          "start": 5.7,
+          "end": 6.16
+        },
+        {
+          "word": "বের",
+          "start": 6.16,
+          "end": 6.36
+        },
+        {
+          "word": "করার",
+          "start": 6.36,
+          "end": 6.66
+        },
+        {
+          "word": "নিয়মটা",
+          "start": 6.66,
+          "end": 7.16
+        },
+        {
+          "word": "বদলাচ্ছে।",
+          "start": 7.16,
+          "end": 8.01
+        },
+        {
+          "word": "এই",
+          "start": 8.01,
+          "end": 8.2
+        },
+        {
+          "word": "নিয়মগুলোকেই",
+          "start": 8.2,
+          "end": 8.94
+        },
+        {
+          "word": "আমরা",
+          "start": 8.94,
+          "end": 9.24
+        },
+        {
+          "word": "আলাদা",
+          "start": 9.24,
+          "end": 9.7
+        },
+        {
+          "word": "strategy",
+          "start": 9.7,
+          "end": 10.16
+        },
+        {
+          "word": "বানাবো।",
+          "start": 10.16,
+          "end": 10.56
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 145
+    },
+    {
+      "id": 5,
+      "duration_sec": 16.16,
+      "narration": "PHP-তে প্রথমে একটা interface লিখি: DeliveryStrategy। এতে একটাই method রাখি: fee। এই উদাহরণে fee দূরত্ব নেয়, আর পূর্ণ টাকায় charge ফেরত দেয়। Interface-টা বলে দেয় checkout কীভাবে হিসাব চাইবে। হিসাবের সূত্রটা থাকবে প্রতিটি class-এর ভেতরে।",
+      "on_screen_text": "*Strategy* interface",
+      "visual": "strategy3/interface",
+      "illustration": "strategy3/interface",
+      "image": null,
+      "audio": "audio/scene-5.mp3",
+      "captions": [
+        {
+          "word": "PHP-তে",
+          "start": 0.19,
+          "end": 0.7
+        },
+        {
+          "word": "প্রথমে",
+          "start": 0.7,
+          "end": 1.14
+        },
+        {
+          "word": "একটা",
+          "start": 1.14,
+          "end": 1.32
+        },
+        {
+          "word": "interface",
+          "start": 1.32,
+          "end": 1.86
+        },
+        {
+          "word": "লিখি:",
+          "start": 1.86,
+          "end": 2.35
+        },
+        {
+          "word": "DeliveryStrategy।",
+          "start": 2.35,
+          "end": 3.79
+        },
+        {
+          "word": "এতে",
+          "start": 3.79,
+          "end": 4.02
+        },
+        {
+          "word": "একটাই",
+          "start": 4.02,
+          "end": 4.46
+        },
+        {
+          "word": "method",
+          "start": 4.46,
+          "end": 4.78
+        },
+        {
+          "word": "রাখি:",
+          "start": 4.78,
+          "end": 5.34
+        },
+        {
+          "word": "fee।",
+          "start": 5.34,
+          "end": 6.02
+        },
+        {
+          "word": "এই",
+          "start": 6.02,
+          "end": 6.2
+        },
+        {
+          "word": "উদাহরণে",
+          "start": 6.2,
+          "end": 6.68
+        },
+        {
+          "word": "fee",
+          "start": 6.68,
+          "end": 7.04
+        },
+        {
+          "word": "দূরত্ব",
+          "start": 7.04,
+          "end": 7.62
+        },
+        {
+          "word": "নেয়,",
+          "start": 7.62,
+          "end": 7.82
+        },
+        {
+          "word": "আর",
+          "start": 7.82,
+          "end": 8.06
+        },
+        {
+          "word": "পূর্ণ",
+          "start": 8.06,
+          "end": 8.54
+        },
+        {
+          "word": "টাকায়",
+          "start": 8.54,
+          "end": 8.88
+        },
+        {
+          "word": "charge",
+          "start": 8.88,
+          "end": 9.22
+        },
+        {
+          "word": "ফেরত",
+          "start": 9.22,
+          "end": 9.64
+        },
+        {
+          "word": "দেয়।",
+          "start": 9.64,
+          "end": 10.15
+        },
+        {
+          "word": "Interface-টা",
+          "start": 10.15,
+          "end": 10.7
+        },
+        {
+          "word": "বলে",
+          "start": 10.7,
+          "end": 10.94
+        },
+        {
+          "word": "দেয়",
+          "start": 10.94,
+          "end": 11.29
+        },
+        {
+          "word": "checkout",
+          "start": 11.29,
+          "end": 11.64
+        },
+        {
+          "word": "কীভাবে",
+          "start": 11.64,
+          "end": 12.14
+        },
+        {
+          "word": "হিসাব",
+          "start": 12.14,
+          "end": 12.48
+        },
+        {
+          "word": "চাইবে।",
+          "start": 12.48,
+          "end": 13.13
+        },
+        {
+          "word": "হিসাবের",
+          "start": 13.13,
+          "end": 13.48
+        },
+        {
+          "word": "সূত্রটা",
+          "start": 13.48,
+          "end": 14
+        },
+        {
+          "word": "থাকবে",
+          "start": 14,
+          "end": 14.32
+        },
+        {
+          "word": "প্রতিটি",
+          "start": 14.32,
+          "end": 14.88
+        },
+        {
+          "word": "class-এর",
+          "start": 14.88,
+          "end": 15.26
+        },
+        {
+          "word": "ভেতরে।",
+          "start": 15.26,
+          "end": 15.7
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 82
+    },
+    {
+      "id": 6,
+      "duration_sec": 13.52,
+      "narration": "এবার StandardDelivery আর ExpressDelivery, দুটো class ওই interface implement করবে। StandardDelivery-র fee সবসময় ৬০ ফেরত দেবে। ExpressDelivery-র fee দূরত্বকে ১০ দিয়ে গুণ করে, তার সঙ্গে ৬০ যোগ করে।",
+      "on_screen_text": "দুটো *strategy* class",
+      "visual": "strategy3/classes",
+      "illustration": "strategy3/classes",
+      "image": null,
+      "audio": "audio/scene-6.mp3",
+      "captions": [
+        {
+          "word": "এবার",
+          "start": 0,
+          "end": 0.6
+        },
+        {
+          "word": "StandardDelivery",
+          "start": 0.6,
+          "end": 1.34
+        },
+        {
+          "word": "আর",
+          "start": 1.34,
+          "end": 1.6
+        },
+        {
+          "word": "ExpressDelivery,",
+          "start": 1.6,
+          "end": 2.74
+        },
+        {
+          "word": "দুটো",
+          "start": 2.74,
+          "end": 3.04
+        },
+        {
+          "word": "class",
+          "start": 3.04,
+          "end": 3.54
+        },
+        {
+          "word": "ওই",
+          "start": 3.54,
+          "end": 3.9
+        },
+        {
+          "word": "interface",
+          "start": 3.9,
+          "end": 4.28
+        },
+        {
+          "word": "implement",
+          "start": 4.28,
+          "end": 4.72
+        },
+        {
+          "word": "করবে।",
+          "start": 4.72,
+          "end": 5.44
+        },
+        {
+          "word": "StandardDelivery-র",
+          "start": 5.44,
+          "end": 6.32
+        },
+        {
+          "word": "fee",
+          "start": 6.32,
+          "end": 6.54
+        },
+        {
+          "word": "সবসময়",
+          "start": 6.54,
+          "end": 7.28
+        },
+        {
+          "word": "৬০",
+          "start": 7.28,
+          "end": 7.6
+        },
+        {
+          "word": "ফেরত",
+          "start": 7.6,
+          "end": 7.96
+        },
+        {
+          "word": "দেবে।",
+          "start": 7.96,
+          "end": 8.49
+        },
+        {
+          "word": "ExpressDelivery-র",
+          "start": 8.49,
+          "end": 9.32
+        },
+        {
+          "word": "fee",
+          "start": 9.32,
+          "end": 9.56
+        },
+        {
+          "word": "দূরত্বকে",
+          "start": 9.56,
+          "end": 10.26
+        },
+        {
+          "word": "১০",
+          "start": 10.26,
+          "end": 10.64
+        },
+        {
+          "word": "দিয়ে",
+          "start": 10.64,
+          "end": 10.92
+        },
+        {
+          "word": "গুণ",
+          "start": 10.92,
+          "end": 11.12
+        },
+        {
+          "word": "করে,",
+          "start": 11.12,
+          "end": 11.4
+        },
+        {
+          "word": "তার",
+          "start": 11.4,
+          "end": 11.76
+        },
+        {
+          "word": "সঙ্গে",
+          "start": 11.76,
+          "end": 12.12
+        },
+        {
+          "word": "৬০",
+          "start": 12.12,
+          "end": 12.54
+        },
+        {
+          "word": "যোগ",
+          "start": 12.54,
+          "end": 12.72
+        },
+        {
+          "word": "করে।",
+          "start": 12.72,
+          "end": 13.02
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 58
+    },
+    {
+      "id": 7,
+      "duration_sec": 14.33,
+      "narration": "এবার সেই click-এ ফিরে যাই। Customer Express বাছলো। Laravel controller প্রথমে যাচাই করে নেয়, Express আমাদের অনুমোদিত delivery option কিনা। তারপর ExpressDelivery object CheckoutService-কে দেয়। Screen-এ এই line-টা দেখো।",
+      "on_screen_text": "Click → *Controller*",
+      "visual": "strategy3/controller",
+      "illustration": "strategy3/controller",
+      "image": null,
+      "audio": "audio/scene-7.mp3",
+      "captions": [
+        {
+          "word": "এবার",
+          "start": 0,
+          "end": 0.4
+        },
+        {
+          "word": "সেই",
+          "start": 0.4,
+          "end": 0.45
+        },
+        {
+          "word": "click-এ",
+          "start": 0.45,
+          "end": 1
+        },
+        {
+          "word": "ফিরে",
+          "start": 1,
+          "end": 1.22
+        },
+        {
+          "word": "যাই।",
+          "start": 1.22,
+          "end": 1.75
+        },
+        {
+          "word": "Customer",
+          "start": 1.75,
+          "end": 2.18
+        },
+        {
+          "word": "Express",
+          "start": 2.18,
+          "end": 2.7
+        },
+        {
+          "word": "বাছলো।",
+          "start": 2.7,
+          "end": 3.44
+        },
+        {
+          "word": "Laravel",
+          "start": 3.44,
+          "end": 3.86
+        },
+        {
+          "word": "controller",
+          "start": 3.86,
+          "end": 4.38
+        },
+        {
+          "word": "প্রথমে",
+          "start": 4.38,
+          "end": 4.76
+        },
+        {
+          "word": "যাচাই",
+          "start": 4.76,
+          "end": 5.16
+        },
+        {
+          "word": "করে",
+          "start": 5.16,
+          "end": 5.43
+        },
+        {
+          "word": "নেয়,",
+          "start": 5.43,
+          "end": 5.8
+        },
+        {
+          "word": "Express",
+          "start": 5.8,
+          "end": 6.3
+        },
+        {
+          "word": "আমাদের",
+          "start": 6.3,
+          "end": 6.7
+        },
+        {
+          "word": "অনুমোদিত",
+          "start": 6.7,
+          "end": 7.36
+        },
+        {
+          "word": "delivery",
+          "start": 7.36,
+          "end": 7.76
+        },
+        {
+          "word": "option",
+          "start": 7.76,
+          "end": 8.14
+        },
+        {
+          "word": "কিনা।",
+          "start": 8.14,
+          "end": 8.89
+        },
+        {
+          "word": "তারপর",
+          "start": 8.89,
+          "end": 9.32
+        },
+        {
+          "word": "ExpressDelivery",
+          "start": 9.32,
+          "end": 10.26
+        },
+        {
+          "word": "object",
+          "start": 10.26,
+          "end": 11.25
+        },
+        {
+          "word": "CheckoutService-কে",
+          "start": 11.25,
+          "end": 12.06
+        },
+        {
+          "word": "দেয়।",
+          "start": 12.06,
+          "end": 12.61
+        },
+        {
+          "word": "Screen-এ",
+          "start": 12.61,
+          "end": 13.02
+        },
+        {
+          "word": "এই",
+          "start": 13.02,
+          "end": 13.16
+        },
+        {
+          "word": "line-টা",
+          "start": 13.16,
+          "end": 13.58
+        },
+        {
+          "word": "দেখো।",
+          "start": 13.58,
+          "end": 13.88
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 90
+    },
+    {
+      "id": 8,
+      "duration_sec": 17.83,
+      "narration": "Checkout তার strategy-র fee method-কে ৪ কিলোমিটার পাঠাচ্ছে। এবার strategy হলো ExpressDelivery, তাই ফল ১০০। Customer Standard বাছলে একই line-এ একই ৪ কিলোমিটার যেতো, কিন্তু StandardDelivery উত্তর দিতো ৬০। কোন সূত্র ব্যবহার হলো, সেটা checkout-এর জানার দরকারই পড়লো না।",
+      "on_screen_text": "Service → *fee()*",
+      "visual": "strategy3/service",
+      "illustration": "strategy3/service",
+      "image": null,
+      "audio": "audio/scene-8.mp3",
+      "captions": [
+        {
+          "word": "Checkout",
+          "start": 0.18,
+          "end": 0.58
+        },
+        {
+          "word": "তার",
+          "start": 0.58,
+          "end": 0.84
+        },
+        {
+          "word": "strategy-র",
+          "start": 0.84,
+          "end": 1.44
+        },
+        {
+          "word": "fee",
+          "start": 1.44,
+          "end": 1.68
+        },
+        {
+          "word": "method-কে",
+          "start": 1.68,
+          "end": 2.26
+        },
+        {
+          "word": "৪",
+          "start": 2.26,
+          "end": 2.62
+        },
+        {
+          "word": "কিলোমিটার",
+          "start": 2.62,
+          "end": 3.08
+        },
+        {
+          "word": "পাঠাচ্ছে।",
+          "start": 3.08,
+          "end": 3.89
+        },
+        {
+          "word": "এবার",
+          "start": 3.89,
+          "end": 4.12
+        },
+        {
+          "word": "strategy",
+          "start": 4.12,
+          "end": 4.64
+        },
+        {
+          "word": "হলো",
+          "start": 4.64,
+          "end": 4.92
+        },
+        {
+          "word": "ExpressDelivery,",
+          "start": 4.92,
+          "end": 6.13
+        },
+        {
+          "word": "তাই",
+          "start": 6.13,
+          "end": 6.28
+        },
+        {
+          "word": "ফল",
+          "start": 6.28,
+          "end": 6.62
+        },
+        {
+          "word": "১০০।",
+          "start": 6.62,
+          "end": 7.46
+        },
+        {
+          "word": "Customer",
+          "start": 7.46,
+          "end": 7.9
+        },
+        {
+          "word": "Standard",
+          "start": 7.9,
+          "end": 8.36
+        },
+        {
+          "word": "বাছলে",
+          "start": 8.36,
+          "end": 8.84
+        },
+        {
+          "word": "একই",
+          "start": 8.84,
+          "end": 9.32
+        },
+        {
+          "word": "line-এ",
+          "start": 9.32,
+          "end": 9.54
+        },
+        {
+          "word": "একই",
+          "start": 9.54,
+          "end": 10.08
+        },
+        {
+          "word": "৪",
+          "start": 10.08,
+          "end": 10.32
+        },
+        {
+          "word": "কিলোমিটার",
+          "start": 10.32,
+          "end": 10.78
+        },
+        {
+          "word": "যেতো,",
+          "start": 10.78,
+          "end": 11.37
+        },
+        {
+          "word": "কিন্তু",
+          "start": 11.37,
+          "end": 11.62
+        },
+        {
+          "word": "StandardDelivery",
+          "start": 11.62,
+          "end": 12.44
+        },
+        {
+          "word": "উত্তর",
+          "start": 12.44,
+          "end": 12.88
+        },
+        {
+          "word": "দিতো",
+          "start": 12.88,
+          "end": 13.2
+        },
+        {
+          "word": "৬০।",
+          "start": 13.2,
+          "end": 13.95
+        },
+        {
+          "word": "কোন",
+          "start": 13.95,
+          "end": 14.2
+        },
+        {
+          "word": "সূত্র",
+          "start": 14.2,
+          "end": 14.56
+        },
+        {
+          "word": "ব্যবহার",
+          "start": 14.56,
+          "end": 14.94
+        },
+        {
+          "word": "হলো,",
+          "start": 14.94,
+          "end": 15.2
+        },
+        {
+          "word": "সেটা",
+          "start": 15.2,
+          "end": 15.66
+        },
+        {
+          "word": "checkout-এর",
+          "start": 15.66,
+          "end": 16.08
+        },
+        {
+          "word": "জানার",
+          "start": 16.08,
+          "end": 16.4
+        },
+        {
+          "word": "দরকারই",
+          "start": 16.4,
+          "end": 16.9
+        },
+        {
+          "word": "পড়লো",
+          "start": 16.9,
+          "end": 17.24
+        },
+        {
+          "word": "না।",
+          "start": 17.24,
+          "end": 17.54
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 77
+    },
+    {
+      "id": 9,
+      "duration_sec": 15.97,
+      "narration": "তাহলে লাভটা কোথায়? কাল Express-এর প্রতি কিলোমিটার rate ১০ থেকে ১৫ টাকা হলে, শুধু ExpressDelivery-র হিসাবটুকু বদলাবো। একই ৪ কিলোমিটারে এবার charge হবে ১২০ টাকা। Standard-এর হিসাব আর checkout-এর ওই method, দুটোই আগের মতো কাজ করবে।",
+      "on_screen_text": "Rate *10 → 15*",
+      "visual": "strategy3/rate",
+      "illustration": "strategy3/rate",
+      "image": null,
+      "audio": "audio/scene-9.mp3",
+      "captions": [
+        {
+          "word": "তাহলে",
+          "start": 0,
+          "end": 0.42
+        },
+        {
+          "word": "লাভটা",
+          "start": 0.42,
+          "end": 0.91
+        },
+        {
+          "word": "কোথায়?",
+          "start": 0.91,
+          "end": 1.62
+        },
+        {
+          "word": "কাল",
+          "start": 1.62,
+          "end": 1.8
+        },
+        {
+          "word": "Express-এর",
+          "start": 1.8,
+          "end": 2.42
+        },
+        {
+          "word": "প্রতি",
+          "start": 2.42,
+          "end": 2.78
+        },
+        {
+          "word": "কিলোমিটার",
+          "start": 2.78,
+          "end": 3.3
+        },
+        {
+          "word": "rate",
+          "start": 3.3,
+          "end": 3.52
+        },
+        {
+          "word": "১০",
+          "start": 3.52,
+          "end": 3.94
+        },
+        {
+          "word": "থেকে",
+          "start": 3.94,
+          "end": 4.24
+        },
+        {
+          "word": "১৫",
+          "start": 4.24,
+          "end": 4.64
+        },
+        {
+          "word": "টাকা",
+          "start": 4.64,
+          "end": 4.9
+        },
+        {
+          "word": "হলে,",
+          "start": 4.9,
+          "end": 5.18
+        },
+        {
+          "word": "শুধু",
+          "start": 5.18,
+          "end": 5.23
+        },
+        {
+          "word": "ExpressDelivery-র",
+          "start": 5.23,
+          "end": 6.14
+        },
+        {
+          "word": "হিসাবটুকু",
+          "start": 6.14,
+          "end": 6.88
+        },
+        {
+          "word": "বদলাবো।",
+          "start": 6.88,
+          "end": 7.46
+        },
+        {
+          "word": "একই",
+          "start": 7.46,
+          "end": 7.76
+        },
+        {
+          "word": "৪",
+          "start": 7.76,
+          "end": 7.96
+        },
+        {
+          "word": "কিলোমিটারে",
+          "start": 7.96,
+          "end": 8.56
+        },
+        {
+          "word": "এবার",
+          "start": 8.56,
+          "end": 8.86
+        },
+        {
+          "word": "charge",
+          "start": 8.86,
+          "end": 9.26
+        },
+        {
+          "word": "হবে",
+          "start": 9.26,
+          "end": 9.52
+        },
+        {
+          "word": "১২০",
+          "start": 9.52,
+          "end": 10.2
+        },
+        {
+          "word": "টাকা।",
+          "start": 10.2,
+          "end": 10.82
+        },
+        {
+          "word": "Standard-এর",
+          "start": 10.82,
+          "end": 11.42
+        },
+        {
+          "word": "হিসাব",
+          "start": 11.42,
+          "end": 11.84
+        },
+        {
+          "word": "আর",
+          "start": 11.84,
+          "end": 12.17
+        },
+        {
+          "word": "checkout-এর",
+          "start": 12.17,
+          "end": 12.6
+        },
+        {
+          "word": "ওই",
+          "start": 12.6,
+          "end": 12.84
+        },
+        {
+          "word": "method,",
+          "start": 12.84,
+          "end": 13.24
+        },
+        {
+          "word": "দুটোই",
+          "start": 13.24,
+          "end": 13.74
+        },
+        {
+          "word": "আগের",
+          "start": 13.74,
+          "end": 14.12
+        },
+        {
+          "word": "মতো",
+          "start": 14.12,
+          "end": 14.34
+        },
+        {
+          "word": "কাজ",
+          "start": 14.34,
+          "end": 14.56
+        },
+        {
+          "word": "করবে।",
+          "start": 14.56,
+          "end": 14.88
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 50
+    },
+    {
+      "id": 10,
+      "duration_sec": 10.41,
+      "narration": "আগের পর্বে Duck ওড়ার কাজটা দিয়েছিল FlyBehavior-কে। আজ CheckoutService ভাড়া হিসাবের কাজটা দিলো DeliveryStrategy-কে। নিজের project-এ সিদ্ধান্ত নিতে এভাবে মিলিয়ে দেখো।",
+      "on_screen_text": "একই *Pattern*",
+      "visual": "strategy3/recap",
+      "illustration": "strategy3/recap",
+      "image": null,
+      "audio": "audio/scene-10.mp3",
+      "captions": [
+        {
+          "word": "আগের",
+          "start": 0,
+          "end": 0.36
+        },
+        {
+          "word": "পর্বে",
+          "start": 0.36,
+          "end": 0.74
+        },
+        {
+          "word": "Duck",
+          "start": 0.74,
+          "end": 1.12
+        },
+        {
+          "word": "ওড়ার",
+          "start": 1.12,
+          "end": 1.5
+        },
+        {
+          "word": "কাজটা",
+          "start": 1.5,
+          "end": 1.9
+        },
+        {
+          "word": "দিয়েছিল",
+          "start": 1.9,
+          "end": 2.34
+        },
+        {
+          "word": "FlyBehavior-কে।",
+          "start": 2.34,
+          "end": 3.66
+        },
+        {
+          "word": "আজ",
+          "start": 3.66,
+          "end": 4.13
+        },
+        {
+          "word": "CheckoutService",
+          "start": 4.13,
+          "end": 4.9
+        },
+        {
+          "word": "ভাড়া",
+          "start": 4.9,
+          "end": 5.36
+        },
+        {
+          "word": "হিসাবের",
+          "start": 5.36,
+          "end": 5.74
+        },
+        {
+          "word": "কাজটা",
+          "start": 5.74,
+          "end": 6.14
+        },
+        {
+          "word": "দিলো",
+          "start": 6.14,
+          "end": 6.38
+        },
+        {
+          "word": "DeliveryStrategy-কে।",
+          "start": 6.38,
+          "end": 7.83
+        },
+        {
+          "word": "নিজের",
+          "start": 7.83,
+          "end": 8.14
+        },
+        {
+          "word": "project-এ",
+          "start": 8.14,
+          "end": 8.6
+        },
+        {
+          "word": "সিদ্ধান্ত",
+          "start": 8.6,
+          "end": 9.1
+        },
+        {
+          "word": "নিতে",
+          "start": 9.1,
+          "end": 9.24
+        },
+        {
+          "word": "এভাবে",
+          "start": 9.24,
+          "end": 9.47
+        },
+        {
+          "word": "মিলিয়ে",
+          "start": 9.47,
+          "end": 9.62
+        },
+        {
+          "word": "দেখো।",
+          "start": 9.62,
+          "end": 9.94
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 81
+    },
+    {
+      "id": 11,
+      "duration_sec": 11.15,
+      "narration": "শুধু একটা নির্দিষ্ট charge থাকলে config-এই রাখা যায়। আর একই কাজের কয়েকটা নিয়ম যখন আলাদাভাবে বদলায়, তখন Strategy Pattern কাজে আসে।",
+      "on_screen_text": "কখন *Strategy*?",
+      "visual": "strategy3/decision",
+      "illustration": "strategy3/decision",
+      "image": null,
+      "audio": "audio/scene-11.mp3",
+      "captions": [
+        {
+          "word": "শুধু",
+          "start": 0,
+          "end": 0.4
+        },
+        {
+          "word": "একটা",
+          "start": 0.4,
+          "end": 0.88
+        },
+        {
+          "word": "নির্দিষ্ট",
+          "start": 0.88,
+          "end": 1.4
+        },
+        {
+          "word": "charge",
+          "start": 1.4,
+          "end": 1.72
+        },
+        {
+          "word": "থাকলে",
+          "start": 1.72,
+          "end": 2.12
+        },
+        {
+          "word": "config-এই",
+          "start": 2.12,
+          "end": 2.68
+        },
+        {
+          "word": "রাখা",
+          "start": 2.68,
+          "end": 3.11
+        },
+        {
+          "word": "যায়।",
+          "start": 3.11,
+          "end": 3.43
+        },
+        {
+          "word": "আর",
+          "start": 3.43,
+          "end": 3.56
+        },
+        {
+          "word": "একই",
+          "start": 3.56,
+          "end": 3.94
+        },
+        {
+          "word": "কাজের",
+          "start": 3.94,
+          "end": 4.3
+        },
+        {
+          "word": "কয়েকটা",
+          "start": 4.3,
+          "end": 4.82
+        },
+        {
+          "word": "নিয়ম",
+          "start": 4.82,
+          "end": 5.06
+        },
+        {
+          "word": "যখন",
+          "start": 5.06,
+          "end": 5.36
+        },
+        {
+          "word": "আলাদাভাবে",
+          "start": 5.36,
+          "end": 6.04
+        },
+        {
+          "word": "বদলায়,",
+          "start": 6.04,
+          "end": 6.72
+        },
+        {
+          "word": "তখন",
+          "start": 6.72,
+          "end": 7.02
+        },
+        {
+          "word": "Strategy",
+          "start": 7.02,
+          "end": 7.6
+        },
+        {
+          "word": "Pattern",
+          "start": 7.6,
+          "end": 7.92
+        },
+        {
+          "word": "কাজে",
+          "start": 7.92,
+          "end": 8.2
+        },
+        {
+          "word": "আসে।",
+          "start": 8.2,
+          "end": 8.58
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null,
+      "voice_source": "recorded",
+      "segments": null,
+      "content_offset": 120
+    }
+  ],
+  "series": {
+    "name": "Strategy Pattern",
+    "part": 3
+  },
+  "voice_source": "recorded"
+}

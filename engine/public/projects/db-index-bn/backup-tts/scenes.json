@@ -1,0 +1,878 @@
+{
+  "project": "db-index-bn",
+  "title": "Database Index কেন Query Fast করে?",
+  "language": "bn",
+  "voice": "bn-IN-TanishaaNeural",
+  "sibling": null,
+  "fps": 30,
+  "theme": {
+    "bg": "#0d1117",
+    "bg2": "#1a2440",
+    "text": "#ffffff",
+    "accent": "#58a6ff",
+    "stroke": "#0d1117",
+    "font": "HindSiliguri"
+  },
+  "music": null,
+  "music_volume": 0.12,
+  "show_captions": true,
+  "scenes": [
+    {
+      "id": 1,
+      "duration_sec": 6.93,
+      "narration": "তোমার users table এ দশ লাখ row. আর একটা simple query নিচ্ছে প্রায় পাঁচ সেকেন্ড!",
+      "tts_text": "তোমার ইউজার্স টেবিলে দশ লাখ রো। আর একটা সিম্পল কোয়েরি নিচ্ছে প্রায় পাঁচ সেকেন্ড!",
+      "on_screen_text": "Query: *৫ সেকেন্ড* 😱",
+      "visual": "layout:terminal",
+      "layout": {
+        "type": "terminal",
+        "title": "psql — users (1,000,000 rows)",
+        "lines": [
+          {
+            "kind": "cmd",
+            "text": "SELECT * FROM users WHERE email = 'rahim@mail.com';"
+          },
+          {
+            "kind": "out",
+            "text": "  id    | email          | name"
+          },
+          {
+            "kind": "out",
+            "text": " 842117 | rahim@mail.com | Rahim"
+          },
+          {
+            "kind": "err",
+            "text": "(1 row)  Time: 4823 ms  🐢"
+          }
+        ]
+      },
+      "image": null,
+      "audio": "audio/scene-1.mp3",
+      "captions": [
+        {
+          "word": "তোমার",
+          "start": 0.05,
+          "end": 0.53
+        },
+        {
+          "word": "users",
+          "start": 0.53,
+          "end": 1.009
+        },
+        {
+          "word": "table",
+          "start": 1.009,
+          "end": 1.489
+        },
+        {
+          "word": "এ",
+          "start": 1.489,
+          "end": 1.649
+        },
+        {
+          "word": "দশ",
+          "start": 1.649,
+          "end": 1.889
+        },
+        {
+          "word": "লাখ",
+          "start": 1.889,
+          "end": 2.209
+        },
+        {
+          "word": "row.",
+          "start": 2.209,
+          "end": 2.608
+        },
+        {
+          "word": "আর",
+          "start": 2.608,
+          "end": 2.848
+        },
+        {
+          "word": "একটা",
+          "start": 2.848,
+          "end": 3.248
+        },
+        {
+          "word": "simple",
+          "start": 3.248,
+          "end": 3.808
+        },
+        {
+          "word": "query",
+          "start": 3.808,
+          "end": 4.287
+        },
+        {
+          "word": "নিচ্ছে",
+          "start": 4.287,
+          "end": 4.847
+        },
+        {
+          "word": "প্রায়",
+          "start": 4.847,
+          "end": 5.407
+        },
+        {
+          "word": "পাঁচ",
+          "start": 5.407,
+          "end": 5.806
+        },
+        {
+          "word": "সেকেন্ড!",
+          "start": 5.806,
+          "end": 6.526
+        }
+      ],
+      "transition": "none",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 2,
+      "duration_sec": 7.86,
+      "narration": "কারণ index ছাড়া database প্রতিটা row একটা একটা করে চেক করে। এটাকে বলে Full Table Scan.",
+      "tts_text": "কারণ ইনডেক্স ছাড়া ডেটাবেস প্রতিটা রো একটা একটা করে চেক করে। এটাকে বলে ফুল টেবিল স্ক্যান।",
+      "on_screen_text": "*Full Table Scan*",
+      "visual": "layout:table",
+      "layout": {
+        "type": "table",
+        "label": "Seq Scan",
+        "columns": [
+          "id",
+          "email",
+          "name"
+        ],
+        "rows": [
+          [
+            "1",
+            "karim@mail.com",
+            "Karim"
+          ],
+          [
+            "2",
+            "sadia@mail.com",
+            "Sadia"
+          ],
+          [
+            "3",
+            "tanvir@mail.com",
+            "Tanvir"
+          ],
+          [
+            "4",
+            "nusrat@mail.com",
+            "Nusrat"
+          ],
+          [
+            "…",
+            "… ৯,৯৯,৯৯০ rows …",
+            "…"
+          ],
+          [
+            "842117",
+            "rahim@mail.com",
+            "Rahim"
+          ],
+          [
+            "…",
+            "…",
+            "…"
+          ]
+        ],
+        "target": 5
+      },
+      "image": null,
+      "audio": "audio/scene-2.mp3",
+      "captions": [
+        {
+          "word": "কারণ",
+          "start": 0.05,
+          "end": 0.471
+        },
+        {
+          "word": "index",
+          "start": 0.471,
+          "end": 0.976
+        },
+        {
+          "word": "ছাড়া",
+          "start": 0.976,
+          "end": 1.482
+        },
+        {
+          "word": "database",
+          "start": 1.482,
+          "end": 2.24
+        },
+        {
+          "word": "প্রতিটা",
+          "start": 2.24,
+          "end": 2.914
+        },
+        {
+          "word": "row",
+          "start": 2.914,
+          "end": 3.251
+        },
+        {
+          "word": "একটা",
+          "start": 3.251,
+          "end": 3.672
+        },
+        {
+          "word": "একটা",
+          "start": 3.672,
+          "end": 4.093
+        },
+        {
+          "word": "করে",
+          "start": 4.093,
+          "end": 4.43
+        },
+        {
+          "word": "চেক",
+          "start": 4.43,
+          "end": 4.767
+        },
+        {
+          "word": "করে।",
+          "start": 4.767,
+          "end": 5.188
+        },
+        {
+          "word": "এটাকে",
+          "start": 5.188,
+          "end": 5.693
+        },
+        {
+          "word": "বলে",
+          "start": 5.693,
+          "end": 6.03
+        },
+        {
+          "word": "Full",
+          "start": 6.03,
+          "end": 6.451
+        },
+        {
+          "word": "Table",
+          "start": 6.451,
+          "end": 6.957
+        },
+        {
+          "word": "Scan.",
+          "start": 6.957,
+          "end": 7.462
+        }
+      ],
+      "transition": "slide",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 3,
+      "duration_sec": 8.25,
+      "narration": "ভাবো, একটা মোটা বইয়ে একটা শব্দ খুঁজছো। প্রথম পাতা থেকে পড়বে, নাকি পেছনের সূচিপত্র দেখবে?",
+      "tts_text": "ভাবো, একটা মোটা বইয়ে একটা শব্দ খুঁজছো। প্রথম পাতা থেকে পড়বে, নাকি পেছনের সূচিপত্র দেখবে?",
+      "on_screen_text": "বই vs *সূচিপত্র*",
+      "visual": "layout:compare",
+      "layout": {
+        "type": "compare",
+        "left": {
+          "title": "পাতা পাতা পড়া",
+          "icon": "📖",
+          "tone": "bad",
+          "items": [
+            "১০০০ পাতা",
+            "অনেক সময়"
+          ]
+        },
+        "right": {
+          "title": "সূচিপত্র দেখা",
+          "icon": "🔖",
+          "tone": "good",
+          "items": [
+            "সরাসরি পাতা ৪৫৬",
+            "কয়েক সেকেন্ড"
+          ]
+        }
+      },
+      "image": null,
+      "audio": "audio/scene-3.mp3",
+      "captions": [
+        {
+          "word": "ভাবো,",
+          "start": 0.05,
+          "end": 0.564
+        },
+        {
+          "word": "একটা",
+          "start": 0.564,
+          "end": 0.992
+        },
+        {
+          "word": "মোটা",
+          "start": 0.992,
+          "end": 1.421
+        },
+        {
+          "word": "বইয়ে",
+          "start": 1.421,
+          "end": 1.935
+        },
+        {
+          "word": "একটা",
+          "start": 1.935,
+          "end": 2.363
+        },
+        {
+          "word": "শব্দ",
+          "start": 2.363,
+          "end": 2.791
+        },
+        {
+          "word": "খুঁজছো।",
+          "start": 2.791,
+          "end": 3.477
+        },
+        {
+          "word": "প্রথম",
+          "start": 3.477,
+          "end": 3.991
+        },
+        {
+          "word": "পাতা",
+          "start": 3.991,
+          "end": 4.419
+        },
+        {
+          "word": "থেকে",
+          "start": 4.419,
+          "end": 4.848
+        },
+        {
+          "word": "পড়বে,",
+          "start": 4.848,
+          "end": 5.447
+        },
+        {
+          "word": "নাকি",
+          "start": 5.447,
+          "end": 5.876
+        },
+        {
+          "word": "পেছনের",
+          "start": 5.876,
+          "end": 6.475
+        },
+        {
+          "word": "সূচিপত্র",
+          "start": 6.475,
+          "end": 7.246
+        },
+        {
+          "word": "দেখবে?",
+          "start": 7.246,
+          "end": 7.846
+        }
+      ],
+      "transition": "slide",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 4,
+      "duration_sec": 8.85,
+      "narration": "Database index ঠিক এই সূচিপত্র। এটা data কে sorted B-Tree তে রাখে, তাই মাত্র কয়েক ধাপেই row পাওয়া যায়।",
+      "tts_text": "ডেটাবেস ইনডেক্স ঠিক এই সূচিপত্র। এটা ডেটাকে সর্টেড বি-ট্রিতে রাখে, তাই মাত্র কয়েক ধাপেই রো পাওয়া যায়।",
+      "on_screen_text": "Index = *B-Tree*",
+      "visual": "layout:tree",
+      "layout": {
+        "type": "tree",
+        "label": "idx_users_email",
+        "levels": [
+          [
+            "m"
+          ],
+          [
+            "a – l",
+            "m – z"
+          ],
+          [
+            "a–d",
+            "e–h",
+            "i–l",
+            "m–q",
+            "r–u",
+            "v–z"
+          ]
+        ],
+        "path": [
+          0,
+          1,
+          4
+        ],
+        "leaf": "rahim@mail.com → row 842117"
+      },
+      "image": null,
+      "audio": "audio/scene-4.mp3",
+      "captions": [
+        {
+          "word": "Database",
+          "start": 0.05,
+          "end": 0.763
+        },
+        {
+          "word": "index",
+          "start": 0.763,
+          "end": 1.238
+        },
+        {
+          "word": "ঠিক",
+          "start": 1.238,
+          "end": 1.555
+        },
+        {
+          "word": "এই",
+          "start": 1.555,
+          "end": 1.793
+        },
+        {
+          "word": "সূচিপত্র।",
+          "start": 1.793,
+          "end": 2.585
+        },
+        {
+          "word": "এটা",
+          "start": 2.585,
+          "end": 2.901
+        },
+        {
+          "word": "data",
+          "start": 2.901,
+          "end": 3.298
+        },
+        {
+          "word": "কে",
+          "start": 3.298,
+          "end": 3.535
+        },
+        {
+          "word": "sorted",
+          "start": 3.535,
+          "end": 4.09
+        },
+        {
+          "word": "B-Tree",
+          "start": 4.09,
+          "end": 4.644
+        },
+        {
+          "word": "তে",
+          "start": 4.644,
+          "end": 4.882
+        },
+        {
+          "word": "রাখে,",
+          "start": 4.882,
+          "end": 5.357
+        },
+        {
+          "word": "তাই",
+          "start": 5.357,
+          "end": 5.674
+        },
+        {
+          "word": "মাত্র",
+          "start": 5.674,
+          "end": 6.149
+        },
+        {
+          "word": "কয়েক",
+          "start": 6.149,
+          "end": 6.624
+        },
+        {
+          "word": "ধাপেই",
+          "start": 6.624,
+          "end": 7.099
+        },
+        {
+          "word": "row",
+          "start": 7.099,
+          "end": 7.416
+        },
+        {
+          "word": "পাওয়া",
+          "start": 7.416,
+          "end": 7.971
+        },
+        {
+          "word": "যায়।",
+          "start": 7.971,
+          "end": 8.446
+        }
+      ],
+      "transition": "slide",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 5,
+      "duration_sec": 5.41,
+      "narration": "Index বানানো খুব সহজ। শুধু এক লাইনের command.",
+      "tts_text": "ইনডেক্স বানানো খুব সহজ। শুধু এক লাইনের কমান্ড।",
+      "on_screen_text": "মাত্র *১ লাইন*",
+      "visual": "layout:code",
+      "layout": {
+        "type": "code",
+        "language": "sql",
+        "title": "add_index.sql",
+        "code": "CREATE INDEX idx_users_email\n  ON users (email);",
+        "highlight": [
+          1,
+          2
+        ]
+      },
+      "image": null,
+      "audio": "audio/scene-5.mp3",
+      "captions": [
+        {
+          "word": "Index",
+          "start": 0.05,
+          "end": 0.697
+        },
+        {
+          "word": "বানানো",
+          "start": 0.697,
+          "end": 1.453
+        },
+        {
+          "word": "খুব",
+          "start": 1.453,
+          "end": 1.885
+        },
+        {
+          "word": "সহজ।",
+          "start": 1.885,
+          "end": 2.424
+        },
+        {
+          "word": "শুধু",
+          "start": 2.424,
+          "end": 2.964
+        },
+        {
+          "word": "এক",
+          "start": 2.964,
+          "end": 3.287
+        },
+        {
+          "word": "লাইনের",
+          "start": 3.287,
+          "end": 4.043
+        },
+        {
+          "word": "command.",
+          "start": 4.043,
+          "end": 5.014
+        }
+      ],
+      "transition": "slide",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 6,
+      "duration_sec": 6.66,
+      "narration": "এবার সেই একই query, মাত্র তিন মিলিসেকেন্ড! প্রায় দেড় হাজার গুণ fast.",
+      "tts_text": "এবার সেই একই কোয়েরি, মাত্র তিন মিলিসেকেন্ড! প্রায় দেড় হাজার গুণ ফাস্ট।",
+      "on_screen_text": "*৪৮২৩ms → ৩ms* ⚡",
+      "visual": "layout:terminal",
+      "layout": {
+        "type": "terminal",
+        "title": "psql — users (1,000,000 rows)",
+        "lines": [
+          {
+            "kind": "cmd",
+            "text": "SELECT * FROM users WHERE email = 'rahim@mail.com';"
+          },
+          {
+            "kind": "info",
+            "text": "Index Scan using idx_users_email"
+          },
+          {
+            "kind": "ok",
+            "text": "(1 row)  Time: 3 ms  ⚡"
+          }
+        ]
+      },
+      "image": null,
+      "audio": "audio/scene-6.mp3",
+      "captions": [
+        {
+          "word": "এবার",
+          "start": 0.05,
+          "end": 0.487
+        },
+        {
+          "word": "সেই",
+          "start": 0.487,
+          "end": 0.837
+        },
+        {
+          "word": "একই",
+          "start": 0.837,
+          "end": 1.187
+        },
+        {
+          "word": "query,",
+          "start": 1.187,
+          "end": 1.8
+        },
+        {
+          "word": "মাত্র",
+          "start": 1.8,
+          "end": 2.325
+        },
+        {
+          "word": "তিন",
+          "start": 2.325,
+          "end": 2.675
+        },
+        {
+          "word": "মিলিসেকেন্ড!",
+          "start": 2.675,
+          "end": 3.812
+        },
+        {
+          "word": "প্রায়",
+          "start": 3.812,
+          "end": 4.425
+        },
+        {
+          "word": "দেড়",
+          "start": 4.425,
+          "end": 4.862
+        },
+        {
+          "word": "হাজার",
+          "start": 4.862,
+          "end": 5.387
+        },
+        {
+          "word": "গুণ",
+          "start": 5.387,
+          "end": 5.737
+        },
+        {
+          "word": "fast.",
+          "start": 5.737,
+          "end": 6.262
+        }
+      ],
+      "transition": "slide",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 7,
+      "duration_sec": 10.05,
+      "narration": "তবে সাবধান! Index insert আর update কে একটু slow করে, আর extra জায়গা নেয়। তাই শুধু দরকারি column এ index দাও।",
+      "tts_text": "তবে সাবধান! ইনডেক্স ইনসার্ট আর আপডেটকে একটু স্লো করে, আর এক্সট্রা জায়গা নেয়। তাই শুধু দরকারি কলামে ইনডেক্স দাও।",
+      "on_screen_text": "Index এর *trade-off*",
+      "visual": "layout:bullets",
+      "layout": {
+        "type": "bullets",
+        "items": [
+          {
+            "icon": "✅",
+            "text": "WHERE / JOIN এর column এ index"
+          },
+          {
+            "icon": "🐌",
+            "text": "INSERT / UPDATE একটু slow"
+          },
+          {
+            "icon": "💾",
+            "text": "Extra disk জায়গা নেয়"
+          }
+        ]
+      },
+      "image": null,
+      "audio": "audio/scene-7.mp3",
+      "captions": [
+        {
+          "word": "তবে",
+          "start": 0.05,
+          "end": 0.396
+        },
+        {
+          "word": "সাবধান!",
+          "start": 0.396,
+          "end": 1.087
+        },
+        {
+          "word": "Index",
+          "start": 1.087,
+          "end": 1.606
+        },
+        {
+          "word": "insert",
+          "start": 1.606,
+          "end": 2.211
+        },
+        {
+          "word": "আর",
+          "start": 2.211,
+          "end": 2.471
+        },
+        {
+          "word": "update",
+          "start": 2.471,
+          "end": 3.076
+        },
+        {
+          "word": "কে",
+          "start": 3.076,
+          "end": 3.335
+        },
+        {
+          "word": "একটু",
+          "start": 3.335,
+          "end": 3.767
+        },
+        {
+          "word": "slow",
+          "start": 3.767,
+          "end": 4.2
+        },
+        {
+          "word": "করে,",
+          "start": 4.2,
+          "end": 4.632
+        },
+        {
+          "word": "আর",
+          "start": 4.632,
+          "end": 4.891
+        },
+        {
+          "word": "extra",
+          "start": 4.891,
+          "end": 5.41
+        },
+        {
+          "word": "জায়গা",
+          "start": 5.41,
+          "end": 6.015
+        },
+        {
+          "word": "নেয়।",
+          "start": 6.015,
+          "end": 6.534
+        },
+        {
+          "word": "তাই",
+          "start": 6.534,
+          "end": 6.88
+        },
+        {
+          "word": "শুধু",
+          "start": 6.88,
+          "end": 7.312
+        },
+        {
+          "word": "দরকারি",
+          "start": 7.312,
+          "end": 7.917
+        },
+        {
+          "word": "column",
+          "start": 7.917,
+          "end": 8.522
+        },
+        {
+          "word": "এ",
+          "start": 8.522,
+          "end": 8.695
+        },
+        {
+          "word": "index",
+          "start": 8.695,
+          "end": 9.214
+        },
+        {
+          "word": "দাও।",
+          "start": 9.214,
+          "end": 9.646
+        }
+      ],
+      "transition": "slide",
+      "text_animation": "pop",
+      "text_position": "top",
+      "emoji": null
+    },
+    {
+      "id": 8,
+      "duration_sec": 3.54,
+      "narration": "এমন আরও tech tips পেতে follow করো!",
+      "tts_text": "এমন আরও টেক টিপস পেতে ফলো করো!",
+      "on_screen_text": "*Follow* করো 🚀",
+      "visual": "end card",
+      "layout": null,
+      "image": null,
+      "audio": "audio/scene-8.mp3",
+      "captions": [
+        {
+          "word": "এমন",
+          "start": 0.05,
+          "end": 0.403
+        },
+        {
+          "word": "আরও",
+          "start": 0.403,
+          "end": 0.757
+        },
+        {
+          "word": "tech",
+          "start": 0.757,
+          "end": 1.198
+        },
+        {
+          "word": "tips",
+          "start": 1.198,
+          "end": 1.64
+        },
+        {
+          "word": "পেতে",
+          "start": 1.64,
+          "end": 2.082
+        },
+        {
+          "word": "follow",
+          "start": 2.082,
+          "end": 2.7
+        },
+        {
+          "word": "করো!",
+          "start": 2.7,
+          "end": 3.142
+        }
+      ],
+      "transition": "zoom",
+      "text_animation": "pop",
+      "text_position": "center",
+      "emoji": "🗂️"
+    }
+  ],
+  "rate": "+5%"
+}

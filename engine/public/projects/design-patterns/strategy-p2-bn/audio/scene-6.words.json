@@ -1,0 +1,122 @@
+{
+ "duration": 7.3039375,
+ "words": [
+  {
+   "word": "Mallard",
+   "start": 0,
+   "end": 0.46
+  },
+  {
+   "word": "duck",
+   "start": 0.46,
+   "end": 0.68
+  },
+  {
+   "word": "ke",
+   "start": 0.68,
+   "end": 0.78
+  },
+  {
+   "word": "debo",
+   "start": 0.78,
+   "end": 1.04
+  },
+  {
+   "word": "fly",
+   "start": 1.04,
+   "end": 1.36
+  },
+  {
+   "word": "with",
+   "start": 1.36,
+   "end": 1.58
+  },
+  {
+   "word": "wings.",
+   "start": 1.58,
+   "end": 1.94
+  },
+  {
+   "word": "Rubber",
+   "start": 2.16,
+   "end": 2.6
+  },
+  {
+   "word": "duck",
+   "start": 2.6,
+   "end": 2.8
+  },
+  {
+   "word": "ke",
+   "start": 2.8,
+   "end": 2.96
+  },
+  {
+   "word": "debo",
+   "start": 2.96,
+   "end": 3.18
+  },
+  {
+   "word": "fly",
+   "start": 3.18,
+   "end": 3.56
+  },
+  {
+   "word": "no",
+   "start": 3.56,
+   "end": 3.8
+  },
+  {
+   "word": "way.",
+   "start": 3.8,
+   "end": 4.04
+  },
+  {
+   "word": "Aki",
+   "start": 4.24,
+   "end": 4.6
+  },
+  {
+   "word": "flying",
+   "start": 4.6,
+   "end": 4.94
+  },
+  {
+   "word": "behavior",
+   "start": 4.94,
+   "end": 5.42
+  },
+  {
+   "word": "onno",
+   "start": 5.42,
+   "end": 5.9
+  },
+  {
+   "word": "haasheu",
+   "start": 5.9,
+   "end": 6.3
+  },
+  {
+   "word": "reuse",
+   "start": 6.3,
+   "end": 6.56
+  },
+  {
+   "word": "kara",
+   "start": 6.56,
+   "end": 6.82
+  },
+  {
+   "word": "jabe.",
+   "start": 6.82,
+   "end": 7.06
+  }
+ ],
+ "segments": [
+  {
+   "start": 0,
+   "end": 7.14,
+   "text": "মালড ডক্যে দেব ভো ফলাই মিংসে মালেড ডক্যে দেবো ফলাই নো টাই নো হাইর কারা জাভে"
+  }
+ ]
+}
