@@ -2,10 +2,18 @@
 // FULL-SCREEN episode: no card/box/border. Important content stays inside y≈300–1500 so the
 // logo/badge (top) and captions (bottom, shadow style) keep equal margins and never cover it.
 // Ray diagrams use real concave-mirror reflection (circle arc, reflect about the normal).
+import { createContext, useContext } from "react";
 import { AbsoluteFill, interpolate } from "remotion";
 import type { IllustrationProps } from "../../../illustrations/registry";
 import { useT } from "../../../tech/anim";
 import { FONT, NAVY, PaperTexture, fade, kf } from "../common";
+
+// Layout knobs so later episodes can reuse these scenes inside StagePage. Defaults = episode 3 as rendered.
+// shift: px the content block moves down; badgeTop: series pill top; overscan: backgrounds extend below 1920;
+// paper: draw this file's own grain (off when StagePage already adds it); legendPlate: cream plate behind the
+// scene-5 legend so the outgoing ray doesn't cross its text.
+export type SpoonLayout = { shift: number; badgeTop: number; overscan: boolean; paper: boolean; legendPlate?: boolean };
+export const SpoonLayoutContext = createContext<SpoonLayout>({ shift: 120, badgeTop: 120, overscan: false, paper: true });
 
 const CREAM = "#FFF4E2";
 const PEACH = "#E9B797";
@@ -19,19 +27,21 @@ const HAIR = "#1b1b1f";
 // ---------- shared pieces ----------
 
 const Badge: React.FC = () => (
-  <div style={{ position: "absolute", left: 44, top: 120, padding: "6px 18px", borderRadius: 14, background: "rgba(32,50,71,0.88)", color: "#fff", fontFamily: FONT, fontWeight: 700, fontSize: 28 }}>
+  <div style={{ position: "absolute", left: 44, top: useContext(SpoonLayoutContext).badgeTop, padding: "6px 18px", borderRadius: 14, background: "rgba(32,50,71,0.88)", color: "#fff", fontFamily: FONT, fontWeight: 700, fontSize: 28 }}>
     hizibizi <span style={{ color: "#fde047" }}>|</span> Why Is That?
   </div>
 );
 
 // Full-screen content is shifted down so the focus sits at the frame centre (equal space above
 // the logo/badge and below the captions). Background colour = wall colour, so no gap shows.
-const SHIFT_Y = 120;
 const Shift: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <AbsoluteFill style={{ transform: `translateY(${SHIFT_Y}px)` }}>{children}</AbsoluteFill>
+  <AbsoluteFill style={{ transform: `translateY(${useContext(SpoonLayoutContext).shift}px)` }}>{children}</AbsoluteFill>
 );
+// extra height below the 1920 frame so shifted backgrounds never show a gap
+const useOver = () => (useContext(SpoonLayoutContext).overscan ? 500 : 0);
 
-const Paper: React.FC = () => (
+const Paper: React.FC = () => (useContext(SpoonLayoutContext).paper ? <PaperGrain /> : null);
+const PaperGrain: React.FC = () => (
   <div style={{ position: "absolute", inset: 0, pointerEvents: "none" }}>
     <div style={{ position: "relative", width: 1080, height: 1920 }}>
       <svg width={1080} height={1920} style={{ position: "absolute", left: 0, top: 0, mixBlendMode: "multiply", opacity: 0.06 }}>
@@ -158,26 +168,29 @@ export const SpoonFront: React.FC<{ cx: number; cy: number; rx: number; ry: numb
 };
 
 // Dining room background with soft side light
-export const Room: React.FC<{ tableY?: number }> = ({ tableY = 1380 }) => (
-  <svg width={1080} height={1920} style={{ position: "absolute", left: 0, top: 0 }}>
+export const Room: React.FC<{ tableY?: number }> = ({ tableY = 1380 }) => {
+  const over = useOver();
+  return (
+  <svg width={1080} height={1920} style={{ position: "absolute", left: 0, top: 0, overflow: over ? "visible" : undefined }}>
     <defs>
       <linearGradient id="sun" x1="0" x2="1">
         <stop offset="0" stopColor="#ffd98a" stopOpacity={0.55} />
         <stop offset="1" stopColor="#ffd98a" stopOpacity={0} />
       </linearGradient>
     </defs>
-    <rect width={1080} height={1920} fill={CREAM} />
+    <rect y={-over} width={1080} height={1920 + 2 * over} fill={CREAM} />
     <polygon points="0,220 0,1000 760,1380 420,1380" fill="url(#sun)" opacity={0.6} />
     <g>
       <rect x={-30} y={250} width={230} height={560} rx={20} fill="#ffe7b0" stroke={NAVY} strokeWidth={6} />
       <line x1={85} y1={250} x2={85} y2={810} stroke={NAVY} strokeWidth={5} />
       <line x1={-30} y1={530} x2={200} y2={530} stroke={NAVY} strokeWidth={5} />
     </g>
-    <rect x={0} y={tableY} width={1080} height={1920 - tableY} fill={PEACH} />
+    <rect x={0} y={tableY} width={1080} height={1920 + over - tableY} fill={PEACH} />
     <line x1={0} y1={tableY} x2={1080} y2={tableY} stroke={NAVY} strokeWidth={6} />
     <rect x={0} y={tableY + 28} width={1080} height={12} fill="#d99c78" />
   </svg>
-);
+  );
+};
 
 // Kid in side profile facing right, head centre (hx,hy), scale s. Optional arm holding a spoon (side view) at (sx,sy).
 const PROFILE = { forehead: [92, -78] as const, chin: [64, 112] as const };
@@ -266,16 +279,19 @@ const Ray: React.FC<{ a: V2; b: V2; amt: number; color: string; dotted?: boolean
 const Dot: React.FC<{ p: V2; color: string; appear: number; r?: number }> = ({ p, color, appear, r = 13 }) =>
   appear <= 0 ? null : <circle cx={p[0]} cy={p[1]} r={r * (0.6 + 0.4 * appear)} fill={color} stroke="#fff" strokeWidth={4} opacity={appear} />;
 
-const DiagramBG: React.FC<{ axis?: number; m?: Mirror }> = ({ axis = 0, m }) => (
-  <svg width={1080} height={1920} style={{ position: "absolute", left: 0, top: 0 }}>
-    <rect width={1080} height={1920} fill={CREAM} />
+const DiagramBG: React.FC<{ axis?: number; m?: Mirror }> = ({ axis = 0, m }) => {
+  const over = useOver();
+  return (
+  <svg width={1080} height={1920} style={{ position: "absolute", left: 0, top: 0, overflow: over ? "visible" : undefined }}>
+    <rect y={-over} width={1080} height={1920 + 2 * over} fill={CREAM} />
     {m && axis > 0 ? (
       <g opacity={axis}>
         <line x1={20} y1={m.cy} x2={1060} y2={m.cy} stroke={NAVY} strokeWidth={3} strokeDasharray="14 12" opacity={0.55} />
       </g>
     ) : null}
   </svg>
-);
+  );
+};
 
 // ---------- scenes ----------
 const CYD = 880; // diagram axis (screen centre of the content block)
@@ -491,6 +507,9 @@ const Near: React.FC<IllustrationProps> = () => {
   const virt = meet(rs[0].M, rs[0].r, rs[1].M, rs[1].r); // behind the mirror (x > vx)
   const seg = (a: number, d = 0.8) => interpolate(t, [a, a + d], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   const big = fade(t, 9.48, 1.0);
+  const plate = useContext(SpoonLayoutContext).legendPlate
+    ? { background: "rgba(255,244,226,0.94)", padding: "8px 18px", borderRadius: 18, left: 44 }
+    : {};
   const mag = (virt[1] - m.cy) / (P[1] - m.cy);
   const gs = mag * h.s;
   return (
@@ -529,7 +548,7 @@ const Near: React.FC<IllustrationProps> = () => {
       <Tag x={800} y={330} text="চামচের পেছনে" appear={fade(t, 8.54)} color="#ffffff" size={30} />
       <Tag x={860} y={1380} text="বড়, সোজা মুখ" appear={fade(t, 10.0)} color="#c9f1ec" size={34} />
       {/* legend: solid = real path, dotted = where the eye thinks it comes from */}
-      <div style={{ position: "absolute", left: 60, top: 1250, fontFamily: FONT, fontWeight: 700, fontSize: 28, color: NAVY, opacity: fade(t, 7.04), lineHeight: 1.6 }}>
+      <div style={{ position: "absolute", left: 60, top: 1250, fontFamily: FONT, fontWeight: 700, fontSize: 28, color: NAVY, opacity: fade(t, 7.04), lineHeight: 1.6, ...plate }}>
         <div>
           <span style={{ display: "inline-block", width: 60, borderTop: `6px solid ${AMBER}`, verticalAlign: "middle", marginRight: 12 }} />
           আলোর আসল পথ

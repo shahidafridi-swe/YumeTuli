@@ -135,6 +135,37 @@ export const SorbotThumb: React.FC = () => (
   </AbsoluteFill>
 );
 
+// Spoon mirror test (YumeTuli #14) — far spoon upside-down vs near spoon upright. Block centred:
+// 165 px above the pill/logo = 165 px below the spoon handles (handle tip = cy + 3.35·ry).
+const SpoonChip: React.FC<{ x: number; text: string; bg: string }> = ({ x, text, bg }) => (
+  <div style={{ position: "absolute", left: x, top: 570, transform: "translate(-50%,-50%)", padding: "6px 26px", borderRadius: 999, background: bg, border: "5px solid #203247", color: "#203247", fontSize: 48, fontWeight: 700, whiteSpace: "nowrap", boxShadow: "0 7px 0 rgba(32,50,71,0.22)" }}>
+    {text}
+  </div>
+);
+export const SpoonTestThumb: React.FC = () => (
+  <AbsoluteFill style={{ background: "#FFF4E2", fontFamily: `${HIND}, sans-serif`, overflow: "hidden" }}>
+    <Img src={staticFile("brand/hizibizi-logo.png")} style={{ position: "absolute", top: 165, right: 70, width: 300 }} />
+    <div style={{ position: "absolute", top: 180, left: 70, padding: "8px 26px", borderRadius: 18, background: "#203247", color: "#fff", fontSize: 40, fontWeight: 700 }}>
+      hizibizi <span style={{ color: "#fde047" }}>|</span> Why Is That?
+    </div>
+    <div style={{ position: "absolute", top: 310, left: 0, right: 0, textAlign: "center", fontSize: 102, fontWeight: 700, lineHeight: 1.1, color: "#203247" }}>
+      চামচে মুখ <span style={{ color: "#C47A00" }}>উল্টো</span> কেন?
+    </div>
+    <svg width={1080} height={1920} style={{ position: "absolute", left: 0, top: 0 }}>
+      <ellipse cx={290} cy={1725} rx={150} ry={22} fill="rgba(32,50,71,0.12)" />
+      <ellipse cx={790} cy={1725} rx={150} ry={22} fill="rgba(32,50,71,0.12)" />
+      <g transform="rotate(-6 290 960)">
+        <SpoonFront cx={290} cy={895} rx={205} ry={250} flip={0} id="thumbFar" />
+      </g>
+      <g transform="rotate(6 790 960)">
+        <SpoonFront cx={790} cy={895} rx={205} ry={250} flip={1} id="thumbNear" />
+      </g>
+    </svg>
+    <SpoonChip x={290} text="দূরে: উল্টো" bg="#ffe2a8" />
+    <SpoonChip x={790} text="কাছে: সোজা" bg="#c9f1ec" />
+  </AbsoluteFill>
+);
+
 // পর্ব ৩ — the upside-down face in a spoon. Block centred (equal space above pill and below spoon).
 export const SpoonThumb: React.FC = () => (
   <AbsoluteFill style={{ background: "#FFF4E2", fontFamily: `${HIND}, sans-serif`, overflow: "hidden" }}>

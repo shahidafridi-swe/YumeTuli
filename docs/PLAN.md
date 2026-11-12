@@ -285,7 +285,7 @@ claude -p "Feedback: <text>. Fix, re-render, print RESULT." --resume <session_id
 | 3 | API core | login, series seed, video create with upload, migrations, tests |
 | 4 | Runs | plan/approve/feedback jobs run Claude, events stored and broadcast, RESULT parsed into versions |
 | 5 | Web UI | all Phase 1 pages, live log, preview, downloads, light/dark, i18n |
-| 6 | Acceptance | spoon rebuilt end-to-end from the browser, README written |
+| 6 | Acceptance | spoon rebuilt end-to-end from the browser, README written — **done 2026-11-12**: plan 1m 24s, build 10m 3s, 73.6 s video (69.6 s + 4 s outro), −16.6 LUFS like the CLI cut, episode 3 still renders identically (SSIM 1.0) |
 
 Each milestone ends with something you can run and see.
 

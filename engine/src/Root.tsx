@@ -2,7 +2,7 @@ import { Composition, Still } from "remotion";
 import { BrandOutro, OUTRO_FRAMES } from "./brand/BrandOutro";
 import { Thumb1, Thumb2, Thumb3 } from "./thumbs/StrategyThumbs";
 import { ObserverThumb1, ObserverThumb2 } from "./thumbs/ObserverThumbs";
-import { SorbotThumb, SpoonThumb, ZipperThumb } from "./thumbs/HizibiziThumbs";
+import { SorbotThumb, SpoonTestThumb, SpoonThumb, ZipperThumb } from "./thumbs/HizibiziThumbs";
 import { Test3D } from "./three/Test3D";
 import { Short } from "./Short";
 import type { ShortProps } from "./types";
@@ -15,6 +15,7 @@ export const totalFrames = (p: ShortProps) =>
 export const RemotionRoot: React.FC = () => (
   <>
   <Still id="HizibiziSpoonThumb" component={SpoonThumb} width={1080} height={1920} />
+  <Still id="HizibiziSpoonTestThumb" component={SpoonTestThumb} width={1080} height={1920} />
   <Still id="HizibiziSorbotThumb" component={SorbotThumb} width={1080} height={1920} />
   <Still id="HizibiziZipperThumb" component={ZipperThumb} width={1080} height={1920} />
   <Composition id="OutroDevDiary" component={BrandOutro} width={1080} height={1920} fps={30} durationInFrames={OUTRO_FRAMES} defaultProps={{ brand: "devdiary" as const }} />

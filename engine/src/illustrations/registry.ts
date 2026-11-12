@@ -13,6 +13,7 @@ import { OBSERVER_P2 } from "../stories/design-patterns/observer-p2/Scenes";
 import { ZIPPER } from "../stories/hizibizi/zipper/Scenes";
 import { SORBOT } from "../stories/hizibizi/sorbot/Scenes";
 import { SPOON } from "../stories/hizibizi/spoon/Scenes";
+import { SPOON_TEST } from "../stories/hizibizi/spoon-mirror-test/Scenes";
 
 export type IllustrationProps = { scene: Scene; theme: Theme };
 
@@ -25,6 +26,7 @@ export const ILLUSTRATIONS: Record<string, React.FC<IllustrationProps>> = {
   ...ZIPPER,
   ...SORBOT,
   ...SPOON,
+  ...SPOON_TEST,
   "ball/play": Ball.Play,
   "ball/splash": Ball.Splash,
   "ball/reach": Ball.Reach,

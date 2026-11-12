@@ -53,5 +53,6 @@ The queue worker keeps code in memory: `docker compose restart worker`.
 Reverb runs on `ws://localhost:8080` (key `REVERB_APP_KEY`). Channel `private-video.<id>`, auth via
 `POST /api/v1/broadcasting/auth` with the JWT. Events: `run.updated`, `run.event`.
 
-Status: Milestone 5 done (web UI: login, dashboard, videos, new/edit video, live run page, plan approval,
-versions + downloads, series, settings, light/dark, i18n-ready). See `docs/PLAN.md`.
+Status: Phase 1 done (Milestones 0–6). Acceptance: the hizibizi spoon episode was rebuilt end to end from the
+browser flow (plan ~2 min, build ~10 min) and matches the CLI episode (same voice timing and loudness, current
+house rules applied, brand outro added). Videos can be vertical 9:16 or landscape 16:9. See `docs/PLAN.md`.
