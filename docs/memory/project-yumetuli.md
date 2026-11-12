@@ -16,3 +16,5 @@ User decisions:
 
 **Why:** user wants to stop chatting in the CLI and drive video generation + posting from a UI.
 **How to apply:** follow docs/PLAN.md milestones; ask approval before starting code (user prefers explain-first, [[user-profile]]). Related: [[video-request-workflow]].
+
+Update 2026-11-12: Milestones 0–5 done (Docker, API with JWT, Claude runs, web UI). User asked for a format choice per video: vertical 9:16 (default) or landscape 16:9 — implemented end to end (scenes.json `format`, engine `src/format.ts`).
