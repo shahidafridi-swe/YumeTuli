@@ -216,11 +216,17 @@ claude -p "Feedback: <text>. Fix, re-render, print RESULT." --resume <session_id
 
 ### UI rules
 - **Black and white only:** grey shades are allowed, no brand colours. Status uses shape, icon and text, not colour.
-- **Theme:** CSS variables (`--bg`, `--fg`, `--muted`, `--border`) with `light`, `dark` and `system` options. Saved in the cookie and the user row, with no flash on load.
-- **Stack:** Tailwind CSS + shadcn/ui (restyled to monochrome), TanStack Query for data, Laravel Echo for Reverb.
-- **i18n:** `next-intl`.
-  - All text lives in `web/messages/en.json`, and locale is in the URL (`/en/...`).
-  - Bangla later means adding `bn.json` with a Bangla font.
+- **Theme:** CSS variables with `light`, `dark` and `system` options.
+  - The choice is saved in the `yt_theme` cookie and the profile.
+  - An inline script sets `<html data-theme>` before first paint, so there is no flash.
+- **BFF:**
+  - `src/app/api/[...path]/route.ts` forwards to Laravel with the JWT from the httpOnly `yt_token` cookie, and refreshes once on 401.
+  - `src/proxy.ts` sends guests to `/login` and refreshes the token when it is under 60 s from expiry.
+  - Login and logout are server actions.
+- **Stack:** Tailwind CSS 4 with small own components (`web/src/components/ui`), lucide icons, TanStack Query for data, Laravel Echo + pusher-js for Reverb, react-markdown for plans.
+- **i18n:** a small own layer (`web/src/i18n`) instead of next-intl, because Next 16 Cache Components and next-intl's routing do not fit together cleanly yet.
+  - All text lives in `web/src/i18n/messages/en.json`. Keys are type-checked: a missing key fails `tsc`.
+  - Adding Bangla means `bn.json` plus an entry in `LOCALES`/`CATALOGS` and in the API's `locales`. The Hind Siliguri font is already loaded.
   - Laravel uses `lang/en/*.php` for API messages.
   - Dates are formatted with Intl in the user's timezone (Asia/Dhaka).
 

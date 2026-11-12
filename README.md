@@ -17,7 +17,7 @@ cp .env.example .env      # fill APP_KEY (base64:…32 random bytes), DB_PASSWOR
 docker compose up -d --wait
 ```
 
-- Web: http://localhost:3000 (shows system status)
+- Web: http://localhost:3000 (log in with OWNER_EMAIL / OWNER_PASSWORD)
 - API health: http://localhost:8000/api/v1/health
 - Queue smoke test: `docker compose exec api php artisan tinker --execute="App\Jobs\PingJob::dispatch();"`
   then `docker compose logs worker`
@@ -53,4 +53,5 @@ The queue worker keeps code in memory: `docker compose restart worker`.
 Reverb runs on `ws://localhost:8080` (key `REVERB_APP_KEY`). Channel `private-video.<id>`, auth via
 `POST /api/v1/broadcasting/auth` with the JWT. Events: `run.updated`, `run.event`.
 
-Status: Milestone 4 done (plan → approve → build → feedback runs with Claude, live log, cancel, retry). See `docs/PLAN.md`.
+Status: Milestone 5 done (web UI: login, dashboard, videos, new/edit video, live run page, plan approval,
+versions + downloads, series, settings, light/dark, i18n-ready). See `docs/PLAN.md`.

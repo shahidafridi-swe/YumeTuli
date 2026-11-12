@@ -1,32 +1,72 @@
 @import "tailwindcss";
 
-/* YumeTuli palette: black, white and greys only. */
+/* YumeTuli palette: black, white and greys only. Status uses shape + text, never colour. */
 :root {
   --background: #ffffff;
   --foreground: #0a0a0a;
+  --surface: #fafafa;
   --muted: #6b6b6b;
   --border: #e5e5e5;
+  --strong-border: #a3a3a3;
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #fafafa;
+  --surface: #141414;
+  --muted: #a3a3a3;
+  --border: #262626;
+  --strong-border: #525252;
+  color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]):not([data-theme="dark"]),
+  :root[data-theme="system"] {
     --background: #0a0a0a;
     --foreground: #fafafa;
+    --surface: #141414;
     --muted: #a3a3a3;
     --border: #262626;
+    --strong-border: #525252;
+    color-scheme: dark;
   }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
   --color-muted: var(--muted);
   --color-border: var(--border);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-strong: var(--strong-border);
+  --font-sans: var(--font-geist-sans), var(--font-bangla), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
 }
+
+:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
+}
+
+/* Markdown (plans) */
+.prose-mono h1 { font-size: 1.35rem; font-weight: 600; margin: 1.2em 0 0.5em; }
+.prose-mono h2 { font-size: 1.1rem; font-weight: 600; margin: 1.2em 0 0.4em; }
+.prose-mono h3 { font-weight: 600; margin: 1em 0 0.3em; }
+.prose-mono p { margin: 0.5em 0; line-height: 1.65; }
+.prose-mono ul { list-style: disc; padding-left: 1.3em; margin: 0.4em 0; }
+.prose-mono ol { list-style: decimal; padding-left: 1.3em; margin: 0.4em 0; }
+.prose-mono li { margin: 0.2em 0; line-height: 1.6; }
+.prose-mono code { font-family: var(--font-mono); font-size: 0.85em; background: var(--surface); border: 1px solid var(--border); border-radius: 4px; padding: 0 0.3em; }
+.prose-mono pre { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 0.8em; overflow-x: auto; }
+.prose-mono pre code { border: 0; padding: 0; }
+.prose-mono table { border-collapse: collapse; margin: 0.6em 0; font-size: 0.9em; display: block; overflow-x: auto; }
+.prose-mono th, .prose-mono td { border: 1px solid var(--border); padding: 0.35em 0.6em; text-align: left; vertical-align: top; }
+.prose-mono strong { font-weight: 600; }
+.prose-mono a { text-decoration: underline; }

@@ -1,0 +1,248 @@
+{
+  "common": {
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "previous": "Previous",
+    "next": "Next",
+    "pageOf": "Page {page} of {total}",
+    "notFound": "Not found",
+    "unexpectedError": "Something went wrong. Please try again."
+  },
+  "nav": {
+    "main": "Main",
+    "dashboard": "Dashboard",
+    "videos": "Videos",
+    "series": "Series",
+    "settings": "Settings",
+    "logout": "Log out",
+    "menu": "Menu"
+  },
+  "theme": {
+    "label": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "login": {
+    "subtitle": "Your studio for vertical shorts.",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Log in",
+    "errors": {
+      "invalid_credentials": "The email or password is incorrect.",
+      "too_many_attempts": "Too many attempts. Wait a minute and try again.",
+      "api_unreachable": "Can't reach the server. Is Docker running?"
+    }
+  },
+  "status": {
+    "draft": "Draft",
+    "queued": "Queued",
+    "planning": "Planning",
+    "awaiting_approval": "Needs approval",
+    "building": "Building",
+    "review": "In review",
+    "ready": "Ready",
+    "failed": "Failed",
+    "cancelled": "Cancelled"
+  },
+  "runStatus": {
+    "queued": "Queued",
+    "running": "Running",
+    "succeeded": "Done",
+    "failed": "Failed",
+    "cancelled": "Cancelled"
+  },
+  "languages": {
+    "bn": "Bangla",
+    "en": "English"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "What's running and what needs you.",
+    "running": "Running now",
+    "needsYou": "Needs you",
+    "recent": "Recent videos",
+    "nothingRunning": "Nothing is running.",
+    "nothingWaiting": "Nothing is waiting for you.",
+    "emptyTitle": "No videos yet",
+    "emptyBody": "Create your first video: add the script and your voice recording, then make a plan."
+  },
+  "videos": {
+    "title": "Videos",
+    "new": "New video",
+    "count": "{count} in total",
+    "search": "Search titles",
+    "series": "Series",
+    "status": "Status",
+    "language": "Language",
+    "allSeries": "All series",
+    "allStatuses": "All statuses",
+    "allLanguages": "All languages",
+    "colTitle": "Title",
+    "updated": "Updated",
+    "emptyTitle": "No videos match",
+    "emptyBody": "Change the filters or create a new video."
+  },
+  "videoForm": {
+    "newSubtitle": "Add the script and your voice. You'll review a plan before anything is built.",
+    "editTitle": "Edit draft",
+    "onlyDrafts": "Only drafts can be edited.",
+    "basics": "Basics",
+    "title": "Title",
+    "titlePlaceholder": "Why does a spoon show you upside down?",
+    "chooseSeries": "Choose a series",
+    "fixedAfterCreate": "Can't be changed after creating.",
+    "targetSeconds": "Target length (seconds)",
+    "targetHint": "Optional. Leave empty to follow the voice.",
+    "mode": "Mode",
+    "modeHint": "Agent mode writes custom animation for this video.",
+    "modeAgent": "Agent (custom animation)",
+    "modeTemplate": "Template (coming later)",
+    "context": "Context",
+    "contextLabel": "Brief for Claude",
+    "contextHint": "Audience, style, references, anything the plan should know.",
+    "script": "Script",
+    "scriptLabel": "Voice script",
+    "scriptHint": "Paste the script you recorded. [Expression tags] are kept out of captions.",
+    "loadFile": "Load file",
+    "voice": "Voice",
+    "voiceLabel": "Voice recording",
+    "replaceVoice": "Replace voice (optional)",
+    "voiceHint": "MP3, WAV or M4A, up to 50 MB.",
+    "dropVoice": "Drop the file here or click to choose",
+    "currentVoice": "Current recording",
+    "saveDraft": "Save draft",
+    "saveChanges": "Save changes",
+    "saveAndPlan": "Save and make plan",
+    "couldNotSave": "Couldn't save the video"
+  },
+  "video": {
+    "plan": "Plan",
+    "liveLog": "Live log",
+    "inputs": "Inputs",
+    "voice": "Voice",
+    "script": "Script",
+    "context": "Context",
+    "target": "Target {seconds} s",
+    "noTarget": "Follows the voice",
+    "actionFailed": "That didn't work",
+    "confirmDelete": "Delete \"{title}\" and all its files? This can't be undone."
+  },
+  "steps": {
+    "label": "Progress",
+    "draft": "Draft",
+    "plan": "Plan",
+    "approve": "Approve",
+    "build": "Build",
+    "review": "Review",
+    "ready": "Ready"
+  },
+  "stage": {
+    "draftTitle": "Ready to plan",
+    "draftBody": "Claude reads the script, the voice and the series rules, then writes a scene plan for you to check. Nothing is built yet.",
+    "makePlan": "Make plan",
+    "running": {
+      "queued": "Waiting to start",
+      "planning": "Writing the plan",
+      "building": "Building the video"
+    },
+    "waitingForWorker": "Waiting for the worker",
+    "inQueue": "In the queue",
+    "elapsed": "Running for {time}",
+    "cancel": "Cancel",
+    "stopping": "Stopping…",
+    "runningHint": "You can close this page. The work continues and the page updates when you come back.",
+    "planTitle": "Check the plan",
+    "planBody": "Read the plan. Edit it if needed, then approve to start building.",
+    "editPlan": "Edit plan",
+    "preview": "Preview",
+    "replan": "Make a new plan",
+    "approve": "Approve and build",
+    "approveEdited": "Approve edited plan",
+    "failedTitle": "It stopped",
+    "failedReason": "Reason",
+    "retry": "Retry",
+    "reviewTitle": "Review the video",
+    "reviewBody": "Watch it. Describe what to change, or mark it as ready.",
+    "readyTitle": "Ready",
+    "readyBody": "This video is final. You can still ask for changes.",
+    "feedbackPlaceholder": "e.g. The rainbow sits too high in scene 3; make the captions shorter.",
+    "sendFeedback": "Send feedback",
+    "markReady": "Mark as ready"
+  },
+  "versions": {
+    "title": "Versions",
+    "version": "Version",
+    "current": "current",
+    "length": "Length",
+    "created": "Created",
+    "feedback": "Feedback",
+    "noVideo": "No video file",
+    "download": {
+      "mp4": "Video (MP4)",
+      "zip": "Editable source (ZIP)",
+      "thumb": "Thumbnail"
+    }
+  },
+  "runs": {
+    "title": "Run history",
+    "turns": "{count} turns",
+    "kind": {
+      "plan": "Plan",
+      "build": "Build",
+      "feedback": "Feedback"
+    }
+  },
+  "log": {
+    "lines": "{count} lines",
+    "details": "Show details",
+    "empty": "Nothing yet.",
+    "waiting": "Waiting for Claude…",
+    "noRuns": "No runs yet."
+  },
+  "series": {
+    "title": "Series",
+    "subtitle": "Presets each video starts from: folder, logo, outro, theme and house rules.",
+    "new": "New series",
+    "empty": "No series yet",
+    "videos": "{count} videos",
+    "outroLabel": "Outro",
+    "none": "None"
+  },
+  "seriesForm": {
+    "basics": "Basics",
+    "style": "Style and rules",
+    "name": "Name",
+    "slug": "Slug",
+    "slugHint": "Lowercase letters, numbers and dashes.",
+    "folder": "Engine folder",
+    "folderHint": "Where projects of this series live in the engine.",
+    "logo": "Logo path",
+    "logoHint": "Path inside engine/public, e.g. brand/hizibizi-logo.png",
+    "theme": "Theme defaults (JSON)",
+    "themeHint": "Copied into each project's scenes.json theme.",
+    "invalidJson": "This isn't valid JSON.",
+    "rules": "House rules",
+    "rulesHint": "Markdown. Given to Claude for every video in this series.",
+    "couldNotSave": "Couldn't save the series",
+    "confirmDelete": "Delete the series \"{name}\"?"
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": "Profile",
+    "name": "Name",
+    "email": "Email",
+    "emailHint": "Change it in .env (OWNER_EMAIL) and run the seeder.",
+    "language": "Interface language",
+    "languageHint": "More languages are coming.",
+    "timezone": "Time zone",
+    "saved": "Saved",
+    "couldNotSave": "Couldn't save",
+    "appearance": "Appearance",
+    "themeHint": "Light, dark, or follow the system.",
+    "system": "System",
+    "database": "Database"
+  }
+}
