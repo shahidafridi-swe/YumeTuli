@@ -71,8 +71,7 @@ YumeTuli/
 ├── api/                 Laravel app (also used by worker, scheduler, reverb)
 ├── engine/              copy of ai-video (no node_modules, out, recordings)
 ├── docker/
-│   ├── api.Dockerfile
-│   ├── worker.Dockerfile   PHP + Node + ffmpeg + Chromium + Claude CLI
+│   ├── api.Dockerfile      targets: api, worker (+ Node, ffmpeg, Chromium, Claude CLI)
 │   └── web.Dockerfile
 ├── docs/
 │   ├── PLAN.md
@@ -198,8 +197,8 @@ claude -p "Feedback: <text>. Fix, re-render, print RESULT." --resume <session_id
 | Service | Image / build | Notes |
 |---|---|---|
 | `mysql` | mysql:8.0 | volume `mysql-data` |
-| `api` | docker/api.Dockerfile (PHP 8.4-fpm + nginx) | port 8000 |
-| `worker` | docker/worker.Dockerfile | `php artisan queue:work --timeout=5400`, volumes `media`, `engine`, `claude-auth` |
+| `api` | docker/api.Dockerfile, target `api` (FrankenPHP: PHP 8.4 + web server) | port 8000, runs migrations on start |
+| `worker` | docker/api.Dockerfile, target `worker` (+ Node 22, ffmpeg) | `php artisan queue:work --timeout=5400`, volumes `media`, `engine`, `claude-auth` |
 | `scheduler` | same as api | `php artisan schedule:work` |
 | `reverb` | same as api | `php artisan reverb:start`, port 8080 |
 | `web` | docker/web.Dockerfile (Node 22) | port 3000 |
@@ -210,7 +209,7 @@ claude -p "Feedback: <text>. Fix, re-render, print RESULT." --resume <session_id
   ```bash
   cp .env.example .env
   docker compose up -d
-  docker compose exec api php artisan migrate --seed
+  docker compose exec api php artisan db:seed   # migrations run automatically
   docker compose run --rm worker claude    # log in once
   ```
 - `make backup` / `make restore` dump MySQL and the media volume, for moving to another PC.

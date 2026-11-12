@@ -10,4 +10,18 @@ press **Generate**, review, download — later, schedule posts to social media.
 - `docs/PLAN.md` — full plan and milestones
 - `docs/memory/` — house rules for videos (centring, logos, outro, series)
 
-Status: Milestone 0 (repo setup). See `docs/PLAN.md`.
+## Run
+
+```bash
+cp .env.example .env      # fill APP_KEY (base64:…32 random bytes), DB_PASSWORD, DB_ROOT_PASSWORD
+docker compose up -d --wait
+```
+
+- Web: http://localhost:3000 (shows system status)
+- API health: http://localhost:8000/api/v1/health
+- Queue smoke test: `docker compose exec api php artisan tinker --execute="App\Jobs\PingJob::dispatch();"`
+  then `docker compose logs worker`
+
+Ports are bound to 127.0.0.1 only. MySQL is on host port 3307 (change in `.env`).
+
+Status: Milestone 1 (Docker skeleton). See `docs/PLAN.md`.
