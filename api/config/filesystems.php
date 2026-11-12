@@ -30,6 +30,16 @@ return [
 
     'disks' => [
 
+        // YumeTuli media (voice uploads, renders, thumbnails, source zips).
+        // Later: add an s3 disk for MinIO and set MEDIA_DISK to it.
+        'media' => [
+            'driver' => 'local',
+            'root' => storage_path('app/media'),
+            'serve' => false,
+            'throw' => true,
+            'report' => false,
+        ],
+
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app/private'),

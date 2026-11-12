@@ -35,4 +35,15 @@ Or set `CLAUDE_CODE_OAUTH_TOKEN` in `.env` (from `claude setup-token`).
 docker compose exec -w /engine worker npm run render -- hizibizi/spoon-bn   # → engine/out/hizibizi/spoon-bn.mp4
 ```
 
-Status: Milestone 2 done (worker renders + Claude headless). See `docs/PLAN.md`.
+### Owner account
+Set `OWNER_NAME`, `OWNER_EMAIL`, `OWNER_PASSWORD` in `.env`, then:
+```bash
+docker compose up -d api && docker compose exec api php artisan db:seed   # re-run after changing the password
+```
+
+### Tests
+```bash
+docker compose exec api php artisan test     # sqlite in memory, never touches MySQL
+```
+
+Status: Milestone 3 done (JWT auth, series, videos + voice upload). See `docs/PLAN.md`.

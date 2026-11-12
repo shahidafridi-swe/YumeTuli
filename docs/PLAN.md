@@ -13,7 +13,7 @@ YumeTuli is a personal web studio that replaces the CLI workflow: write the cont
 ## 1. Scope
 
 ### Phase 1 — Generate videos from the browser (MVP)
-- Login (single owner account, created by a seed command).
+- Login with JWT (single owner account, created by a seed command).
 - Series presets (Dev Diary, hizibizi): logo, theme, outro, caption style, folder.
 - New video form: series, title, context/brief, script, voice mp3, target length, language.
 - Two-step generation: **Plan → Approve → Build**.
@@ -58,7 +58,12 @@ web (Next.js 16) ──REST──▶ api (Laravel 13) ──▶ mysql (8.0)
 scheduler (Laravel schedule:run) — posting, cleanup
 ```
 
-- **web:** UI only. Talks to Laravel via REST (Sanctum cookie auth) and listens to Reverb for live updates.
+- **web:** UI only. Talks to Laravel via REST and listens to Reverb for live updates.
+- **Auth (JWT, `php-open-source-saver/jwt-auth`):**
+  - Access token 15 min; refresh within 14 days; logout and refresh blacklist the old token.
+  - The Next.js server keeps the token in an httpOnly cookie and adds `Authorization: Bearer` when calling Laravel (BFF), so browser JS never sees it.
+  - `<audio>`/`<video>` use short-lived signed URLs.
+  - Login and refresh are limited to 5 per minute per email + IP.
 - **api:** auth, CRUD, uploads, dispatches jobs, serves files.
 - **worker:** same Laravel code base, runs `queue:work`. Runs Claude Code headless inside `engine/`. One video job at a time (rendering is CPU-heavy).
 - **engine:** copy of ai-video (Remotion, scripts, stories, brand assets, AGENTS.md). Claude edits and renders here.
@@ -109,7 +114,7 @@ Phase 2 and later: `social_accounts`, `posts`, `post_targets`, `analytics_snapsh
 
 | Method | Path | Purpose |
 |---|---|---|
-| POST | `/auth/login`, `/auth/logout` | session login (Sanctum SPA) |
+| POST | `/auth/login`, `/auth/refresh`, `/auth/logout` | JWT login, refresh, logout |
 | GET/PATCH | `/me` | profile, locale, theme |
 | GET/POST/PATCH | `/series`, `/series/{id}` | presets |
 | GET/POST | `/videos` | list (filters), create (multipart: script, voice) |
@@ -119,8 +124,7 @@ Phase 2 and later: `social_accounts`, `posts`, `post_targets`, `analytics_snapsh
 | POST | `/videos/{id}/feedback` | feedback text, starts a new build run (resume) |
 | POST | `/videos/{id}/cancel` | stop the running process |
 | GET | `/videos/{id}/runs`, `/runs/{id}/events` | history + log |
-| GET | `/versions/{id}/download/{mp4\|zip\|thumb}` | signed file download |
-| GET | `/versions/{id}/stream` | video preview (range requests) |
+| GET | `/assets/{id}/download?signature=…` | signed file download / stream (Range supported) |
 
 Websocket channel: `private-video.{id}` with events `RunStatusChanged`, `RunEventCreated`, `VersionCreated`.
 
@@ -226,7 +230,8 @@ claude -p "Feedback: <text>. Fix, re-render, print RESULT." --resume <session_id
 
 ## 8. Security
 
-- Only the owner account exists; login rate-limited; Sanctum session cookies.
+- Only the owner account exists; login rate-limited; JWT in an httpOnly cookie held by the Next.js server.
+- Tests refuse to run unless the database is sqlite `:memory:` (protects the dev MySQL).
 - Claude runs with an allowlist of tools (no `rm`, no network tools beyond what npm/render need), inside the container only.
 - Uploads: mp3/wav/m4a only, size limit, stored with random names.
 - Downloads via signed, expiring URLs.

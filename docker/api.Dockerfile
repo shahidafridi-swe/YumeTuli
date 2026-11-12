@@ -4,6 +4,9 @@ FROM dunglas/frankenphp:1-php8.4 AS api
 
 RUN install-php-extensions pdo_mysql pcntl intl zip bcmath opcache
 
+# Voice/video uploads.
+RUN printf 'upload_max_filesize=64M\npost_max_size=70M\nmemory_limit=512M\n' > "$PHP_INI_DIR/conf.d/yumetuli.ini"
+
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
 ENV COMPOSER_HOME=/tmp/composer \

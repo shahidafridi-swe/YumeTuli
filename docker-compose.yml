@@ -17,6 +17,11 @@ x-laravel-env: &laravel-env
   CACHE_STORE: database
   SESSION_DRIVER: database
   LOG_CHANNEL: stderr
+  JWT_SECRET: ${JWT_SECRET:?set JWT_SECRET in .env}
+  MEDIA_DISK: ${MEDIA_DISK:-media}
+  OWNER_NAME: ${OWNER_NAME:-Owner}
+  OWNER_EMAIL: ${OWNER_EMAIL:-}
+  OWNER_PASSWORD: ${OWNER_PASSWORD:-}
 
 services:
   mysql:
