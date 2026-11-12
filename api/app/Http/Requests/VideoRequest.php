@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Enums\Language;
+use App\Enums\VideoFormat;
 use App\Enums\VideoMode;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
@@ -19,6 +20,7 @@ class VideoRequest extends FormRequest
             'series_id' => [$required, 'integer', 'exists:series,id'],
             'title' => [$required, 'string', 'max:160'],
             'language' => [$required, Rule::enum(Language::class)],
+            'format' => ['sometimes', Rule::enum(VideoFormat::class)],
             'context' => ['nullable', 'string', 'max:5000'],
             'script' => [$required, 'string', 'max:50000'],
             'target_seconds' => ['nullable', 'integer', 'between:10,600'],

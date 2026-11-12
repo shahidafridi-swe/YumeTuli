@@ -4,6 +4,7 @@ export type VideoStatus =
 export type RunStatus = "queued" | "running" | "succeeded" | "failed" | "cancelled";
 export type RunKind = "plan" | "build" | "feedback";
 export type Language = "bn" | "en";
+export type VideoFormat = "vertical" | "landscape";
 
 export interface User {
   id: number;
@@ -77,6 +78,7 @@ export interface Video {
   title: string;
   slug: string;
   language: Language;
+  format: VideoFormat;
   mode: "agent" | "template";
   status: VideoStatus;
   context: string | null;

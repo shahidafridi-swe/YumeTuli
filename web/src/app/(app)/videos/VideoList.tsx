@@ -10,6 +10,7 @@ import { formatDate } from "@/lib/format";
 import { useI18n } from "@/i18n";
 import { Button, EmptyState, Input, LinkButton, PageHeader, Select, Spinner } from "@/components/ui";
 import { StatusBadge } from "@/components/StatusBadge";
+import { FormatIcon } from "@/components/FormatIcon";
 
 const STATUSES: VideoStatus[] = ["draft", "queued", "planning", "awaiting_approval", "building", "review", "ready", "failed"];
 
@@ -55,7 +56,7 @@ export function VideoList() {
         }
       />
 
-      <div className="mb-4 grid gap-2 sm:grid-cols-[1fr_12rem_12rem_7rem]">
+      <div className="mb-4 grid gap-2 sm:grid-cols-2 lg:grid-cols-[1fr_12rem_12rem_8rem_9rem]">
         <div className="relative">
           <Search className="pointer-events-none absolute top-2.5 left-3 size-4 text-muted" aria-hidden />
           <Input value={q} onChange={(e) => setQ(e.target.value)} placeholder={t("videos.search")} aria-label={t("videos.search")} className="pl-9" />
@@ -80,6 +81,11 @@ export function VideoList() {
           <option value="">{t("videos.allLanguages")}</option>
           <option value="bn">{t("languages.bn")}</option>
           <option value="en">{t("languages.en")}</option>
+        </Select>
+        <Select value={params.get("format") ?? ""} onChange={(e) => setParam("format", e.target.value)} aria-label={t("videoForm.format")}>
+          <option value="">{t("videos.allFormats")}</option>
+          <option value="vertical">{t("formats.vertical.name")}</option>
+          <option value="landscape">{t("formats.landscape.name")}</option>
         </Select>
       </div>
 
@@ -109,7 +115,12 @@ export function VideoList() {
                     <span className="block truncate font-mono text-xs text-muted">{v.slug}</span>
                   </td>
                   <td className="hidden px-4 py-3 md:table-cell">{v.series?.name}</td>
-                  <td className="hidden px-4 py-3 sm:table-cell">{t(`languages.${v.language}`)}</td>
+                  <td className="hidden px-4 py-3 sm:table-cell">
+                    <span className="inline-flex items-center gap-2">
+                      <FormatIcon format={v.format} className="size-4" title={t(`formats.${v.format}.name`)} />
+                      {t(`languages.${v.language}`)}
+                    </span>
+                  </td>
                   <td className="px-4 py-3">
                     <StatusBadge status={v.status} />
                   </td>

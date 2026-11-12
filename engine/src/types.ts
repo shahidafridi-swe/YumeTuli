@@ -62,6 +62,7 @@ export type ShortProps = {
   characters?: Record<string, { voice: string; rate?: string; pitch?: string }>; // voice cast, for reference
   sibling?: string | null; // slug of the other-language version, e.g. "topic-en" for "topic-bn"
   fps: number;
+  format?: "vertical" | "landscape"; // frame: 1080×1920 (default) or 1920×1080, see src/format.ts
   theme: Theme;
   music?: string | null; // relative to project dir
   music_volume?: number;

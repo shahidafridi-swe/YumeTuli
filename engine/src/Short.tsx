@@ -8,6 +8,7 @@ import type { ShortProps } from "./types";
 import { SceneView } from "./components/SceneView";
 import { BrandOutro, FADE_OUT_FRAMES, OUTRO_BG, OUTRO_FRAMES } from "./brand/BrandOutro";
 import { projectFile } from "./util";
+import { useFormat } from "./format";
 
 const inter = loadInter("normal", { weights: ["700", "900"] });
 const bengali = loadBengali("normal", { weights: ["700", "900"] });
@@ -31,6 +32,7 @@ const FadeToOutro: React.FC = () => {
 
 export const Short: React.FC<ShortProps> = (props) => {
   const { fps, scenes, project, theme } = props;
+  const { landscape } = useFormat();
   const fontFamily = FONTS[theme.font] ?? FONTS.Inter;
 
   const scenesFrames = scenes.reduce((a, sc) => a + Math.round(sc.duration_sec * fps), 0);
@@ -67,7 +69,7 @@ export const Short: React.FC<ShortProps> = (props) => {
         ) : (
           <Img
             src={staticFile(props.logo)}
-            style={{ position: "absolute", top: theme.logo_top ?? 56, right: 48, width: 190, opacity: 0.92, filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.5))" }}
+            style={{ position: "absolute", top: theme.logo_top ?? (landscape ? 44 : 56), right: landscape ? 56 : 48, width: landscape ? 170 : 190, opacity: 0.92, filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.5))" }}
           />
         )
       ) : null}

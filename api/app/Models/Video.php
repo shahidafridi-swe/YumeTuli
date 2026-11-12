@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Enums\AssetKind;
 use App\Enums\Language;
+use App\Enums\VideoFormat;
 use App\Enums\VideoMode;
 use App\Enums\VideoStatus;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
@@ -15,7 +16,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
-#[Fillable(['series_id', 'title', 'slug', 'language', 'context', 'script', 'plan', 'target_seconds', 'mode', 'status', 'current_version_id', 'claude_session_id'])]
+#[Fillable(['series_id', 'title', 'slug', 'language', 'format', 'context', 'script', 'plan', 'target_seconds', 'mode', 'status', 'current_version_id', 'claude_session_id'])]
 class Video extends Model
 {
     use HasFactory;
@@ -24,6 +25,7 @@ class Video extends Model
     {
         return [
             'language' => Language::class,
+            'format' => VideoFormat::class,
             'mode' => VideoMode::class,
             'status' => VideoStatus::class,
             'target_seconds' => 'integer',

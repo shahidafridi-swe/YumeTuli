@@ -1,11 +1,15 @@
 import { AbsoluteFill, useCurrentFrame, useVideoConfig } from "remotion";
 import type { CaptionWord, Theme } from "../types";
+import { useFormat } from "../format";
 
-const WORDS_PER_PAGE = 4;
-const CHARS_PER_PAGE = 26; // ≈ 2 lines at 60px in a 900px box — keeps captions to max 2 lines
+// Max 2 lines: vertical ≈ 26 chars at 60px in a 900px box; landscape ≈ 44 chars at 56px in a 1400px box.
+const PAGE = {
+  vertical: { words: 4, chars: 26, fontSize: 60, maxWidth: 900, bottom: 380 },
+  landscape: { words: 7, chars: 44, fontSize: 56, maxWidth: 1400, bottom: 90 },
+};
 
-// Split words into pages: ≤ 4 words and ≤ CHARS_PER_PAGE characters (long English terms get fewer per page).
-const paginate = (words: CaptionWord[]) => {
+// Split words into pages: ≤ N words and ≤ CHARS_PER_PAGE characters (long English terms get fewer per page).
+const paginate = (words: CaptionWord[], WORDS_PER_PAGE: number, CHARS_PER_PAGE: number) => {
   const pageOf: number[] = [];
   const starts: number[] = [];
   let count = 0;
@@ -32,27 +36,29 @@ const paginate = (words: CaptionWord[]) => {
 export const Captions: React.FC<{ words: CaptionWord[]; theme: Theme }> = ({ words, theme }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const { landscape } = useFormat();
+  const cfg = PAGE[landscape ? "landscape" : "vertical"];
   const t = frame / fps;
 
   const current = words.findIndex((w) => t >= w.start && t < w.end);
   const active = current === -1 ? words.findLastIndex((w) => t >= w.end) : current;
   if (active < 0) return null;
 
-  const { pageOf, starts } = paginate(words);
+  const { pageOf, starts } = paginate(words, cfg.words, cfg.chars);
   const pg = pageOf[active];
   const pageStart = starts[pg];
   const page = words.slice(pageStart, starts[pg + 1] ?? words.length);
 
   return (
-    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: theme.caption_bottom ?? 380 }}>
+    <AbsoluteFill style={{ justifyContent: "flex-end", alignItems: "center", paddingBottom: theme.caption_bottom ?? cfg.bottom }}>
       <div
         style={{
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",
           gap: "0 32px",
-          fontSize: 60,
-          maxWidth: 900,
+          fontSize: cfg.fontSize,
+          maxWidth: cfg.maxWidth,
           lineHeight: 1.25,
           background: theme.caption_style === "shadow" ? "transparent" : (theme.caption_bg ?? "rgba(20, 30, 60, 0.55)"),
           textShadow: theme.caption_style === "shadow" ? "0 4px 14px rgba(0,0,0,0.55), 0 0 4px rgba(0,0,0,0.6)" : undefined,

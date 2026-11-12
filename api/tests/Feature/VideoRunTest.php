@@ -74,6 +74,8 @@ class VideoRunTest extends TestCase
         $this->assertStringNotContainsString('--resume', $planArgs);
         $this->assertStringContainsString('Bash(npm run *)', $planArgs);
         $this->assertStringContainsString('--append-system-prompt', $planArgs);
+        $this->assertStringContainsString('"format": "vertical"', $planArgs);
+        $this->assertStringContainsString('Format: vertical 9:16', file_get_contents("{$this->engine}/inbox/{$video->id}/brief.md"));
 
         // Claude never sees the worker's secrets.
         $env = file("{$this->engine}/inbox/{$video->id}/env-plan.txt", FILE_IGNORE_NEW_LINES);

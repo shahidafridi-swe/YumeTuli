@@ -15,7 +15,7 @@ YumeTuli is a personal web studio that replaces the CLI workflow: write the cont
 ### Phase 1 — Generate videos from the browser (MVP)
 - Login with JWT (single owner account, created by a seed command).
 - Series presets (Dev Diary, hizibizi): logo, theme, outro, caption style, folder.
-- New video form: series, title, context/brief, script, voice mp3, target length, language.
+- New video form: series, title, context/brief, script, voice mp3, target length, language, format (vertical 9:16 or landscape 16:9).
 - Two-step generation: **Plan → Approve → Build**.
 - Live progress (steps + log) over websocket.
 - Preview player, written feedback → regenerate (new version), version history.

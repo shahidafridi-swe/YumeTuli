@@ -1,16 +1,26 @@
 import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
 import type { Scene, Theme } from "../types";
+import { useFormat } from "../format";
 
 // Safe zones for 9:16 shorts: keep text out of top ~12% and bottom ~20% (platform UI).
-const POSITION: Record<string, React.CSSProperties> = {
-  top: { justifyContent: "flex-start", paddingTop: 260 },
-  center: { justifyContent: "center" },
-  bottom: { justifyContent: "flex-end", paddingBottom: 520 },
+// Landscape (16:9) has no platform UI on top, so titles sit higher and smaller.
+const POSITION: Record<"vertical" | "landscape", Record<string, React.CSSProperties>> = {
+  vertical: {
+    top: { justifyContent: "flex-start", paddingTop: 260 },
+    center: { justifyContent: "center" },
+    bottom: { justifyContent: "flex-end", paddingBottom: 520 },
+  },
+  landscape: {
+    top: { justifyContent: "flex-start", paddingTop: 90 },
+    center: { justifyContent: "center" },
+    bottom: { justifyContent: "flex-end", paddingBottom: 240 },
+  },
 };
 
 export const AnimatedText: React.FC<{ scene: Scene; theme: Theme }> = ({ scene, theme }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
+  const { landscape } = useFormat();
   const text = scene.on_screen_text ?? "";
   if (!text && !scene.emoji) return null;
 
@@ -34,14 +44,14 @@ export const AnimatedText: React.FC<{ scene: Scene; theme: Theme }> = ({ scene, 
   // *word* = accent color, ~word~ = warn color (problems)
   const parts = shown.split(/(\*[^*]+\*?|~[^~]+~?)/g);
 
-  const fontSize = (text.length > 40 ? 88 : text.length > 22 ? 108 : 132) * (theme.title_scale ?? 1);
+  const fontSize = (text.length > 40 ? 88 : text.length > 22 ? 108 : 132) * (theme.title_scale ?? 1) * (landscape ? 0.72 : 1);
 
   return (
     <AbsoluteFill
       style={{
         alignItems: "center",
         padding: "0 80px",
-        ...POSITION[scene.text_position ?? "center"],
+        ...POSITION[landscape ? "landscape" : "vertical"][scene.text_position ?? "center"],
         ...(scene.text_position === "top" && theme.title_top != null ? { paddingTop: theme.title_top } : {}),
       }}
     >

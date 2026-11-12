@@ -68,6 +68,16 @@ Language arg: `bn`, `en`, or `both`.
 - Strategy series: dark navy/teal, white logo. Observer series: ivory `#FAF7EF`, charcoal, plum (observer link), burnt orange
   (temperature), black logo `brand/dev-diary-logo-black.png`; caption colours via `theme.caption_color/caption_accent/caption_bg`.
 
+## Video format: vertical or landscape
+- scenes.json `"format": "vertical"` (default, 1080×1920, 9:16 Shorts/Reels/TikTok) or `"landscape"` (1920×1080, 16:9 YouTube).
+  Sizes live in `src/format.ts`; use `useFormat()` in components instead of hard-coding 1080/1920.
+- Shared pieces adapt by themselves: captions (wider, max 2 lines, lower), logo, titles, layouts, brand outro.
+- Landscape scene design: use the width. Put visuals side by side (e.g. code left, diagram right), keep the
+  focus in the middle band, captions at the bottom. The centring rule still applies: space above the
+  logo/title = space below the captions.
+- Thumbnails: vertical 1080×1920; landscape 1280×720 (`THUMB_SIZES`). Big readable title, same series style.
+- Landscape brand outros for standalone files: `OutroDevDiaryLandscape`, `OutroHizibiziLandscape`.
+
 ## Brand outro (user rule: every NEW video)
 - One house format: main video fades to charcoal `#141318`, then a 4 s cream `#F3E9D7` logo outro fades in.
 - scenes.json: `"outro": "devdiary"` (Dev Diary / tech) or `"outro": "hizibizi"` (hizibizi). Code: `src/brand/BrandOutro.tsx`.

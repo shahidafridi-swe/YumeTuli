@@ -51,6 +51,7 @@ class VideoTest extends TestCase
             ->assertJsonPath('data.slug', 'hizibizi/why-is-the-sky-blue-bn')
             ->assertJsonPath('data.status', 'draft')
             ->assertJsonPath('data.mode', 'agent')
+            ->assertJsonPath('data.format', 'vertical')
             ->assertJsonPath('data.voice.kind', 'voice')
             ->assertJsonPath('data.voice.original_name', 'voice.mp3');
 
@@ -73,6 +74,19 @@ class VideoTest extends TestCase
         // Titles with nothing to transliterate fall back to "video".
         $this->post('/api/v1/videos', $this->payload(['title' => '!!!', 'voice' => $this->voice()]), ['Accept' => 'application/json'])
             ->assertCreated()->assertJsonPath('data.slug', 'hizibizi/video-bn');
+    }
+
+    public function test_landscape_format_is_stored_and_filterable(): void
+    {
+        $this->post('/api/v1/videos', $this->payload(['format' => 'landscape']), ['Accept' => 'application/json'])
+            ->assertCreated()
+            ->assertJsonPath('data.format', 'landscape');
+        $this->post('/api/v1/videos', $this->payload(['title' => 'Other', 'voice' => $this->voice()]), ['Accept' => 'application/json'])
+            ->assertCreated();
+
+        $this->getJson('/api/v1/videos?format=landscape')->assertOk()->assertJsonCount(1, 'data');
+        $this->post('/api/v1/videos', $this->payload(['format' => 'square', 'voice' => $this->voice()]), ['Accept' => 'application/json'])
+            ->assertUnprocessable()->assertJsonValidationErrors(['format']);
     }
 
     public function test_validation(): void

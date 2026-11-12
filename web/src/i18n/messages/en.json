@@ -83,7 +83,8 @@
     "colTitle": "Title",
     "updated": "Updated",
     "emptyTitle": "No videos match",
-    "emptyBody": "Change the filters or create a new video."
+    "emptyBody": "Change the filters or create a new video.",
+    "allFormats": "All formats"
   },
   "videoForm": {
     "newSubtitle": "Add the script and your voice. You'll review a plan before anything is built.",
@@ -116,7 +117,8 @@
     "saveDraft": "Save draft",
     "saveChanges": "Save changes",
     "saveAndPlan": "Save and make plan",
-    "couldNotSave": "Couldn't save the video"
+    "couldNotSave": "Couldn't save the video",
+    "format": "Format"
   },
   "video": {
     "plan": "Plan",
@@ -244,5 +246,15 @@
     "themeHint": "Light, dark, or follow the system.",
     "system": "System",
     "database": "Database"
+  },
+  "formats": {
+    "vertical": {
+      "name": "Vertical 9:16",
+      "hint": "Shorts, Reels, TikTok · 1080×1920"
+    },
+    "landscape": {
+      "name": "Landscape 16:9",
+      "hint": "YouTube · 1920×1080"
+    }
   }
 }

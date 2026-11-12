@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Enums\AssetKind;
 use App\Enums\Language;
+use App\Enums\VideoFormat;
 use App\Enums\VideoMode;
 use App\Enums\VideoStatus;
 use App\Http\Controllers\Controller;
@@ -27,6 +28,7 @@ class VideoController extends Controller
             'series_id' => ['nullable', 'integer'],
             'status' => ['nullable', 'string'],
             'language' => ['nullable', 'string'],
+            'format' => ['nullable', 'string'],
             'q' => ['nullable', 'string', 'max:100'],
         ]);
 
@@ -35,6 +37,7 @@ class VideoController extends Controller
             ->when($filters['series_id'] ?? null, fn ($q, $v) => $q->where('series_id', $v))
             ->when($filters['status'] ?? null, fn ($q, $v) => $q->where('status', $v))
             ->when($filters['language'] ?? null, fn ($q, $v) => $q->where('language', $v))
+            ->when($filters['format'] ?? null, fn ($q, $v) => $q->where('format', $v))
             ->when($filters['q'] ?? null, fn ($q, $v) => $q->where('title', 'like', '%'.$v.'%'))
             ->latest()
             ->paginate(20);
@@ -52,6 +55,7 @@ class VideoController extends Controller
                 ...collect($data)->except('voice')->all(),
                 'slug' => Video::makeSlug($series, $data['title'], Language::from($data['language'])),
                 'mode' => $data['mode'] ?? VideoMode::Agent->value,
+                'format' => $data['format'] ?? VideoFormat::Vertical->value,
                 'status' => VideoStatus::Draft,
             ]);
             $this->storeVoice($video, $request->file('voice'));

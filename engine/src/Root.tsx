@@ -6,6 +6,7 @@ import { SorbotThumb, SpoonThumb, ZipperThumb } from "./thumbs/HizibiziThumbs";
 import { Test3D } from "./three/Test3D";
 import { Short } from "./Short";
 import type { ShortProps } from "./types";
+import { FORMATS } from "./format";
 import example from "../public/projects/example/scenes.json";
 
 export const totalFrames = (p: ShortProps) =>
@@ -20,6 +21,8 @@ export const RemotionRoot: React.FC = () => (
   <Composition id="OutroDevDiaryAlpha" component={BrandOutro} width={1080} height={1920} fps={30} durationInFrames={OUTRO_FRAMES} defaultProps={{ brand: "devdiary" as const, transparent: true }} />
   <Composition id="OutroHizibizi" component={BrandOutro} width={1080} height={1920} fps={30} durationInFrames={OUTRO_FRAMES} defaultProps={{ brand: "hizibizi" as const }} />
   <Composition id="OutroHizibiziAlpha" component={BrandOutro} width={1080} height={1920} fps={30} durationInFrames={OUTRO_FRAMES} defaultProps={{ brand: "hizibizi" as const, transparent: true }} />
+  <Composition id="OutroDevDiaryLandscape" component={BrandOutro} width={1920} height={1080} fps={30} durationInFrames={OUTRO_FRAMES} defaultProps={{ brand: "devdiary" as const }} />
+  <Composition id="OutroHizibiziLandscape" component={BrandOutro} width={1920} height={1080} fps={30} durationInFrames={OUTRO_FRAMES} defaultProps={{ brand: "hizibizi" as const }} />
   <Still id="ObserverThumb2" component={ObserverThumb2} width={1080} height={1920} />
   <Still id="ObserverThumb1" component={ObserverThumb1} width={1080} height={1920} />
   <Still id="StrategyThumb1" component={Thumb1} width={1080} height={1920} />
@@ -37,6 +40,7 @@ export const RemotionRoot: React.FC = () => (
     calculateMetadata={({ props }) => ({
       fps: props.fps,
       durationInFrames: totalFrames(props),
+      ...FORMATS[props.format ?? "vertical"],
     })}
   />
   </>

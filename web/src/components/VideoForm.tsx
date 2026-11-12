@@ -6,9 +6,10 @@ import { useRef, useState, type FormEvent } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { api, ApiError } from "@/lib/api";
 import { useSeriesList } from "@/lib/queries";
-import type { Video } from "@/lib/types";
+import type { Video, VideoFormat } from "@/lib/types";
 import { formatBytes } from "@/lib/format";
 import { useT } from "@/i18n";
+import { FormatIcon } from "@/components/FormatIcon";
 import { Alert, Button, Card, Field, Input, Select, Textarea } from "@/components/ui";
 
 /** Create a video (series, script, voice) or edit a draft. */
@@ -24,6 +25,7 @@ export function VideoForm({ video }: { video?: Video }) {
   const [script, setScript] = useState(video?.script ?? "");
   const [voice, setVoice] = useState<File | null>(null);
   const [voiceUrl, setVoiceUrl] = useState<string | null>(null);
+  const [format, setFormat] = useState<VideoFormat>(video?.format ?? "vertical");
   const scriptFile = useRef<HTMLInputElement>(null);
 
   const err = (name: string) => errors[name]?.[0];
@@ -107,6 +109,28 @@ export function VideoForm({ video }: { video?: Video }) {
             </Select>
           </Field>
         </div>
+      </Card>
+
+      <Card title={t("videoForm.format")}>
+        <fieldset>
+          <legend className="sr-only">{t("videoForm.format")}</legend>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {(["vertical", "landscape"] as const).map((f) => (
+              <label
+                key={f}
+                className={`flex cursor-pointer items-center gap-4 rounded-md border p-4 ${format === f ? "border-foreground ring-1 ring-foreground" : "border-border hover:bg-surface"}`}
+              >
+                <input type="radio" name="format" value={f} checked={format === f} onChange={() => setFormat(f)} className="sr-only" />
+                <FormatIcon format={f} className="h-12 w-12 shrink-0" />
+                <span>
+                  <span className="block font-medium">{t(`formats.${f}.name`)}</span>
+                  <span className="block text-sm text-muted">{t(`formats.${f}.hint`)}</span>
+                </span>
+              </label>
+            ))}
+          </div>
+        </fieldset>
+        {err("format") ? <p className="mt-2 text-sm font-medium">✕ {err("format")}</p> : null}
       </Card>
 
       <Card title={t("videoForm.context")}>

@@ -21,6 +21,8 @@ class PromptBuilder
             '{{folder}}' => $series->folder,
             '{{slug}}' => $video->slug,
             '{{language}}' => $video->language->value,
+            '{{format}}' => $video->format->value,
+            '{{format_desc}}' => $video->format->describe(),
             '{{target}}' => $video->target_seconds ? "{$video->target_seconds} seconds" : 'follow the voice length',
             '{{logo}}' => $series->logo_path ?? '(none)',
             '{{outro}}' => $series->outro ?? 'none',

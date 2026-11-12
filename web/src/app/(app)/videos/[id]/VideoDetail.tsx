@@ -49,6 +49,8 @@ export function VideoDetail() {
             <span aria-hidden>·</span>
             <span>{t(`languages.${video.language}`)}</span>
             <span aria-hidden>·</span>
+            <span>{t(`formats.${video.format}.name`)}</span>
+            <span aria-hidden>·</span>
             <span className="font-mono text-xs">{video.slug}</span>
           </span>
         }
@@ -302,6 +304,7 @@ function VersionsPanel({ video }: { video: Video }) {
   if (!version) return null;
   const asset = (kind: string) => version.assets?.find((a) => a.kind === kind);
   const mp4 = asset("mp4");
+  const landscape = video.format === "landscape";
 
   return (
     <Card
@@ -324,11 +327,11 @@ function VersionsPanel({ video }: { video: Video }) {
         ) : null
       }
     >
-      <div className="grid gap-4 sm:grid-cols-[minmax(0,16rem)_1fr]">
+      <div className={landscape ? "space-y-4" : "grid gap-4 sm:grid-cols-[minmax(0,16rem)_1fr]"}>
         {mp4 ? (
-          <video key={mp4.url} src={mp4.url} poster={asset("thumb")?.url} controls preload="metadata" className="aspect-[9/16] w-full rounded-md border border-border bg-black" />
+          <video key={mp4.url} src={mp4.url} poster={asset("thumb")?.url} controls preload="metadata" className={cx("w-full rounded-md border border-border bg-black", landscape ? "aspect-video" : "aspect-[9/16]")} />
         ) : (
-          <div className="flex aspect-[9/16] items-center justify-center rounded-md border border-dashed border-strong text-sm text-muted">{t("versions.noVideo")}</div>
+          <div className={cx("flex items-center justify-center rounded-md border border-dashed border-strong text-sm text-muted", landscape ? "aspect-video" : "aspect-[9/16]")}>{t("versions.noVideo")}</div>
         )}
         <div className="space-y-4 text-sm">
           <dl className="grid grid-cols-[auto_1fr] gap-x-4 gap-y-1.5">

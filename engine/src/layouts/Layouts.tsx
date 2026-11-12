@@ -1,3 +1,4 @@
+import { useFormat } from "../format";
 import { interpolate, spring, useCurrentFrame, useVideoConfig, Easing } from "remotion";
 import { loadFont as loadMono } from "@remotion/google-fonts/JetBrainsMono";
 import type { Theme } from "../types";
@@ -26,14 +27,19 @@ const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 const Area: React.FC<{ children: React.ReactNode; justify?: React.CSSProperties["justifyContent"] }> = ({
   children,
   justify = "center",
-}) => (
+}) => {
+  const { width, height, landscape } = useFormat();
+  const top = landscape ? 220 : 500;
+  const bottom = landscape ? 230 : 470;
+  const side = landscape ? Math.round((width - 1500) / 2) : 56;
+  return (
   <div
     style={{
       position: "absolute",
-      top: 500,
-      height: 1920 - 500 - 470,
-      left: 56,
-      right: 56,
+      top,
+      height: height - top - bottom,
+      left: side,
+      right: side,
       display: "flex",
       flexDirection: "column",
       justifyContent: justify,
@@ -42,7 +48,8 @@ const Area: React.FC<{ children: React.ReactNode; justify?: React.CSSProperties[
   >
     {children}
   </div>
-);
+  );
+};
 
 const useEnter = (delay = 0) => {
   const frame = useCurrentFrame();

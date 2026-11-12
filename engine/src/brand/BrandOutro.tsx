@@ -4,6 +4,7 @@
 //   brand "hizibizi": letters of "hizibizi" pop up one by one, bounce, line sweep, hold, fade.
 // `transparent` drops the background (for overlay files).
 import { AbsoluteFill, Audio, Easing, Img, interpolate, spring, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
+import { useFormat } from "../format";
 
 export const OUTRO_FRAMES = 120;
 export const OUTRO_BG = "#141318";
@@ -26,11 +27,12 @@ const DEV_STEPS = [493, 950, 1473];
 const DIARY_STEPS = [346, 510, 880, 1200, 1473];
 
 const DevDiaryMark: React.FC<{ t: number; frame: number; fps: number }> = ({ t, frame, fps }) => {
-  const W = 860;
+  const { width, height, landscape } = useFormat();
+  const W = landscape ? 720 : 860;
   const s = W / DD.w;
   const H = DD.h * s;
-  const x0 = (1080 - W) / 2;
-  const y0 = (1920 - H) / 2 - 40;
+  const x0 = (width - W) / 2;
+  const y0 = (height - H) / 2 - (landscape ? 30 : 40);
   const dev = stepped(t, 0.55, 0.16, DEV_STEPS);
   const diary = stepped(t, 1.05, 0.12, DIARY_STEPS);
   const strip = interpolate(t, [1.7, 2.2], [0, DD.h], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.out(Easing.cubic) });
@@ -71,11 +73,12 @@ const HZ_LETTERS: [number, number][] = [
 ];
 
 const HizibiziMark: React.FC<{ t: number; frame: number; fps: number }> = ({ t, frame, fps }) => {
-  const W = 900;
+  const { width, height, landscape } = useFormat();
+  const W = landscape ? 860 : 900;
   const s = W / HZ.w;
   const H = HZ.h * s;
-  const x0 = (1080 - W) / 2;
-  const y0 = (1920 - H) / 2 - 40;
+  const x0 = (width - W) / 2;
+  const y0 = (height - H) / 2 - (landscape ? 30 : 40);
   const start = 0.6;
   const beat = 0.14;
   const allIn = start + beat * HZ_LETTERS.length + 0.15;

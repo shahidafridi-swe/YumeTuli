@@ -167,6 +167,7 @@ class Workspace
             '',
             "- Series: {$series->name}",
             "- Language: {$video->language->value}",
+            "- Format: {$video->format->describe()}",
             '- Target length: '.($video->target_seconds ? "{$video->target_seconds} s" : 'follow the voice'),
             '',
             '## Context from the owner',
