@@ -62,10 +62,15 @@ services:
     build: { context: ., dockerfile: docker/api.Dockerfile, target: worker }
     image: yumetuli-worker
     user: "${UID:-1000}:${GID:-1000}"
-    environment: *laravel-env
+    environment:
+      <<: *laravel-env
+      # Optional: long-lived token from `claude setup-token` instead of logging in inside the container.
+      CLAUDE_CODE_OAUTH_TOKEN: ${CLAUDE_CODE_OAUTH_TOKEN:-}
     volumes:
       - ./api:/app
       - ./engine:/engine
+      - engine-node-modules:/engine/node_modules
+      - worker-home:/home/worker
     restart: unless-stopped
     healthcheck:
       disable: true
@@ -90,5 +95,7 @@ services:
 
 volumes:
   mysql-data:
+  engine-node-modules:
+  worker-home:
   web-node-modules:
   web-next:
