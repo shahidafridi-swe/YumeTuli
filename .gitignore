@@ -21,3 +21,4 @@ storage-data/
 **/.claude/settings.local.json
 engine/.venv
 engine/node_modules/
+engine/inbox/

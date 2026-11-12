@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
 
-#[Fillable(['video_id', 'kind', 'disk', 'path', 'original_name', 'size', 'mime'])]
+#[Fillable(['video_id', 'video_version_id', 'kind', 'disk', 'path', 'original_name', 'size', 'mime'])]
 class Asset extends Model
 {
     protected function casts(): array

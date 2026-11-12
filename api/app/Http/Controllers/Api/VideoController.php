@@ -64,7 +64,7 @@ class VideoController extends Controller
 
     public function show(Video $video): VideoResource
     {
-        return new VideoResource($video->load(['series', 'voice', 'currentVersion', 'versions']));
+        return new VideoResource($video->load(['series', 'voice', 'currentVersion.assets', 'versions.assets', 'activeRun']));
     }
 
     /** Edit a draft. Multipart updates must be sent as POST with _method=PATCH (PHP limitation). */

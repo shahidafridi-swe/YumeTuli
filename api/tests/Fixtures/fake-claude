@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+# Stand-in for `claude -p` in tests: prints stream-json like the real CLI.
+# Behaviour switches come from words in the prompt or the brief (FAIL_ONCE, NO_RESULT, LIMIT, ESCAPE, SLOW).
+prompt="$2"; resume=""; prev=""
+for a in "$@"; do [ "$prev" = "--resume" ] && resume="$a"; prev="$a"; done
+
+dir=$(printf '%s' "$prompt" | grep -o 'inbox/[0-9]*' | head -1)
+[ -z "$dir" ] && dir=$(ls -d inbox/* | tail -1)
+brief="$(cat "$dir/brief.md" 2>/dev/null) $prompt"
+kind=build; case "$prompt" in *"PLAN ONLY"*) kind=plan;; *"gave this feedback"*) kind=feedback;; esac
+printf '%s\n' "$@" > "$dir/args-$kind.txt"
+env | cut -d= -f1 | sort > "$dir/env-$kind.txt"
+session="${resume:-fake-session-1}"
+
+emit() { printf '%s\n' "$1"; }
+result() { # $1 = text (JSON-escaped), $2 = is_error, $3 = subtype
+  emit "{\"type\":\"result\",\"subtype\":\"$3\",\"is_error\":$2,\"result\":\"$1\",\"session_id\":\"$session\",\"num_turns\":3,\"total_cost_usd\":0.12,\"permission_denials\":[]}"
+}
+
+emit "{\"type\":\"system\",\"subtype\":\"init\",\"session_id\":\"$session\",\"cwd\":\"$PWD\",\"model\":\"fake\"}"
+echo "warning: this goes to stderr" >&2
+
+case "$brief" in *LIMIT*) result "Claude AI usage limit reached|1794500000" true error_during_execution; exit 1;; esac
+case "$brief" in *FAIL_ONCE*) if [ ! -f "$dir/failed-once" ]; then touch "$dir/failed-once"; result "Something broke" true error_during_execution; exit 1; fi;; esac
+case "$brief" in *SLOW*) for i in $(seq 1 60); do emit '{"type":"assistant","message":{"content":[{"type":"text","text":"working"}]}}'; sleep 1; done;; esac
+
+if [ "$kind" = plan ]; then
+  emit '{"type":"assistant","message":{"content":[{"type":"tool_use","name":"Bash","input":{"command":"ffprobe -v error voice.mp3"}}]}}'
+  emit '{"type":"user","message":{"content":[{"type":"tool_result","content":"69.6","is_error":false}]}}'
+  printf '# Plan\n\n## Scene 1\nHook.\n' > "$dir/plan.md"
+  emit "{\"type\":\"assistant\",\"message\":{\"content\":[{\"type\":\"tool_use\",\"name\":\"Write\",\"input\":{\"file_path\":\"$dir/plan.md\"}}]}}"
+  result "Plan written.\nPLAN_READY" false success
+  exit 0
+fi
+
+n=$(ls out/test 2>/dev/null | grep -c mp4 || true); n=$((n+1))
+mkdir -p out/test
+printf 'fake mp4 %s' "$n" > "out/test/video-$n.mp4"
+printf 'zip' > "out/test/source-$n.zip"
+printf 'png' > "out/test/thumb-$n.png"
+emit '{"type":"assistant","message":{"content":[{"type":"text","text":"Rendering now."},{"type":"tool_use","name":"Bash","input":{"command":"npm run render -- test/x-bn"}}]}}'
+emit '{"type":"user","message":{"content":[{"type":"tool_result","content":"Rendered 10/10","is_error":false}]}}'
+emit '{"type":"assistant","message":{"content":[{"type":"tool_use","name":"Read","input":{"file_path":"out/frames/f1.png"}}]}}'
+emit '{"type":"user","message":{"content":[{"type":"tool_result","content":[{"type":"image"}],"is_error":false}]}}'
+case "$brief" in
+  *NO_RESULT*) result "All done." false success ;;
+  *ESCAPE*) result "Done.\nRESULT {\\\"mp4\\\": \\\"../../../../etc/hostname\\\", \\\"zip\\\": null, \\\"thumb\\\": null, \\\"duration\\\": 1}" false success ;;
+  *) result "Done.\nRESULT {\\\"mp4\\\": \\\"out/test/video-$n.mp4\\\", \\\"zip\\\": \\\"out/test/source-$n.zip\\\", \\\"thumb\\\": \\\"out/test/thumb-$n.png\\\", \\\"duration\\\": 61.5}" false success ;;
+esac

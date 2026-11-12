@@ -17,6 +17,7 @@ class VideoVersionResource extends JsonResource
             'number' => $this->number,
             'feedback' => $this->feedback,
             'duration_sec' => $this->duration_sec,
+            'assets' => AssetResource::collection($this->whenLoaded('assets')),
             'created_at' => $this->created_at,
         ];
     }

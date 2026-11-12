@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
-#[Fillable(['series_id', 'title', 'slug', 'language', 'context', 'script', 'target_seconds', 'mode', 'status'])]
+#[Fillable(['series_id', 'title', 'slug', 'language', 'context', 'script', 'plan', 'target_seconds', 'mode', 'status', 'current_version_id', 'claude_session_id'])]
 class Video extends Model
 {
     use HasFactory;
@@ -65,7 +65,20 @@ class Video extends Model
     /** @return HasOne<Asset, $this> */
     public function voice(): HasOne
     {
-        return $this->hasOne(Asset::class)->where('kind', AssetKind::Voice)->latestOfMany();
+        // The kind filter must be inside ofMany(), otherwise the newest asset of any kind is picked first.
+        return $this->hasOne(Asset::class)->ofMany(['id' => 'max'], fn ($q) => $q->where('kind', AssetKind::Voice));
+    }
+
+    /** @return HasMany<Run, $this> */
+    public function runs(): HasMany
+    {
+        return $this->hasMany(Run::class)->orderByDesc('id');
+    }
+
+    /** @return HasOne<Run, $this> */
+    public function activeRun(): HasOne
+    {
+        return $this->hasOne(Run::class)->ofMany(['id' => 'max'], fn ($q) => $q->whereIn('status', ['queued', 'running']));
     }
 
     public function mediaDirectory(): string

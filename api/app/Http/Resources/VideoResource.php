@@ -21,11 +21,13 @@ class VideoResource extends JsonResource
             'status' => $this->status,
             'context' => $this->context,
             'script' => $this->script,
+            'plan' => $this->plan,
             'target_seconds' => $this->target_seconds,
             'series' => new SeriesResource($this->whenLoaded('series')),
             'voice' => new AssetResource($this->whenLoaded('voice')),
             'current_version' => new VideoVersionResource($this->whenLoaded('currentVersion')),
             'versions' => VideoVersionResource::collection($this->whenLoaded('versions')),
+            'active_run' => new RunResource($this->whenLoaded('activeRun')),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

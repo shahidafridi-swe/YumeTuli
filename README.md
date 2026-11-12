@@ -46,4 +46,11 @@ docker compose up -d api && docker compose exec api php artisan db:seed   # re-r
 docker compose exec api php artisan test     # sqlite in memory, never touches MySQL
 ```
 
-Status: Milestone 3 done (JWT auth, series, videos + voice upload). See `docs/PLAN.md`.
+### After changing PHP code
+The queue worker keeps code in memory: `docker compose restart worker`.
+
+### Live progress
+Reverb runs on `ws://localhost:8080` (key `REVERB_APP_KEY`). Channel `private-video.<id>`, auth via
+`POST /api/v1/broadcasting/auth` with the JWT. Events: `run.updated`, `run.event`.
+
+Status: Milestone 4 done (plan → approve → build → feedback runs with Claude, live log, cancel, retry). See `docs/PLAN.md`.

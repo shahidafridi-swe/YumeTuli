@@ -31,7 +31,7 @@ RUN ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm \
  && ln -s /usr/local/lib/node_modules/npm/bin/npx-cli.js /usr/local/bin/npx \
  && apt-get update \
  && apt-get install -y --no-install-recommends \
-      ffmpeg python3 python3-venv git procps \
+      ffmpeg python3 python3-venv git procps zip unzip \
       libnss3 libdbus-1-3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 libgbm1 \
       libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libasound2 \
       libpango-1.0-0 libcairo2 libx11-xcb1 libxshmfence1 \
@@ -52,4 +52,4 @@ RUN mkdir -p /home/worker /engine/node_modules && chmod 777 /home/worker /engine
 COPY docker/worker-entrypoint.sh /usr/local/bin/worker-entrypoint
 RUN chmod +x /usr/local/bin/worker-entrypoint
 ENTRYPOINT ["worker-entrypoint"]
-CMD ["php", "artisan", "queue:work", "--sleep=3", "--tries=1", "--timeout=5400"]
+CMD ["php", "artisan", "queue:work", "--sleep=3", "--tries=1", "--timeout=5700"]

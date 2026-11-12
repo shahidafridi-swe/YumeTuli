@@ -122,11 +122,14 @@ Phase 2 and later: `social_accounts`, `posts`, `post_targets`, `analytics_snapsh
 | POST | `/videos/{id}/plan` | start the plan run |
 | POST | `/videos/{id}/approve` | approve the plan and start the build run |
 | POST | `/videos/{id}/feedback` | feedback text, starts a new build run (resume) |
-| POST | `/videos/{id}/cancel` | stop the running process |
-| GET | `/videos/{id}/runs`, `/runs/{id}/events` | history + log |
+| POST | `/videos/{id}/retry` | re-run the last failed run |
+| POST | `/videos/{id}/cancel` | stop the running process (or drop a queued run) |
+| POST | `/videos/{id}/ready` | mark the reviewed version as final |
+| GET | `/videos/{id}/runs`, `/runs/{id}/events?after=<id>` | history + log (catch up after reconnect) |
+| POST | `/broadcasting/auth` | Reverb private channel auth (JWT) |
 | GET | `/assets/{id}/download?signature=…` | signed file download / stream (Range supported) |
 
-Websocket channel: `private-video.{id}` with events `RunStatusChanged`, `RunEventCreated`, `VersionCreated`.
+Websocket channel: `private-video.{id}` with events `run.updated` (run status/step + video status) and `run.event` (one log line).
 
 ---
 
@@ -169,6 +172,25 @@ claude -p "Feedback: <text>. Fix, re-render, print RESULT." --resume <session_id
 - `--resume <session_id>` keeps the context.
 - The Laravel process must pass stdin `/dev/null`, otherwise Claude waits 3 s for stdin.
 - `total_cost_usd` is an estimate only; the subscription is not billed per call.
+
+**Implemented in Milestone 4:**
+- **Main pieces:**
+  - `RunService` is the state machine.
+  - `RunVideoJob` runs one step.
+  - `ClaudeProcess` uses `setsid`, so cancel and timeout kill Claude and everything it started.
+  - `StreamParser` turns stream-json into friendly steps.
+  - `Workspace` handles the files.
+  - `LiveFeed` stores events and broadcasts them.
+- **Files:**
+  - Each video's inputs go to `engine/inbox/<id>/`: `script.md`, `brief.md`, `voice.*`, `plan.md`.
+  - The finished files named in RESULT are copied to `media/videos/<id>/v<n>/` as assets of the version.
+  - A path outside the engine is refused.
+- **Prompts:** templates in `api/resources/prompts/` (`plan`, `build`, `feedback`) plus `system.md`, which adds headless rules (no `cd`, one simple command per call).
+- **Environment:**
+  - Claude gets a clean environment, so no DB, JWT, app or Reverb secrets reach it.
+  - The tool allowlist prevents accidents, not attacks (it allows `.venv/bin/python`). The container is the real boundary.
+- **Real plan run:** about 2 minutes, around 20 turns, no blocked calls after the system prompt.
+- **Tests:** a fake CLI (`tests/Fixtures/fake-claude`) drives the full plan → approve → feedback → ready cycle, failure, retry, the usage limit, a missing RESULT, path escape and cancel.
 
 **Auth:** the `worker-home` volume holds the Claude login (`~/.claude` of the worker user). It is set up once per PC: `docker compose run --rm worker claude` and log in. No API key in Phase 1.
 
