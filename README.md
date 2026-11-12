@@ -24,4 +24,15 @@ docker compose up -d --wait
 
 Ports are bound to 127.0.0.1 only. MySQL is on host port 3307 (change in `.env`).
 
-Status: Milestone 1 (Docker skeleton). See `docs/PLAN.md`.
+### Claude login (once per PC)
+```bash
+docker compose exec -it worker claude     # then /login, approve in the browser, /exit
+```
+Or set `CLAUDE_CODE_OAUTH_TOKEN` in `.env` (from `claude setup-token`).
+
+### Render test
+```bash
+docker compose exec -w /engine worker npm run render -- hizibizi/spoon-bn   # → engine/out/hizibizi/spoon-bn.mp4
+```
+
+Status: Milestone 2 done (worker renders + Claude headless). See `docs/PLAN.md`.

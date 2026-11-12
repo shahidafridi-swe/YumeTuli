@@ -158,7 +158,15 @@ claude -p "Feedback: <text>. Fix, re-render, print RESULT." --resume <session_id
 - **Errors:** a non-zero exit, a missing RESULT or the usage limit marks the run as `failed` with the message. Retry is offered.
 - **Limits:** one worker process; a job timeout of 90 min; cancel kills the process group.
 
-**Auth:** the `claude-auth` volume holds the Claude login (`~/.claude` of the worker user). It is set up once per PC: `docker compose run --rm worker claude` and log in. No API key in Phase 1.
+**Verified in Milestone 2:**
+- Claude headless runs in the worker with cwd `/engine` and loads `engine/CLAUDE.md`/`AGENTS.md` automatically.
+- `stream-json` gives `system`, `assistant` (tool_use), `user` (tool_result) and a final `result` with `session_id` and `permission_denials`.
+- Tools outside `--allowedTools`, and paths outside `/engine`, are denied (not prompted).
+- `--resume <session_id>` keeps the context.
+- The Laravel process must pass stdin `/dev/null`, otherwise Claude waits 3 s for stdin.
+- `total_cost_usd` is an estimate only; the subscription is not billed per call.
+
+**Auth:** the `worker-home` volume holds the Claude login (`~/.claude` of the worker user). It is set up once per PC: `docker compose run --rm worker claude` and log in. No API key in Phase 1.
 
 **Template mode** (later in Phase 1, or Phase 2): Claude writes only scenes.json using existing layouts. It is faster and cheaper.
 
