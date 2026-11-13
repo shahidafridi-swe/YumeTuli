@@ -140,6 +140,8 @@
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/react/promise-timer" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/react/socket" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/react/stream" />
+      <excludeFolder url="file://$MODULE_DIR$/api/storage/app" />
+      <excludeFolder url="file://$MODULE_DIR$/api/storage/framework" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

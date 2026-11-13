@@ -6,11 +6,12 @@ import { SorbotThumb, SpoonTestThumb, SpoonThumb, ZipperThumb } from "./thumbs/H
 import { Test3D } from "./three/Test3D";
 import { Short } from "./Short";
 import type { ShortProps } from "./types";
-import { FORMATS } from "./format";
+import { FORMATS, type VideoFormat } from "./format";
+import { OutroPreview, outroFrames } from "./brand/Outro";
 import example from "../public/projects/example/scenes.json";
 
 export const totalFrames = (p: ShortProps) =>
-  Math.max(1, p.scenes.reduce((s, sc) => s + Math.round(sc.duration_sec * p.fps), 0) + (p.outro ? OUTRO_FRAMES : 0));
+  Math.max(1, p.scenes.reduce((s, sc) => s + Math.round(sc.duration_sec * p.fps), 0) + outroFrames(p, p.fps));
 
 export const RemotionRoot: React.FC = () => (
   <>
@@ -29,6 +30,19 @@ export const RemotionRoot: React.FC = () => (
   <Still id="StrategyThumb1" component={Thumb1} width={1080} height={1920} />
   <Still id="StrategyThumb2" component={Thumb2} width={1080} height={1920} />
   <Still id="StrategyThumb3" component={Thumb3} width={1080} height={1920} />
+  <Composition
+    id="OutroPreview"
+    component={OutroPreview}
+    width={1080}
+    height={1920}
+    fps={30}
+    durationInFrames={OUTRO_FRAMES}
+    defaultProps={{ outro: "common", outro_logo: "brand/hizibizi-logo.png", format: "vertical" as const }}
+    calculateMetadata={({ props }) => ({
+      durationInFrames: Math.max(1, outroFrames(props, 30)),
+      ...FORMATS[(props.format as VideoFormat | undefined) ?? "vertical"],
+    })}
+  />
   <Composition id="Test3D" component={Test3D} width={1080} height={1920} fps={30} durationInFrames={300} />
   <Composition
     id="Short"

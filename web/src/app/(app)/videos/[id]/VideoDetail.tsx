@@ -45,6 +45,10 @@ export function VideoDetail() {
         subtitle={
           <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
             <StatusBadge status={video.status} />
+            <Link href={`/projects/${video.series?.project_id}`} className="hover:underline">
+              {video.series?.project?.name}
+            </Link>
+            <span aria-hidden>·</span>
             <span>{video.series?.name}</span>
             <span aria-hidden>·</span>
             <span>{t(`languages.${video.language}`)}</span>

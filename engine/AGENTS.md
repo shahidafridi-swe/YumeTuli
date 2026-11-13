@@ -62,11 +62,14 @@ Language arg: `bn`, `en`, or `both`.
 
 ## Design patterns (Dev Diary series)
 - All design-pattern episodes live in one folder: projects `public/projects/design-patterns/<slug>`, scenes
-  `src/stories/design-patterns/<slug>/`, recordings `recordings/design-patterns/`, renders + source zips `out/design-patterns/`.
+  `src/stories/design-patterns/<slug>/`, recordings `recordings/design-patterns/`, renders `out/design-patterns/`.
 - Nested slugs: `npm run render -- design-patterns/observer-p1-bn`. Thumbnails: `npm run thumbs:patterns` → `out/design-patterns/thumbs/`
   (`src/thumbs/StrategyThumbs.tsx`, `src/thumbs/ObserverThumbs.tsx`).
 - Strategy series: dark navy/teal, white logo. Observer series: ivory `#FAF7EF`, charcoal, plum (observer link), burnt orange
   (temperature), black logo `brand/dev-diary-logo-black.png`; caption colours via `theme.caption_color/caption_accent/caption_bg`.
+
+## Deliverables (user rule, 2026-11-13)
+- Each video ships as the MP4 and the thumbnail only. No source zip, no example code.
 
 ## Video format: vertical or landscape
 - scenes.json `"format": "vertical"` (default, 1080×1920, 9:16 Shorts/Reels/TikTok) or `"landscape"` (1920×1080, 16:9 YouTube).
@@ -79,8 +82,13 @@ Language arg: `bn`, `en`, or `both`.
 - Landscape brand outros for standalone files: `OutroDevDiaryLandscape`, `OutroHizibiziLandscape`.
 
 ## Brand outro (user rule: every NEW video)
-- One house format: main video fades to charcoal `#141318`, then a 4 s cream `#F3E9D7` logo outro fades in.
-- scenes.json: `"outro": "devdiary"` (Dev Diary / tech) or `"outro": "hizibizi"` (hizibizi). Code: `src/brand/BrandOutro.tsx`.
+- One house format: main video fades to charcoal `#141318`, then the project's outro plays.
+- The outro belongs to the project (channel) in YumeTuli; copy the fields the prompt gives you into scenes.json:
+  - `"outro": "devdiary" | "hizibizi"`: the built-in animated logo outros (4 s).
+  - `"outro": "common"` + `outro_logo` + `outro_logo_ratio`: any logo, tinted cream, house animation (4 s).
+  - `"outro": "p-<project>"`: a custom animation registered in `src/brand/custom/index.ts` (4 s).
+  - `"outro": "video"` + `outro_video` + `outro_duration_sec`: the project's uploaded outro file.
+- Code: `src/brand/BrandOutro.tsx`, `src/brand/Outro.tsx` (`OutroPreview` composition renders just the outro).
 - Standalone files: `npm run outro` → `out/brand/dev-diary/`, `out/brand/hizibizi/` (MP4 + transparent ProRes 4444 `.mov`).
 - Don't retrofit older videos unless asked.
 

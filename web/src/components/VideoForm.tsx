@@ -5,7 +5,7 @@ import { FileUp, Music } from "lucide-react";
 import { useRef, useState, type FormEvent } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { api, ApiError } from "@/lib/api";
-import { useSeriesList } from "@/lib/queries";
+import { groupSeries, useSeriesList } from "@/lib/queries";
 import type { Video, VideoFormat } from "@/lib/types";
 import { formatBytes } from "@/lib/format";
 import { useT } from "@/i18n";
@@ -84,10 +84,14 @@ export function VideoForm({ video }: { video?: Video }) {
               <option value="" disabled>
                 {t("videoForm.chooseSeries")}
               </option>
-              {series.data?.map((s) => (
-                <option key={s.id} value={s.id}>
-                  {s.name}
-                </option>
+              {groupSeries(series.data).map(([project, items]) => (
+                <optgroup key={project} label={project}>
+                  {items.map((s) => (
+                    <option key={s.id} value={s.id}>
+                      {s.name}
+                    </option>
+                  ))}
+                </optgroup>
               ))}
             </Select>
           </Field>

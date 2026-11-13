@@ -67,7 +67,15 @@ export type ShortProps = {
   music?: string | null; // relative to project dir
   music_volume?: number;
   logo_plate?: boolean; // light rounded plate behind the logo (for a dark logo over busy art)
-  outro?: "devdiary" | "hizibizi" | null; // house outro: video fades to charcoal, then the brand logo outro (cream on dark, 4 s) fades in
+  // House outro: the video fades to charcoal, then the outro plays.
+  //   "devdiary" | "hizibizi" | <custom key in src/brand/custom> = animated logo outro (4 s)
+  //   "common" = outro_logo tinted cream, 4 s
+  //   "video" = the project's uploaded outro file `outro_video` (length `outro_duration_sec`)
+  outro?: string | null;
+  outro_logo?: string | null; // relative to public/, used by "common"
+  outro_logo_ratio?: number | null; // logo width / height, places the underline right below it
+  outro_video?: string | null; // relative to public/, used by "video"
+  outro_duration_sec?: number | null;
   max_duration_sec?: number; // validation limit (default 90s); set for long episodes
   logo?: string | null; // channel logo, relative to public/ (e.g. "brand/dev-diary-logo.png"), shown top-right
   show_captions?: boolean;

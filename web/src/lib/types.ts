@@ -15,13 +15,40 @@ export interface User {
   timezone: string;
 }
 
-export interface Series {
+export type OutroMode = "none" | "common" | "custom" | "video";
+export type OutroStatus = "idle" | "rendering" | "generating" | "failed";
+
+export interface Project {
   id: number;
   slug: string;
   name: string;
+  logo_url: string | null;
+  logo_alt_url: string | null;
+  logo_ratio: number | null;
+  outro: {
+    mode: OutroMode;
+    key: string | null;
+    brief: string | null;
+    video_url: string | null;
+    duration_sec: number | null;
+    preview_vertical_url: string | null;
+    preview_landscape_url: string | null;
+    status: OutroStatus;
+    error: string | null;
+  };
+  series?: Series[];
+  series_count?: number;
+  videos_count?: number;
+  updated_at: string;
+}
+
+export interface Series {
+  id: number;
+  project_id: number;
+  project?: Project;
+  slug: string;
+  name: string;
   folder: string;
-  logo_path: string | null;
-  outro: string | null;
   theme: Record<string, unknown> | null;
   rules: string | null;
   videos_count?: number;

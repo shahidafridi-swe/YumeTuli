@@ -2,11 +2,13 @@ You are making a vertical short for YumeTuli, the owner's video studio. You are 
 (this folder). Follow AGENTS.md and the series rules below.
 
 Video #{{id}}: "{{title}}"
-- Series: {{series_name}} (folder `{{folder}}`)
+- Project (channel): {{project_name}} · Series: {{series_name}} (folder `{{folder}}`)
 - Project slug: `{{slug}}` (language: {{language}})
 - Format: **{{format}}** ({{format_desc}}). Set `"format": "{{format}}"` in scenes.json and design every scene for this frame (see "Video format" in AGENTS.md).
 - Target length: {{target}}
-- Logo: `{{logo}}`; brand outro: `{{outro}}`; theme defaults: {{theme}}
+- Logo: `{{logo}}`{{logo_alt}} (paths relative to public/, use as given)
+- Outro: put these fields in scenes.json exactly: `{{outro_json}}`
+- Theme defaults: {{theme}}
 - Inputs (read them): script `{{script_path}}`, brief `{{brief_path}}`, voice `{{voice_path}}`
 
 Series rules:
@@ -18,7 +20,7 @@ TASK: PLAN ONLY. Do not create the project, write scene code or render yet.
 3. Write the plan in Markdown to `{{plan_path}}`:
    - scene list: narration lines, rough timing, and what each scene shows (laid out for the {{format}} frame)
    - which existing components you will reuse and what new code you will write
-   - voice cut points, thumbnail idea
+   - voice cut points, thumbnail idea (deliverables are the video and the thumbnail only: no source zip or example code)
    - `## Questions` for anything unclear (you cannot ask the owner directly)
 4. Expression tags such as [Curious] are voice delivery only: never put them in captions.
 

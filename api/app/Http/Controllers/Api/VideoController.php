@@ -26,6 +26,7 @@ class VideoController extends Controller
     {
         $filters = $request->validate([
             'series_id' => ['nullable', 'integer'],
+            'project_id' => ['nullable', 'integer'],
             'status' => ['nullable', 'string'],
             'language' => ['nullable', 'string'],
             'format' => ['nullable', 'string'],
@@ -33,7 +34,8 @@ class VideoController extends Controller
         ]);
 
         $videos = Video::query()
-            ->with(['series', 'currentVersion'])
+            ->with(['series.project', 'currentVersion'])
+            ->when($filters['project_id'] ?? null, fn ($q, $v) => $q->whereHas('series', fn ($s) => $s->where('project_id', $v)))
             ->when($filters['series_id'] ?? null, fn ($q, $v) => $q->where('series_id', $v))
             ->when($filters['status'] ?? null, fn ($q, $v) => $q->where('status', $v))
             ->when($filters['language'] ?? null, fn ($q, $v) => $q->where('language', $v))
@@ -63,12 +65,12 @@ class VideoController extends Controller
             return $video;
         });
 
-        return (new VideoResource($video->load(['series', 'voice'])))->response()->setStatusCode(201);
+        return (new VideoResource($video->load(['series.project', 'voice'])))->response()->setStatusCode(201);
     }
 
     public function show(Video $video): VideoResource
     {
-        return new VideoResource($video->load(['series', 'voice', 'currentVersion.assets', 'versions.assets', 'activeRun']));
+        return new VideoResource($video->load(['series.project', 'voice', 'currentVersion.assets', 'versions.assets', 'activeRun']));
     }
 
     /** Edit a draft. Multipart updates must be sent as POST with _method=PATCH (PHP limitation). */
@@ -88,7 +90,7 @@ class VideoController extends Controller
             }
         });
 
-        return new VideoResource($video->fresh(['series', 'voice']));
+        return new VideoResource($video->fresh(['series.project', 'voice']));
     }
 
     public function destroy(Video $video): Response|JsonResponse

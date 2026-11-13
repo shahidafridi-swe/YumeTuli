@@ -14,4 +14,9 @@ return [
     'run_no_result' => 'Claude finished without a RESULT line, so no video was imported.',
     'run_usage_limit' => 'Claude usage limit reached. Try again later with Retry.',
     'run_claude_error' => 'Claude stopped with an error: :message',
+    'project_in_use' => 'This project has series and cannot be deleted.',
+    'outro_needs_logo' => 'Upload a logo first.',
+    'outro_needs_video' => 'Upload an outro video first.',
+    'outro_needs_custom' => 'Generate a custom outro first.',
+    'outro_busy' => 'The outro is already being made. Wait for it to finish.',
 ];

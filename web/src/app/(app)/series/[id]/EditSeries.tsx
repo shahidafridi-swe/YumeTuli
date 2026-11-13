@@ -16,7 +16,7 @@ export function EditSeries() {
   if (!series) return <Alert title={t("common.notFound")} />;
   return (
     <div className="max-w-3xl">
-      <PageHeader title={series.name} subtitle={t("series.videos", { count: series.videos_count ?? 0 })} />
+      <PageHeader title={series.name} subtitle={`${series.project?.name ?? ""} · ${t("series.videos", { count: series.videos_count ?? 0 })}`} />
       <SeriesForm series={series} />
     </div>
   );

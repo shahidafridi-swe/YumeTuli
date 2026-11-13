@@ -14,7 +14,7 @@ class SeriesController extends Controller
 {
     public function index(): AnonymousResourceCollection
     {
-        return SeriesResource::collection(Series::withCount('videos')->orderBy('name')->get());
+        return SeriesResource::collection(Series::with('project')->withCount('videos')->orderBy('name')->get());
     }
 
     public function store(SeriesRequest $request): JsonResponse
@@ -26,7 +26,7 @@ class SeriesController extends Controller
 
     public function show(Series $series): SeriesResource
     {
-        return new SeriesResource($series->loadCount('videos'));
+        return new SeriesResource($series->load('project')->loadCount('videos'));
     }
 
     public function update(SeriesRequest $request, Series $series): SeriesResource

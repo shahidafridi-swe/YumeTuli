@@ -13,8 +13,8 @@ Every episode request = voice mp3 (+ script). Do all of this without being asked
 4. `npm run align-captions -- <slug>`; fix garbled/dropped Whisper ranges with `scripts/splice-words.sh`; numbers need NUM_WORDS map in align-captions.
 5. Captions: max 2 lines, synced to voice, no expression tags.
 6. Render `npm run render -- <slug>`, QA with contact-sheet frames: centring, overlaps, caption lines, last frames/outro. Loudness ~ −16.5 LUFS.
-7. Deliverables to `out/<series>/`: `<slug>.mp4`, `<topic>-source.zip` (editable source), thumbnail in `out/<series>/thumbs/` (thumbs file in `src/thumbs/`, Still in `src/Root.tsx`, same centring rule).
+7. Deliverables to `out/<series>/`: `<slug>.mp4` and the thumbnail in `out/<series>/thumbs/` (thumbs file in `src/thumbs/`, Still in `src/Root.tsx`, same centring rule). **No source zip and no example code** (user, 2026-11-13: "code er dorkar nai, video r thumbnail holei hobe").
 8. Report in Banglish: paths, scene flow, length, what was verified.
 
-**Why:** user expects the full package every time (said "final MP4 ar editable source dao", asked for thumbnails repeatedly).
+**Why:** user expects video + thumbnail every time. Earlier they asked for an editable source zip; on 2026-11-13 they dropped zip and example code.
 **How to apply:** treat this as the default checklist; ask nothing that this answers. Related: [[user-profile]].

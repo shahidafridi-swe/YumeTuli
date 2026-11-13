@@ -14,7 +14,11 @@ YumeTuli is a personal web studio that replaces the CLI workflow: write the cont
 
 ### Phase 1 — Generate videos from the browser (MVP)
 - Login with JWT (single owner account, created by a seed command).
-- Series presets (Dev Diary, hizibizi): logo, theme, outro, caption style, folder.
+- Projects (one channel/page each: Dev Diary by Afridi, hizibizi), each with its own series.
+  - Logo upload (plus an optional variant for light backgrounds).
+  - Outro: the house logo animation, a custom animation designed by Claude, an uploaded video, or none, with vertical and landscape previews.
+- Series inside a project: folder, theme, house rules.
+- Deliverables: the video and the thumbnail only (no source zip).
 - New video form: series, title, context/brief, script, voice mp3, target length, language, format (vertical 9:16 or landscape 16:9).
 - Two-step generation: **Plan → Approve → Build**.
 - Live progress (steps + log) over websocket.
@@ -93,7 +97,8 @@ YumeTuli/
 | Table | Key columns |
 |---|---|
 | `users` | id, name, email, password, locale, theme (`light`/`dark`/`system`) |
-| `series` | id, slug (`devdiary`, `hizibizi`), name, folder (`design-patterns`, `hizibizi`), logo_path, outro, theme_json, rules_md |
+| `projects` | id, slug, name, logo_path, logo_alt_path, logo_ratio, outro_mode (none/common/custom/video), outro_key, outro_brief, outro_video_path, outro_duration_sec, outro previews, outro_status/error |
+| `series` | id, project_id, slug (`design-patterns`, `why-is-that`), name, folder, theme_json, rules_md |
 | `videos` | id, series_id, title, slug, language, context, script, target_seconds, mode (`agent`/`template`), status, current_version_id, claude_session_id |
 | `video_versions` | id, video_id, number, feedback, mp4_path, zip_path, thumb_path, duration_sec, created_at |
 | `assets` | id, video_id nullable, kind (`voice`/`upload`/`thumb`/`mp4`/`zip`), disk, path, size, mime |

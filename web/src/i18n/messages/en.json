@@ -17,7 +17,8 @@
     "series": "Series",
     "settings": "Settings",
     "logout": "Log out",
-    "menu": "Menu"
+    "menu": "Menu",
+    "projects": "Projects"
   },
   "theme": {
     "label": "Theme",
@@ -74,7 +75,7 @@
     "new": "New video",
     "count": "{count} in total",
     "search": "Search titles",
-    "series": "Series",
+    "series": "Project / series",
     "status": "Status",
     "language": "Language",
     "allSeries": "All series",
@@ -205,13 +206,8 @@
     "noRuns": "No runs yet."
   },
   "series": {
-    "title": "Series",
-    "subtitle": "Presets each video starts from: folder, logo, outro, theme and house rules.",
     "new": "New series",
-    "empty": "No series yet",
-    "videos": "{count} videos",
-    "outroLabel": "Outro",
-    "none": "None"
+    "videos": "{count} videos"
   },
   "seriesForm": {
     "basics": "Basics",
@@ -221,15 +217,15 @@
     "slugHint": "Lowercase letters, numbers and dashes.",
     "folder": "Engine folder",
     "folderHint": "Where projects of this series live in the engine.",
-    "logo": "Logo path",
-    "logoHint": "Path inside engine/public, e.g. brand/hizibizi-logo.png",
     "theme": "Theme defaults (JSON)",
     "themeHint": "Copied into each project's scenes.json theme.",
     "invalidJson": "This isn't valid JSON.",
     "rules": "House rules",
     "rulesHint": "Markdown. Given to Claude for every video in this series.",
     "couldNotSave": "Couldn't save the series",
-    "confirmDelete": "Delete the series \"{name}\"?"
+    "confirmDelete": "Delete the series \"{name}\"?",
+    "project": "Project",
+    "chooseProject": "Choose a project"
   },
   "settings": {
     "title": "Settings",
@@ -256,5 +252,59 @@
       "name": "Landscape 16:9",
       "hint": "YouTube · 1920×1080"
     }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Each project is one channel or page: its logo and outro apply to all its series.",
+    "new": "New project",
+    "newSubtitle": "Create the project, then add its logo, outro and series.",
+    "create": "Create project",
+    "empty": "No projects yet",
+    "name": "Name",
+    "details": "Details",
+    "detailsHint": "Logo and outro changes apply to new videos; finished videos stay as they are.",
+    "seriesCount": "{count} series",
+    "series": "Series",
+    "noSeries": "No series yet. Add one to start making videos.",
+    "logo": "Logo",
+    "mainLogo": "Main logo",
+    "altLogo": "Logo for light backgrounds",
+    "optional": "optional",
+    "logoHint": "PNG, WebP or SVG with a transparent background, up to 5 MB. Used exactly as given, top-right in every video.",
+    "upload": "Upload",
+    "replace": "Replace",
+    "outro": "Outro",
+    "couldNotSave": "Couldn't save",
+    "confirmDelete": "Delete the project \"{name}\"?"
+  },
+  "outro": {
+    "type": "Outro type",
+    "preview": "Preview",
+    "rerender": "Render again",
+    "modes": {
+      "none": "No outro",
+      "common": "Logo animation",
+      "custom": "Custom animation",
+      "video": "Uploaded video"
+    },
+    "hints": {
+      "none": "Videos end without an outro.",
+      "common": "Your logo in cream on charcoal, house animation.",
+      "custom": "An animation Claude designs for this logo.",
+      "video": "Your own outro file."
+    },
+    "customTitle": "Custom animation by Claude",
+    "customCurrent": "Current custom outro: {key}",
+    "customNone": "Describe the idea; Claude designs it with your logo (a few minutes).",
+    "briefPlaceholder": "e.g. The letters drop in one by one and bounce, then a line sweeps under the logo.",
+    "generate": "Design with Claude",
+    "uploadTitle": "Upload an outro video",
+    "uploadHint": "MP4, MOV or WebM, up to 30 s and 100 MB.",
+    "uploadCurrent": "Current file: {length}",
+    "generating": "Claude is designing the outro…",
+    "rendering": "Rendering the preview…",
+    "noPreview": "No preview yet.",
+    "noneHint": "No outro.",
+    "failed": "The outro didn't work"
   }
 }

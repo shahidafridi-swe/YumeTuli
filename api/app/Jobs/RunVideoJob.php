@@ -8,6 +8,7 @@ use App\Enums\VideoStatus;
 use App\Models\Run;
 use App\Services\Runs\ClaudeProcess;
 use App\Services\Runs\LiveFeed;
+use App\Services\Runs\ProjectBrand;
 use App\Services\Runs\PromptBuilder;
 use App\Services\Runs\RunService;
 use App\Services\Runs\StreamParser;
@@ -28,9 +29,9 @@ class RunVideoJob implements ShouldQueue
 
     public function __construct(public int $runId) {}
 
-    public function handle(Workspace $workspace, PromptBuilder $prompts, LiveFeed $feed, ClaudeProcess $claude): void
+    public function handle(Workspace $workspace, PromptBuilder $prompts, LiveFeed $feed, ClaudeProcess $claude, ProjectBrand $brand): void
     {
-        $run = Run::with(['video.series', 'video.voice', 'video.currentVersion'])->find($this->runId);
+        $run = Run::with(['video.series.project', 'video.voice', 'video.currentVersion'])->find($this->runId);
         if (! $run || $run->status !== RunStatus::Queued) {
             return;
         }
@@ -49,7 +50,10 @@ class RunVideoJob implements ShouldQueue
 
         try {
             $paths = $workspace->prepare($video);
-            $prompt = $prompts->build($run, $video, $paths);
+            $brandFiles = $video->series->project
+                ? $brand->sync($video->series->project)
+                : ['logo' => null, 'logo_alt' => null, 'outro' => ['outro' => null]];
+            $prompt = $prompts->build($run, $video, $paths, $brandFiles);
             $parser = new StreamParser;
 
             $outcome = $claude->run(

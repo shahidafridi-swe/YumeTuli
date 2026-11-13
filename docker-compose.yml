@@ -63,6 +63,7 @@ services:
       RUN_MIGRATIONS: "1"
     volumes:
       - ./api:/app
+      - ./engine:/engine:ro   # read-only: the seeder imports house logos from engine/public/brand
     ports:
       - "127.0.0.1:${API_PORT:-8000}:8000"
     restart: unless-stopped

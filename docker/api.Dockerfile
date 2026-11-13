@@ -2,7 +2,7 @@
 # Stages: `api` (HTTP, scheduler, reverb) and `worker` (queue + video engine tools).
 FROM dunglas/frankenphp:1-php8.4 AS api
 
-RUN install-php-extensions pdo_mysql pcntl intl zip bcmath opcache
+RUN install-php-extensions pdo_mysql pcntl intl zip bcmath opcache gd
 
 # Voice/video uploads.
 RUN printf 'upload_max_filesize=64M\npost_max_size=70M\nmemory_limit=512M\n' > "$PHP_INI_DIR/conf.d/yumetuli.ini"

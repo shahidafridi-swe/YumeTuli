@@ -3,8 +3,8 @@
   <component name="PHPUnit">
     <option name="directories">
       <list>
-        <option value="$PROJECT_DIR$/engine/public/projects/design-patterns/observer-p2-bn/source/laravel-shop/tests" />
         <option value="$PROJECT_DIR$/api/tests" />
+        <option value="$PROJECT_DIR$/engine/public/projects/design-patterns/observer-p2-bn/source/laravel-shop/tests" />
       </list>
     </option>
   </component>

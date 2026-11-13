@@ -56,3 +56,14 @@ Reverb runs on `ws://localhost:8080` (key `REVERB_APP_KEY`). Channel `private-vi
 Status: Phase 1 done (Milestones 0–6). Acceptance: the hizibizi spoon episode was rebuilt end to end from the
 browser flow (plan ~2 min, build ~10 min) and matches the CLI episode (same voice timing and loudness, current
 house rules applied, brand outro added). Videos can be vertical 9:16 or landscape 16:9. See `docs/PLAN.md`.
+
+### Projects, logos and outros
+Each project is one channel/page with its own logo, outro and series. On the project page:
+- **Logo:** upload a PNG, WebP or SVG with transparency.
+- **Outro:** pick the logo animation, ask Claude for a custom one, upload a video, or none, and watch the preview.
+
+The worker copies logos and outros into `engine/public/brand/projects/` (generated, ignored by git). Custom
+outro code lives in `engine/src/brand/custom/`; commit it.
+
+### QA screenshots
+`node scripts/qa/shot.mjs <outDir> <jwt> light|dark <width> /path ...` (needs google-chrome).

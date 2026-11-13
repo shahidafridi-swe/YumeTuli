@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Plus, Search } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useSeriesList, useVideos } from "@/lib/queries";
+import { groupSeries, useSeriesList, useVideos } from "@/lib/queries";
 import type { VideoStatus } from "@/lib/types";
 import { formatDate } from "@/lib/format";
 import { useI18n } from "@/i18n";
@@ -63,10 +63,14 @@ export function VideoList() {
         </div>
         <Select value={params.get("series_id") ?? ""} onChange={(e) => setParam("series_id", e.target.value)} aria-label={t("videos.series")}>
           <option value="">{t("videos.allSeries")}</option>
-          {series.data?.map((s) => (
-            <option key={s.id} value={s.id}>
-              {s.name}
-            </option>
+          {groupSeries(series.data).map(([project, items]) => (
+            <optgroup key={project} label={project}>
+              {items.map((s) => (
+                <option key={s.id} value={s.id}>
+                  {s.name}
+                </option>
+              ))}
+            </optgroup>
           ))}
         </Select>
         <Select value={params.get("status") ?? ""} onChange={(e) => setParam("status", e.target.value)} aria-label={t("videos.status")}>
@@ -114,7 +118,10 @@ export function VideoList() {
                     </Link>
                     <span className="block truncate font-mono text-xs text-muted">{v.slug}</span>
                   </td>
-                  <td className="hidden px-4 py-3 md:table-cell">{v.series?.name}</td>
+                  <td className="hidden px-4 py-3 md:table-cell">
+                    <span className="block">{v.series?.project?.name}</span>
+                    <span className="block text-xs text-muted">{v.series?.name}</span>
+                  </td>
                   <td className="hidden px-4 py-3 sm:table-cell">
                     <span className="inline-flex items-center gap-2">
                       <FormatIcon format={v.format} className="size-4" title={t(`formats.${v.format}.name`)} />

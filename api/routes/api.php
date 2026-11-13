@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AssetController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\HealthController;
+use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\SeriesController;
 use App\Http\Controllers\Api\VideoController;
 use App\Http\Controllers\Api\VideoRunController;
@@ -21,9 +22,21 @@ Route::get('/assets/{asset}/download', [AssetController::class, 'download'])
     ->middleware('signed')
     ->name('assets.download');
 
+Route::get('/projects/{project}/files/{kind}', [ProjectController::class, 'file'])
+    ->middleware('signed')
+    ->name('projects.file');
+
 Route::middleware('auth:api')->group(function () {
     Route::get('/me', [AuthController::class, 'me']);
     Route::patch('/me', [AuthController::class, 'updateMe']);
+
+    Route::apiResource('projects', ProjectController::class);
+    Route::prefix('projects/{project}')->controller(ProjectController::class)->group(function () {
+        Route::post('/logo', 'uploadLogo');
+        Route::post('/outro/video', 'uploadOutro');
+        Route::post('/outro/custom', 'generateOutro');
+        Route::post('/outro/preview', 'renderPreview');
+    });
 
     Route::apiResource('series', SeriesController::class)->parameters(['series' => 'series']);
     Route::apiResource('videos', VideoController::class);

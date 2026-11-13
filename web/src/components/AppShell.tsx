@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Clapperboard, LayoutDashboard, Layers, LogOut, Menu, Settings, X } from "lucide-react";
+import { Clapperboard, FolderKanban, LayoutDashboard, LogOut, Menu, Settings, X } from "lucide-react";
 import { Suspense, useEffect, useState, type ReactNode } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { logout } from "@/app/login/actions";
@@ -13,10 +13,10 @@ import { useT, type MessageKey } from "@/i18n";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { cx } from "@/components/ui";
 
-const NAV: { href: string; label: MessageKey; icon: typeof Layers }[] = [
+const NAV: { href: string; label: MessageKey; icon: typeof FolderKanban }[] = [
   { href: "/", label: "nav.dashboard", icon: LayoutDashboard },
   { href: "/videos", label: "nav.videos", icon: Clapperboard },
-  { href: "/series", label: "nav.series", icon: Layers },
+  { href: "/projects", label: "nav.projects", icon: FolderKanban },
   { href: "/settings", label: "nav.settings", icon: Settings },
 ];
 
@@ -92,7 +92,9 @@ function CurrentNav({ onNavigate }: { onNavigate: () => void }) {
 
 function NavLinks({ pathname, onNavigate }: { pathname: string | null; onNavigate: () => void }) {
   const t = useT();
-  const active = (href: string) => pathname !== null && (href === "/" ? pathname === "/" : pathname.startsWith(href));
+  // Series pages live under their project.
+  const active = (href: string) =>
+    pathname !== null && (href === "/" ? pathname === "/" : pathname.startsWith(href) || (href === "/projects" && pathname.startsWith("/series")));
   return (
     <nav className="flex flex-col gap-0.5" aria-label={t("nav.main")}>
       {NAV.map(({ href, label, icon: Icon }) => (

@@ -6,7 +6,8 @@ import { loadFont as loadFredoka } from "@remotion/google-fonts/Fredoka";
 import { loadFont as loadBaloo } from "@remotion/google-fonts/BalooDa2";
 import type { ShortProps } from "./types";
 import { SceneView } from "./components/SceneView";
-import { BrandOutro, FADE_OUT_FRAMES, OUTRO_BG, OUTRO_FRAMES } from "./brand/BrandOutro";
+import { FADE_OUT_FRAMES, OUTRO_BG } from "./brand/BrandOutro";
+import { Outro, outroFrames } from "./brand/Outro";
 import { projectFile } from "./util";
 import { useFormat } from "./format";
 
@@ -83,8 +84,8 @@ export const Short: React.FC<ShortProps> = (props) => {
           <Sequence from={scenesFrames - FADE_OUT_FRAMES} durationInFrames={FADE_OUT_FRAMES} name="Fade to outro">
             <FadeToOutro />
           </Sequence>
-          <Sequence from={scenesFrames} durationInFrames={OUTRO_FRAMES} name="Outro">
-            <BrandOutro brand={props.outro} />
+          <Sequence from={scenesFrames} durationInFrames={outroFrames(props, fps)} name="Outro">
+            <Outro outro={props.outro} outro_logo={props.outro_logo} outro_logo_ratio={props.outro_logo_ratio} outro_video={props.outro_video} outro_duration_sec={props.outro_duration_sec} />
           </Sequence>
         </>
       ) : null}

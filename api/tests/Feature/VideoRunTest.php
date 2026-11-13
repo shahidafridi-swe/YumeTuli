@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Enums\RunStatus;
 use App\Enums\VideoStatus;
 use App\Jobs\RunVideoJob;
+use App\Models\Project;
 use App\Models\Run;
 use App\Models\Series;
 use App\Models\User;
@@ -44,7 +45,8 @@ class VideoRunTest extends TestCase
 
     private function video(string $context = 'Kids, 60s'): Video
     {
-        $series = Series::factory()->create(['folder' => 'hizibizi', 'outro' => 'hizibizi', 'rules' => 'Full-screen.']);
+        $project = Project::factory()->create(['slug' => 'kids', 'outro_mode' => 'custom', 'outro_key' => 'hizibizi']);
+        $series = Series::factory()->for($project)->create(['folder' => 'hizibizi', 'rules' => 'Full-screen.']);
         $id = $this->post('/api/v1/videos', [
             'series_id' => $series->id,
             'title' => 'Rainbow',
@@ -75,6 +77,8 @@ class VideoRunTest extends TestCase
         $this->assertStringContainsString('Bash(npm run *)', $planArgs);
         $this->assertStringContainsString('--append-system-prompt', $planArgs);
         $this->assertStringContainsString('"format": "vertical"', $planArgs);
+        $this->assertStringContainsString('{"outro":"hizibizi"}', $planArgs);
+
         $this->assertStringContainsString('Format: vertical 9:16', file_get_contents("{$this->engine}/inbox/{$video->id}/brief.md"));
 
         // Claude never sees the worker's secrets.
@@ -89,7 +93,9 @@ class VideoRunTest extends TestCase
         $video->refresh();
         $this->assertSame(VideoStatus::Review, $video->status);
         $this->assertSame("# Plan\nEdited by owner", file_get_contents("{$this->engine}/inbox/{$video->id}/plan.md"));
-        $this->assertStringContainsString("--resume\nfake-session-1", file_get_contents("{$this->engine}/inbox/{$video->id}/args-build.txt"));
+        $buildArgs = file_get_contents("{$this->engine}/inbox/{$video->id}/args-build.txt");
+        $this->assertStringContainsString("--resume\nfake-session-1", $buildArgs);
+        $this->assertStringNotContainsString('"zip"', $buildArgs); // deliverables: video + thumbnail only
 
         $show = $this->getJson("/api/v1/videos/{$video->id}")->assertOk()
             ->assertJsonPath('data.status', 'review')

@@ -18,3 +18,5 @@ User decisions:
 **How to apply:** follow docs/PLAN.md milestones; ask approval before starting code (user prefers explain-first, [[user-profile]]). Related: [[video-request-workflow]].
 
 Update 2026-11-12: Milestones 0–5 done (Docker, API with JWT, Claude runs, web UI). User asked for a format choice per video: vertical 9:16 (default) or landscape 16:9 — implemented end to end (scenes.json `format`, engine `src/format.ts`).
+
+Update 2026-11-13: user wants **projects** = one channel/page each (Dev Diary by Afridi and hizibizi are separate projects). A project has many series, its own logo (+ optional light-background variant) and outro, visible/editable in the UI. Outro choices: common logo animation, custom animation designed by Claude, uploaded video, none. Deliverables are video + thumbnail only (no zip, no example code). Social accounts (Phase 2) should attach to the project.

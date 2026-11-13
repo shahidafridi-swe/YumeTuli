@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Project;
 use App\Models\Series;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -13,11 +14,10 @@ class SeriesFactory extends Factory
         $slug = fake()->unique()->slug(2);
 
         return [
+            'project_id' => Project::factory(),
             'slug' => $slug,
             'name' => fake()->words(3, true),
             'folder' => $slug,
-            'logo_path' => null,
-            'outro' => null,
             'theme' => [],
             'rules' => null,
         ];

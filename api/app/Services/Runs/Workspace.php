@@ -165,6 +165,7 @@ class Workspace
         return implode("\n", [
             "# {$video->title}",
             '',
+            '- Project: '.($series->project?->name ?? '—'),
             "- Series: {$series->name}",
             "- Language: {$video->language->value}",
             "- Format: {$video->format->describe()}",
