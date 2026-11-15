@@ -17,7 +17,7 @@ follows one spec-driven workflow with human gates, shared rules, subagents and g
 - [x] `docs/instructions/`: conventions, comment style, communication style, workflow, stack & commands, slash commands.
 - [x] Slash commands: feature, bug, refactor, hotfix, chore, spike, check, review-loop, review-invariants, security-review, adr, new-endpoint, new-page, ui-check, merge-conflict.
 - [x] Subagents: tester, developer, reviewer, ui-designer, codex-reviewer, review-fixer.
-- [x] `.claude/settings.json` guardrails (allow make/test/read-only git; deny rm -rf, push, hard reset, volume removal, secret files).
+- [x] `.claude/settings.json` guardrails (allow make/test/local git; `git push` asks first; deny rm -rf, hard reset, volume removal, secret files).
 - [x] `Makefile` entry point (`make check` = pint --test + eslint + tsc web/engine + Laravel tests; `make ui-check`; …).
 - [x] GitHub Actions CI (path-filtered api / web / engine).
 - [x] Read-only MySQL MCP server (SELECT-only user without secret tables/columns + server writes disabled).
@@ -46,5 +46,6 @@ Defines them. Security: the MCP user cannot read sessions, tokens, jobs or passw
 - **What was built:** everything in the acceptance criteria. All five checks passed on 2026-11-15.
 - **Deviations:** `Makefile` instead of Taskfile (owner's choice). Web has no unit runner; UI is verified
   with `make ui-check` screenshots. Engine/video work keeps its own `engine/.claude` (`/make-video`).
+- **Change after Done (2026-11-15, owner):** `git push` moved from `deny` to `ask`, so Claude asks before every push instead of never pushing.
 - **Follow-ups:** watch the first CI run on GitHub. Optional later: a pre-commit `/review-loop --staged`
   hook, and a web test runner if UI logic grows.

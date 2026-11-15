@@ -1,5 +1,5 @@
 {
-  "$comment": "Permission guardrails for YumeTuli. Allow the make/docker/test workflows and read-only git; deny destructive commands, pushing, and reading secrets (.env.example stays readable). Per-user tweaks go in settings.local.json (git-ignored).",
+  "$comment": "Permission guardrails for YumeTuli. Allow the make/docker/test workflows and local git; git push always asks the owner first; deny destructive commands and reading secrets (.env.example stays readable).",
   "permissions": {
     "allow": [
       "Bash(make:*)",
@@ -19,9 +19,11 @@
       "Bash(git commit:*)",
       "mcp__mysql-readonly"
     ],
+    "ask": [
+      "Bash(git push:*)"
+    ],
     "deny": [
       "Bash(rm -rf:*)",
-      "Bash(git push:*)",
       "Bash(git reset --hard:*)",
       "Bash(git clean:*)",
       "Bash(docker compose down -v:*)",
@@ -36,5 +38,7 @@
     ]
   },
   "enableAllProjectMcpServers": false,
-  "enabledMcpjsonServers": ["mysql-readonly"]
+  "enabledMcpjsonServers": [
+    "mysql-readonly"
+  ]
 }
