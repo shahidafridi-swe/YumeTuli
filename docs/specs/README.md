@@ -36,7 +36,7 @@ Driven by `/feature`. Every other task type is a variation.
 | 5 | **Implement** | Per task, in order: `tester` writes that task's tests (red), `developer` makes them green. Confirm green before the next task. | `tester` → `developer` | |
 | 6 | **Self-review** | `reviewer` grills the diff (spec, invariants, security, over-engineering). Findings go back to their author. Then `/review-loop`, then `make check` until green; `make ui-check` for UI. | `reviewer` | |
 | 7 | **Approve work** | Present diff summary, test results, screenshots, and criterion → evidence. **STOP.** | lead | ⛔ **Gate 2** |
-| 8 | **Handoff** | Fill *Outcome* in the same spec: what was built, deviations (with reasons), follow-ups. Status `Done`. Commit. | lead | |
+| 8 | **Handoff** | Fill *Outcome* in the same spec: what was built, deviations (with reasons), follow-ups. Status `Done`. Update `docs/ROADMAP.md`. Commit. | lead | |
 
 "Lead" is the main agent talking to the owner. "Grilling" means reviewing as a hostile reviewer would:
 assume there is a bug and find it — including unrequested abstraction, which is a finding to cut.

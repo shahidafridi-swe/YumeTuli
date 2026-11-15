@@ -16,7 +16,9 @@ Single owner, runs locally in Docker with the owner's Claude subscription.
 | `engine/` | Remotion video engine; Claude builds videos here (worker runs `claude -p`) |
 | `docker/`, `docker-compose.yml` | the stack (web, api, worker, reverb, mysql) |
 
-Plan and phases: `docs/PLAN.md`. Decisions: `docs/adr/`. Video house rules: `engine/AGENTS.md` + `docs/memory/`.
+**What's done and what's next: `docs/ROADMAP.md`** (read it when the owner asks what is left or before
+starting new work). Plan and phases: `docs/PLAN.md`. Decisions: `docs/adr/`. Video house rules:
+`engine/AGENTS.md` + `docs/memory/`.
 
 ## The six invariants (non-negotiable)
 
@@ -60,6 +62,7 @@ Full contract: `docs/specs/README.md`.
 web/                 Next.js app — CLAUDE.md
 api/                 Laravel app — CLAUDE.md
 engine/              Remotion engine — CLAUDE.md / AGENTS.md (video rules)
+docs/ROADMAP.md      done / next / follow-ups (keep updated)
 docs/PLAN.md         phases and milestones
 docs/specs/          per-task specs + workflow contract (README.md)
 docs/adr/            architecture decisions
@@ -87,6 +90,7 @@ make restart-worker  # after PHP changes
 
 ## Read when the task touches it (not preloaded)
 
+- "What's left?" / choosing the next task → `docs/ROADMAP.md`.
 - Starting any task → `docs/specs/README.md`, then `docs/instructions/workflow.md`.
 - Stack, services, commands → `docs/instructions/stack-and-commands.md`.
 - Slash command catalog → `docs/instructions/slash-commands.md`.
