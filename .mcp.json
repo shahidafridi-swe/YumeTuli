@@ -1,0 +1,9 @@
+{
+  "$comment": "Claude Code MCP servers for YumeTuli. MySQL is READ-ONLY: a SELECT-only user (make db-readonly-user) that cannot see sessions, tokens, jobs or password hashes, and the server's write operations are disabled. Agents inspect data to reason about the schema; all writes go through the Laravel app.",
+  "mcpServers": {
+    "mysql-readonly": {
+      "command": "bash",
+      "args": ["scripts/mcp-mysql.sh"]
+    }
+  }
+}

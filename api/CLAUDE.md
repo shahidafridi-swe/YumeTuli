@@ -1,47 +1,37 @@
-<laravel-boost-guidelines>
-# Laravel Application
+# api/ — Laravel 13 (API, jobs, Claude runs)
 
-This repository contains a Laravel application. Complete the following setup before working on the user's request.
+Read the root `CLAUDE.md` first. This file adds local rules.
 
-## Prerequisites
-
-Verify that PHP and Composer are available:
-
-```sh
-php -v
-composer -V
+## Map
+```
+app/Http/Controllers/Api/   thin controllers (Auth, Project, Series, Video, VideoRun, Asset, Health)
+app/Http/Requests/          validation
+app/Http/Resources/         JSON output (never return models directly)
+app/Models/                 Project → Series → Video → VideoVersion/Asset; Run → RunEvent
+app/Enums/                  VideoStatus, RunKind, RunStatus, OutroMode, VideoFormat, …
+app/Services/Runs/          RunService (state machine), ClaudeProcess, StreamParser, Workspace,
+                            PromptBuilder, ProjectBrand, LiveFeed
+app/Jobs/                   RunVideoJob, RenderOutroPreviewJob, GenerateCustomOutroJob
+resources/prompts/          plan / build / feedback / custom-outro / system prompts for Claude
+config/yumetuli.php         media disk, owner, engine path, Claude bin/timeout/allowlist
+lang/en/api.php             owner-facing API messages
+tests/Feature/              PHPUnit feature tests; tests/Fixtures/fake-claude
 ```
 
-If either command is unavailable, detect the user's operating system and install the prerequisites with the appropriate command:
+## Rules
+- Routes: `routes/api.php`, prefix `/api/v1`, `auth:api` (JWT) except health, auth and signed file links.
+- Video status changes only through `RunService` (allowed transitions, one active run per video, 409 otherwise).
+- Long work is a queued job; the worker runs one job at a time. After PHP changes: `make restart-worker`.
+- Claude: build prompts in `resources/prompts/`, never inline. Keep the clean environment and allowlist
+  in `ClaudeProcess`/`config/yumetuli.php`. Any new path coming back from Claude must be resolved inside
+  the engine (see `Workspace::resolve`).
+- Broadcasting: `LiveFeed` stores then broadcasts; a broadcast failure must never fail a run.
+- Migrations are additive and reversible (`down()`); data moves live in the migration that needs them.
 
-macOS:
-
-```sh
-/bin/bash -c "$(curl -fsSL https://php.new/install/mac/8.5)"
-```
-
-Windows PowerShell:
-
-```powershell
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://php.new/install/windows/8.5'))
-```
-
-Linux:
-
-```sh
-/bin/bash -c "$(curl -fsSL https://php.new/install/linux/8.5)"
-```
-
-After installation, ask the user to restart their terminal. If the agent needs the restarted shell to continue, ask the user to reopen their terminal and rerun their original prompt.
-
-## Agent Setup
-
-Install Laravel Boost from the application root before making application changes:
-
-```sh
-composer require laravel/boost --dev
-php artisan boost:install
-```
-
-Boost replaces these bootstrap instructions with guidelines tailored to the application. After installation, read `AGENTS.md` again and continue with the user's original request using the generated guidelines.
-</laravel-boost-guidelines>
+## Tests
+- `make test-api` (or `F=ClassOrMethod`). sqlite in memory is forced; `TestCase` refuses other databases.
+- Fake externals: `Storage::fake('media')`, `Queue::fake()`, `config(['yumetuli.engine_path' => <tmp>,
+  'yumetuli.claude.bin' => base_path('tests/Fixtures/fake-claude')])`. The fake CLI reacts to words in the
+  brief (`FAIL_ONCE`, `NO_RESULT`, `LIMIT`, `ESCAPE`, `SLOW`).
+- In tests the JWT singleton keeps the last token: call `forgetGuards()` and `app('tymon.jwt')->unsetToken()`
+  between requests that switch tokens.

@@ -67,3 +67,12 @@ outro code lives in `engine/src/brand/custom/`; commit it.
 
 ### QA screenshots
 `node scripts/qa/shot.mjs <outDir> <jwt> light|dark <width> /path ...` (needs google-chrome).
+
+## Agentic development
+Every change goes through the spec-driven workflow in `docs/specs/README.md`: spec → test spec →
+**Gate 1** (owner approves tests) → one task at a time (tester → developer) → review → **Gate 2** → handoff.
+- Agent rules: `CLAUDE.md` (root + `api/`, `web/`, `engine/`), `AGENTS.md` for Codex.
+- Slash commands: `/feature` `/bug` `/refactor` `/hotfix` `/chore` `/spike` `/check` `/review-loop` … (`docs/instructions/slash-commands.md`).
+- Subagents: `tester`, `developer`, `reviewer`, `ui-designer`, `codex-reviewer`, `review-fixer` (`.claude/agents/`).
+- Decisions: `docs/adr/`. Quality gate: `make check`. CI: `.github/workflows/ci.yml`.
+- Database for agents: the read-only `mysql-readonly` MCP server — run `make db-readonly-user` once.
